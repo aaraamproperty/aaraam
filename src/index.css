@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 0 0% 97%;
     --muted-foreground: 197 50% 45%;
 
-    --accent: 84 93% 56%;
+    --accent: 142 76% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,13 +34,13 @@ All colors MUST be HSL.
 
     --border: 0 0% 89%;
     --input: 0 0% 89%;
-    --ring: 84 93% 56%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.25rem;
+    --radius: 0.75rem;
     
     /* Corporate colors */
     --corporate-blue: 197 100% 19%;
-    --corporate-green: 84 93% 56%;
+    --corporate-green: 142 76% 36%;
     --corporate-light: 0 0% 97%;
     
     /* Shadows */
@@ -83,7 +83,7 @@ All colors MUST be HSL.
     --muted: 197 30% 20%;
     --muted-foreground: 197 20% 65%;
 
-    --accent: 84 93% 56%;
+    --accent: 142 76% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
@@ -91,10 +91,10 @@ All colors MUST be HSL.
 
     --border: 197 30% 20%;
     --input: 197 30% 20%;
-    --ring: 84 93% 56%;
+    --ring: 142 76% 36%;
     
     --corporate-blue: 197 100% 19%;
-    --corporate-green: 84 93% 56%;
+    --corporate-green: 142 76% 36%;
     --corporate-light: 197 50% 12%;
     
     --shadow-sharp: 0 0% 0% / 0.15;

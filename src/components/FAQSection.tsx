@@ -48,7 +48,7 @@ const FAQSection = () => {
             <img
               src={officeImage}
               alt="Office Space"
-              className="w-full h-[500px] object-cover shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+              className="w-full h-[500px] object-cover rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
             />
           </div>
 
@@ -59,7 +59,7 @@ const FAQSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-card border border-border px-6"
+                  className="bg-card border border-border rounded-2xl px-6 overflow-hidden"
                 >
                   <AccordionTrigger className="text-left font-bold text-foreground hover:text-accent">
                     {faq.question}

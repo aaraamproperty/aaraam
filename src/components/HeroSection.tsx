@@ -23,14 +23,14 @@ const HeroSection = () => {
             Find the Perfect Commercial Space for Your Business
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 animate-fade-in">
-            Pan-India rentals and commercial listings — verified, transparent, and corporate-ready.
+            Pan-India corporate rentals and commercial listings curated for your needs.
           </p>
 
-          {/* Sharp Search Bar */}
-          <div className="bg-card rounded-none p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] animate-[slide-up_0.6s_ease-out]">
+          {/* Glassmorphism Search Bar */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)] animate-[slide-up_0.6s_ease-out]">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Location */}
-              <div className="flex items-center gap-3 p-4 bg-secondary border border-border">
+              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0" />
                 <div className="flex-1 text-left">
                   <label className="text-xs text-muted-foreground block mb-1">
@@ -48,7 +48,7 @@ const HeroSection = () => {
               </div>
 
               {/* Property Type */}
-              <div className="flex items-center gap-3 p-4 bg-secondary border border-border">
+              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
                 <Home className="h-5 w-5 text-accent flex-shrink-0" />
                 <div className="flex-1 text-left">
                   <label className="text-xs text-muted-foreground block mb-1">
@@ -65,7 +65,7 @@ const HeroSection = () => {
               </div>
 
               {/* Budget */}
-              <div className="flex items-center gap-3 p-4 bg-secondary border border-border">
+              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
                 <DollarSign className="h-5 w-5 text-accent flex-shrink-0" />
                 <div className="flex-1 text-left">
                   <label className="text-xs text-muted-foreground block mb-1">
@@ -81,7 +81,7 @@ const HeroSection = () => {
               </div>
 
               {/* Search Button */}
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground h-full text-lg font-semibold">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground h-full text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all">
                 <Search className="mr-2 h-5 w-5" />
                 Search Property
               </Button>

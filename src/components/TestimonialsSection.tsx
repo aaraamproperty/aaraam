@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-secondary border border-border p-8 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+              className="bg-secondary border border-border rounded-3xl p-8 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:scale-105"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">

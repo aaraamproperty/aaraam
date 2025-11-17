@@ -11,7 +11,7 @@ const AboutSection = () => {
             <img
               src={officeImage}
               alt="Office Space"
-              className="w-full h-[500px] object-cover shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+              className="w-full h-[500px] object-cover rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
             />
           </div>
 
@@ -28,7 +28,7 @@ const AboutSection = () => {
 
             {/* USP Cards */}
             <div className="space-y-4 pt-6">
-              <div className="flex items-start gap-4 p-4 bg-secondary border-l-4 border-accent">
+              <div className="flex items-start gap-4 p-6 bg-secondary rounded-2xl border-l-4 border-accent shadow-sm">
                 <CheckCircle className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-1">Verified Commercial Listings</h3>
@@ -36,7 +36,7 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-secondary border-l-4 border-accent">
+              <div className="flex items-start gap-4 p-6 bg-secondary rounded-2xl border-l-4 border-accent shadow-sm">
                 <Shield className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-1">Trusted by Corporates</h3>
@@ -44,7 +44,7 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-secondary border-l-4 border-accent">
+              <div className="flex items-start gap-4 p-6 bg-secondary rounded-2xl border-l-4 border-accent shadow-sm">
                 <Globe className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-1">Pan-India Presence</h3>
