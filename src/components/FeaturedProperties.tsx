@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import officeImage from "@/assets/office-space.jpg";
 import retailImage from "@/assets/retail-shop.jpg";
 import commercialImage from "@/assets/hero-commercial.jpg";
@@ -35,6 +35,15 @@ const properties = [
 const FeaturedProperties = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % properties.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const nextProperty = () => {
     setCurrentIndex((prev) => (prev + 1) % properties.length);
   };
@@ -60,7 +69,7 @@ const FeaturedProperties = () => {
 
         {/* Single Property Card with Slider */}
         <div className="max-w-5xl mx-auto relative">
-          <div className="bg-card shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden transition-all duration-500">
+          <div className="bg-card rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Property Image */}
               <div className="relative h-[400px]">
@@ -69,7 +78,7 @@ const FeaturedProperties = () => {
                   alt={currentProperty.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-4 py-2 font-bold">
+                <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-4 py-2 font-bold rounded-full">
                   {currentProperty.type}
                 </div>
               </div>
@@ -90,7 +99,7 @@ const FeaturedProperties = () => {
                   </div>
                 </div>
 
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground w-full text-lg">
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground w-full text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105">
                   View Property Details
                 </Button>
               </div>
@@ -103,7 +112,7 @@ const FeaturedProperties = () => {
               onClick={prevProperty}
               variant="outline"
               size="icon"
-              className="h-12 w-12 border-2 hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="h-12 w-12 rounded-full border-2 hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
@@ -111,7 +120,7 @@ const FeaturedProperties = () => {
               onClick={nextProperty}
               variant="outline"
               size="icon"
-              className="h-12 w-12 border-2 hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="h-12 w-12 rounded-full border-2 hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
@@ -123,7 +132,7 @@ const FeaturedProperties = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 transition-all ${
+                className={`h-2 rounded-full transition-all ${
                   index === currentIndex ? "w-8 bg-accent" : "w-2 bg-border"
                 }`}
               />

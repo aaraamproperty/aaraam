@@ -94,7 +94,7 @@ const StatCard = ({ icon: Icon, label, value, suffix, isVisible, delay }: StatCa
 
   return (
     <div
-      className="bg-primary-foreground/10 border border-primary-foreground/20 p-8 text-center transition-all duration-500 hover:bg-primary-foreground/15"
+      className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-3xl p-8 text-center transition-all duration-500 hover:bg-primary-foreground/15 hover:scale-105"
       style={{
         animation: isVisible ? `scale-in 0.5s ease-out ${delay}ms both` : "none",
       }}

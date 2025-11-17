@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card border border-border p-6 transition-all duration-300 hover:border-accent hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] group"
+              className="bg-card border border-border rounded-3xl p-8 transition-all duration-300 hover:border-accent hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:scale-105 group"
             >
               <div className="mb-4">
                 <benefit.icon className="h-10 w-10 text-accent transition-transform duration-300 group-hover:scale-110" />
