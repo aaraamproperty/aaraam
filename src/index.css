@@ -8,40 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --background: 0 0% 97%;
+    --foreground: 197 100% 19%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 197 100% 19%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 197 100% 19%;
 
-    --primary: 220 30% 20%;
+    --primary: 197 100% 19%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 220 30% 20%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 197 100% 19%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 197 50% 45%;
 
-    --accent: 24 95% 53%;
+    --accent: 84 93% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 24 95% 53%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 84 93% 56%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
     
-    /* Premium real estate colors */
-    --glass-bg: 0 0% 100% / 0.8;
-    --glass-border: 220 13% 91% / 0.5;
-    --shadow-premium: 220 20% 15% / 0.08;
+    /* Corporate colors */
+    --corporate-blue: 197 100% 19%;
+    --corporate-green: 84 93% 56%;
+    --corporate-light: 0 0% 97%;
+    
+    /* Shadows */
+    --shadow-sharp: 0 0% 0% / 0.08;
+    --shadow-corporate: 0 0% 0% / 0.12;
 
     --sidebar-background: 0 0% 98%;
 
@@ -61,37 +65,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 10%;
+    --background: 197 50% 12%;
     --foreground: 0 0% 98%;
 
-    --card: 220 25% 10%;
+    --card: 197 40% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 25% 10%;
+    --popover: 197 40% 15%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 220 30% 20%;
+    --primary-foreground: 197 100% 19%;
 
-    --secondary: 220 20% 18%;
+    --secondary: 197 30% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 197 30% 20%;
+    --muted-foreground: 197 20% 65%;
 
-    --accent: 24 95% 53%;
+    --accent: 84 93% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 24 95% 53%;
+    --border: 197 30% 20%;
+    --input: 197 30% 20%;
+    --ring: 84 93% 56%;
     
-    --glass-bg: 220 25% 10% / 0.8;
-    --glass-border: 220 20% 18% / 0.5;
-    --shadow-premium: 0 0% 0% / 0.3;
+    --corporate-blue: 197 100% 19%;
+    --corporate-green: 84 93% 56%;
+    --corporate-light: 197 50% 12%;
+    
+    --shadow-sharp: 0 0% 0% / 0.15;
+    --shadow-corporate: 0 0% 0% / 0.25;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

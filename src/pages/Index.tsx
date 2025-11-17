@@ -1,15 +1,25 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import WelcomeSection from "@/components/WelcomeSection";
-import LocationSelector from "@/components/LocationSelector";
+import AboutSection from "@/components/AboutSection";
+import FeaturedProperties from "@/components/FeaturedProperties";
+import StatsSection from "@/components/StatsSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import ClientsSection from "@/components/ClientsSection";
+import FAQSection from "@/components/FAQSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <WelcomeSection />
-      <LocationSelector />
+      <AboutSection />
+      <FeaturedProperties />
+      <StatsSection />
+      <WhyChooseUs />
+      <ClientsSection />
+      <FAQSection />
+      <TestimonialsSection />
     </div>
   );
 };
