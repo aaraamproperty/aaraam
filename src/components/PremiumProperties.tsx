@@ -31,6 +31,22 @@ const PremiumProperties = () => {
       price: "₹1,80,000/month",
       area: "3000 sq.ft",
     },
+    {
+      id: 4,
+      image: officeImage,
+      name: "Executive Business Suite",
+      location: "Connaught Place, New Delhi",
+      price: "₹3,50,000/month",
+      area: "2800 sq.ft",
+    },
+    {
+      id: 5,
+      image: officeImage,
+      name: "Tech Park Office Space",
+      location: "HITEC City, Hyderabad",
+      price: "₹2,20,000/month",
+      area: "3200 sq.ft",
+    },
   ];
 
   useEffect(() => {
