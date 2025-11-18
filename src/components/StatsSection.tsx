@@ -11,23 +11,19 @@ const stats = [
 ];
 
 const StatsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setAnimationKey((prev) => prev + 1);
         }
-      },
-      { threshold: 0.2 }
-    );
+      });
+    }, { threshold: 0.3 });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -36,22 +32,11 @@ const StatsSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Achievements</h2>
-          <p className="text-lg text-primary-foreground/80">
-            Numbers that reflect our commitment to excellence
-          </p>
+          <p className="text-lg text-primary-foreground/80">Numbers that reflect our commitment to excellence</p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
-            <StatCard
-              key={index}
-              icon={stat.icon}
-              label={stat.label}
-              value={stat.value}
-              suffix={stat.suffix}
-              isVisible={isVisible}
-              delay={index * 100}
-            />
+            <StatCard key={`${index}-${animationKey}`} icon={stat.icon} label={stat.label} value={stat.value} suffix={stat.suffix} delay={index * 100} />
           ))}
         </div>
       </div>
@@ -59,51 +44,25 @@ const StatsSection = () => {
   );
 };
 
-interface StatCardProps {
-  icon: React.ElementType;
-  label: string;
-  value: number;
-  suffix: string;
-  isVisible: boolean;
-  delay: number;
-}
-
-const StatCard = ({ icon: Icon, label, value, suffix, isVisible, delay }: StatCardProps) => {
+const StatCard = ({ icon: Icon, label, value, suffix, delay }: { icon: React.ElementType; label: string; value: number; suffix: string; delay: number }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (isVisible) {
-      const duration = 2000;
-      const steps = 60;
-      const increment = value / steps;
-      let current = 0;
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-
-      return () => clearInterval(timer);
-    }
-  }, [isVisible, value]);
+    setCount(0);
+    const duration = 2000, steps = 60, increment = value / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) { setCount(value); clearInterval(timer); }
+      else setCount(Math.floor(current));
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [value]);
 
   return (
-    <div
-      className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-3xl p-8 text-center transition-all duration-500 hover:bg-primary-foreground/15 hover:scale-105"
-      style={{
-        animation: isVisible ? `scale-in 0.5s ease-out ${delay}ms both` : "none",
-      }}
-    >
+    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-3xl p-8 text-center hover:bg-primary-foreground/15 hover:scale-105 transition-all animate-scale-in" style={{ animationDelay: `${delay}ms` }}>
       <Icon className="h-12 w-12 text-accent mx-auto mb-4" />
-      <div className="text-4xl font-bold mb-2">
-        {count}
-        {suffix}
-      </div>
+      <div className="text-4xl font-bold mb-2">{count}{suffix}</div>
       <div className="text-lg text-primary-foreground/80">{label}</div>
     </div>
   );

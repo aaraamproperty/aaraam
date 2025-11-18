@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Search, MapPin, Home, DollarSign } from "lucide-react";
 import heroImage from "@/assets/hero-commercial.jpg";
 
 const HeroSection = () => {
@@ -26,67 +25,10 @@ const HeroSection = () => {
             Pan-India corporate rentals and commercial listings curated for your needs.
           </p>
 
-          {/* Glassmorphism Search Bar */}
-          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)] animate-[slide-up_0.6s_ease-out]">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {/* Location */}
-              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
-                <MapPin className="h-5 w-5 text-accent flex-shrink-0" />
-                <div className="flex-1 text-left">
-                  <label className="text-xs text-muted-foreground block mb-1">
-                    Location
-                  </label>
-                  <select className="w-full bg-transparent text-foreground font-medium focus:outline-none">
-                    <option>All Cities</option>
-                    <option>Mumbai</option>
-                    <option>Delhi</option>
-                    <option>Bangalore</option>
-                    <option>Pune</option>
-                    <option>Hyderabad</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Property Type */}
-              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
-                <Home className="h-5 w-5 text-accent flex-shrink-0" />
-                <div className="flex-1 text-left">
-                  <label className="text-xs text-muted-foreground block mb-1">
-                    Property Type
-                  </label>
-                  <select className="w-full bg-transparent text-foreground font-medium focus:outline-none">
-                    <option>Commercial</option>
-                    <option>Office Space</option>
-                    <option>Retail Shop</option>
-                    <option>Warehouse</option>
-                    <option>Co-working</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Budget */}
-              <div className="flex items-center gap-3 p-4 bg-white/90 backdrop-blur-sm rounded-2xl border border-white/30">
-                <DollarSign className="h-5 w-5 text-accent flex-shrink-0" />
-                <div className="flex-1 text-left">
-                  <label className="text-xs text-muted-foreground block mb-1">
-                    Budget
-                  </label>
-                  <select className="w-full bg-transparent text-foreground font-medium focus:outline-none">
-                    <option>₹50K - ₹1L/month</option>
-                    <option>₹1L - ₹5L/month</option>
-                    <option>₹5L - ₹10L/month</option>
-                    <option>₹10L+/month</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Search Button */}
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground h-full text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <Search className="mr-2 h-5 w-5" />
-                Search Property
-              </Button>
-            </div>
-          </div>
+          {/* CTA Button */}
+          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all animate-[slide-up_0.6s_ease-out]">
+            Book Site Visit
+          </Button>
         </div>
       </div>
     </section>
