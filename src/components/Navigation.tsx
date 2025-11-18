@@ -35,7 +35,7 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-2">
             <a
-              href="#home"
+              href="/"
               className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                 isScrolled
                   ? "text-foreground hover:bg-accent hover:text-accent-foreground"
@@ -45,7 +45,7 @@ const Navigation = () => {
               Home
             </a>
             <a
-              href="#properties"
+              href="/properties"
               className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                 isScrolled
                   ? "text-foreground hover:bg-accent hover:text-accent-foreground"
@@ -55,7 +55,7 @@ const Navigation = () => {
               Properties
             </a>
             <a
-              href="#about"
+              href="/about"
               className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                 isScrolled
                   ? "text-foreground hover:bg-accent hover:text-accent-foreground"
@@ -65,7 +65,7 @@ const Navigation = () => {
               About Us
             </a>
             <a
-              href="#blog"
+              href="/blog"
               className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                 isScrolled
                   ? "text-foreground hover:bg-accent hover:text-accent-foreground"
@@ -75,7 +75,7 @@ const Navigation = () => {
               Blog
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                 isScrolled
                   ? "text-foreground hover:bg-accent hover:text-accent-foreground"
@@ -86,10 +86,10 @@ const Navigation = () => {
             </a>
           </div>
 
-          {/* Sign Up Button */}
+          {/* Book Site Visit Button */}
           <div className="hidden md:block">
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 rounded-full">
-              Sign Up
+              Book Site Visit
             </Button>
           </div>
 
@@ -105,23 +105,23 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-4 border-t border-border bg-card">
-            <a href="#home" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
+            <a href="/" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
               Home
             </a>
-            <a href="#properties" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
+            <a href="/properties" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
               Properties
             </a>
-            <a href="#about" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
+            <a href="/about" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
               About Us
             </a>
-            <a href="#blog" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
+            <a href="/blog" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
               Blog
             </a>
-            <a href="#contact" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
+            <a href="/contact" className="block text-foreground hover:text-accent transition-colors font-medium px-4 py-2 rounded-lg hover:bg-secondary">
               Contact
             </a>
             <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-              Sign Up
+              Book Site Visit
             </Button>
           </div>
         )}
