@@ -1,42 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import saiAaradhya from "@/partner_logos/Sai Aaradhya Logo.png";
+import paradise from "@/partner_logos/Paradise Logo.png";
+import saiIcon from "@/partner_logos/Sai Icon Logo.png";
+import positiveLife from "@/partner_logos/Codename Positive Life.png";
+import saiPrerna from "@/partner_logos/Sai Prerna Logo.png";
+import saiSymphony from "@/partner_logos/Sai Symphony Logo.png";
+import saiWorldEmpire from "@/partner_logos/Sai World Empire Logo.png";
+import saiWorldDreams from "@/partner_logos/Sai World Dreams Logo_new.png";
+import sunCity from "@/partner_logos/Sun City Logo.png";
+import swl from "@/partner_logos/SWL Logo.jpg";
 
 const clients = [
-  { name: "TechCorp India", logo: "TC" },
-  { name: "Global Retail Ltd", logo: "GR" },
-  { name: "Innovate Solutions", logo: "IS" },
-  { name: "Enterprise Group", logo: "EG" },
-  { name: "Smart Business Co", logo: "SB" },
-  { name: "Prime Industries", logo: "PI" },
-  { name: "Urban Ventures", logo: "UV" },
-  { name: "Capital Partners", logo: "CP" },
+  { name: "Sai Aaradhya", logo: saiAaradhya },
+  { name: "Paradise", logo: paradise },
+  { name: "Sai Icon", logo: saiIcon },
+  { name: "Codename Positive Life", logo: positiveLife },
+  { name: "Sai Prerna", logo: saiPrerna },
+  { name: "Sai Symphony", logo: saiSymphony },
+  { name: "Sai World Empire", logo: saiWorldEmpire },
+  { name: "Sai World Dreams", logo: saiWorldDreams },
+  { name: "Sun City", logo: sunCity },
+  { name: "SWL", logo: swl },
 ];
 
 const ClientsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollRef1 = useRef<HTMLDivElement>(null);
+  const scrollRef2 = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  // Duplicate clients for seamless loop
+  const clientsRow1 = [...clients, ...clients, ...clients];
+  const clientsRow2 = [...clients, ...clients, ...clients];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-card">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#004861] mb-4">
             Trusted by Leading Businesses
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -44,21 +43,54 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {clients.map((client, index) => (
+        <div className="space-y-8">
+          {/* Row 1: Left to Right */}
+          <div className="relative">
             <div
-              key={index}
-              className="flex items-center justify-center h-32 border border-border bg-secondary rounded-2xl grayscale hover:grayscale-0 transition-all duration-300 hover:border-accent hover:shadow-lg hover:scale-105"
+              ref={scrollRef1}
+              className="flex gap-8 animate-scroll-left"
               style={{
-                animation: isVisible ? `slide-in-left 0.6s ease-out ${index * 100}ms both` : "none",
+                width: "fit-content",
               }}
             >
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">{client.logo}</div>
-                <div className="text-sm text-muted-foreground">{client.name}</div>
-              </div>
+              {clientsRow1.map((client, index) => (
+                <div
+                  key={`row1-${index}`}
+                  className="flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-24 max-w-[180px] w-auto h-auto object-contain transition-all duration-300"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Row 2: Right to Left */}
+          <div className="relative">
+            <div
+              ref={scrollRef2}
+              className="flex gap-8 animate-scroll-right"
+              style={{
+                width: "fit-content",
+              }}
+            >
+              {clientsRow2.map((client, index) => (
+                <div
+                  key={`row2-${index}`}
+                  className="flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-24 max-w-[180px] w-auto h-auto object-contain transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

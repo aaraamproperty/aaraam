@@ -9,9 +9,9 @@ const PrivacyPolicy = () => {
       <FloatingChatbot />
 
       {/* Hero */}
-      <section className="pt-32 pb-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="pt-32 pb-12 bg-[#F7F7F7]">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-[#004861] mb-6 animate-fade-in">
             Privacy Policy
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in">
@@ -21,13 +21,16 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16">
+      <section className="py-16 bg-[#F7F7F7]">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-          <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border space-y-8">
+          <div className="bg-white rounded-3xl p-8 lg:p-12 border-2 border-[#004861]/10 shadow-lg space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Information We Collect
+              </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We collect information that you provide directly to us, including:
+                We collect information that you provide directly to us,
+                including:
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
                 <li>Name and contact information (email, phone number)</li>
@@ -39,7 +42,9 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">How We Use Your Information</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                How We Use Your Information
+              </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 We use the information we collect to:
               </p>
@@ -54,37 +59,47 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Information Sharing</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Information Sharing
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We do not sell, trade, or rent your personal information to third parties. 
-                We may share your information with trusted partners and service providers who 
-                assist us in operating our website and conducting our business, provided they 
-                agree to keep this information confidential.
+                We do not sell, trade, or rent your personal information to
+                third parties. We may share your information with trusted
+                partners and service providers who assist us in operating our
+                website and conducting our business, provided they agree to keep
+                this information confidential.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Data Security</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Data Security
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We implement appropriate security measures to protect your personal information 
-                against unauthorized access, alteration, disclosure, or destruction. However, 
-                no method of transmission over the internet is 100% secure, and we cannot 
-                guarantee absolute security.
+                We implement appropriate security measures to protect your
+                personal information against unauthorized access, alteration,
+                disclosure, or destruction. However, no method of transmission
+                over the internet is 100% secure, and we cannot guarantee
+                absolute security.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Cookies</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Cookies
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Our website uses cookies to enhance user experience. Cookies are small files 
-                stored on your device that help us understand how you use our site. You can 
-                choose to disable cookies through your browser settings, though this may affect 
-                site functionality.
+                Our website uses cookies to enhance user experience. Cookies are
+                small files stored on your device that help us understand how
+                you use our site. You can choose to disable cookies through your
+                browser settings, though this may affect site functionality.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Your Rights</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Your Rights
+              </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 You have the right to:
               </p>
@@ -98,24 +113,35 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Contact Us
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                If you have any questions about this Privacy Policy or how we handle your 
-                information, please contact us at privacy@aaramproperties.com
+                If you have any questions about this Privacy Policy or how we
+                handle your information, please contact us at
+                privacy@aaramproperties.com
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-4">Policy Updates</h2>
+              <h2 className="text-2xl font-bold text-[#004861] mb-4">
+                Policy Updates
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of 
-                any changes by posting the new policy on this page with an updated date.
+                We may update this Privacy Policy from time to time. We will
+                notify you of any changes by posting the new policy on this page
+                with an updated date.
               </p>
             </div>
 
             <div className="pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground">
-                Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+                Last updated:{" "}
+                {new Date().toLocaleDateString("en-IN", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
             </div>
           </div>

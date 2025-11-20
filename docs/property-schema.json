@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Property",
+  "description": "Schema for commercial and residential property listings",
+  "type": "object",
+  "required": [
+    "id",
+    "image",
+    "name",
+    "location",
+    "price",
+    "area",
+    "type",
+    "category",
+    "status",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the property",
+      "minimum": 1
+    },
+    "image": {
+      "type": "string",
+      "description": "URL or path to the property image. Should be optimized WebP format for best performance.",
+      "pattern": "^(https?://|/|\\./|@/)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the property",
+      "minLength": 5,
+      "maxLength": 100
+    },
+    "location": {
+      "type": "string",
+      "description": "Full address or area description (e.g., 'Bandra Kurla Complex, Mumbai')",
+      "minLength": 5,
+      "maxLength": 150
+    },
+    "price": {
+      "type": "string",
+      "description": "Display price string (e.g., '₹2.5 Cr onwards', '₹1,80,000/month')",
+      "pattern": "^₹[\\d,.]+(\\s(Cr|L|K))?.*$"
+    },
+    "area": {
+      "type": "string",
+      "description": "Property area (e.g., '2500 sq.ft', '1200 sq.ft')",
+      "pattern": "^\\d+\\s*sq\\.ft$"
+    },
+    "type": {
+      "type": "string",
+      "description": "Primary property category",
+      "enum": ["Residential", "Commercial"]
+    },
+    "category": {
+      "type": "string",
+      "description": "Specific property subcategory",
+      "enum": [
+        "Office Space",
+        "Retail Shop",
+        "Showroom",
+        "Warehouse",
+        "Business Park",
+        "Apartment",
+        "Villa",
+        "Penthouse",
+        "Studio",
+        "Duplex"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Construction/availability status",
+      "enum": ["Under Construction", "Ready to Move", "Ready to Live In"]
+    },
+    "bhk": {
+      "type": "string",
+      "description": "Bedroom configuration (only for residential properties)",
+      "pattern": "^[1-9]\\s*BHK$"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Brief property description (50-150 characters recommended)",
+      "minLength": 20,
+      "maxLength": 200
+    }
+  }
+}

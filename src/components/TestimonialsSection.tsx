@@ -44,24 +44,29 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-secondary border border-border rounded-3xl p-8 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:scale-105"
+              className="group bg-secondary hover:bg-[#16A34A] border border-border rounded-3xl p-8 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:scale-105"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                  <Star
+                    key={i}
+                    className="h-5 w-5 fill-[#FFD700] text-[#FFD700]"
+                  />
                 ))}
               </div>
 
               {/* Content */}
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground group-hover:text-white mb-6 leading-relaxed transition-colors duration-500">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="border-t border-border pt-4">
-                <div className="font-bold text-foreground">{testimonial.name}</div>
-                <div className="text-sm text-muted-foreground">
+              <div className="border-t border-border group-hover:border-white/30 pt-4 transition-colors duration-500">
+                <div className="font-bold text-foreground group-hover:text-white transition-colors duration-500">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-muted-foreground group-hover:text-white/90 transition-colors duration-500">
                   {testimonial.role}, {testimonial.company}
                 </div>
               </div>

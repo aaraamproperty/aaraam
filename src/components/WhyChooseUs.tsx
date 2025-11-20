@@ -11,17 +11,20 @@ const benefits = [
   {
     icon: Shield,
     title: "No Brokerage Hassles",
-    description: "Direct listings with transparent pricing and no hidden charges.",
+    description:
+      "Direct listings with transparent pricing and no hidden charges.",
   },
   {
     icon: FileCheck,
     title: "Corporate-Friendly Agreements",
-    description: "Legal documentation tailored for business needs and compliance.",
+    description:
+      "Legal documentation tailored for business needs and compliance.",
   },
   {
     icon: Clock,
     title: "Verified Commercial Spaces",
-    description: "Every property is verified, documented, and ready to move in.",
+    description:
+      "Every property is verified, documented, and ready to move in.",
   },
   {
     icon: Users,
@@ -31,7 +34,8 @@ const benefits = [
   {
     icon: MapPin,
     title: "Local Experts in Every City",
-    description: "Pan-India presence with local market knowledge and expertise.",
+    description:
+      "Pan-India presence with local market knowledge and expertise.",
   },
   {
     icon: TrendingUp,
@@ -57,15 +61,17 @@ const WhyChooseUs = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-3xl p-8 transition-all duration-300 hover:border-accent hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:scale-105 group"
+              className="bg-card hover:bg-[#16A34A] border border-border rounded-3xl p-8 transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:scale-105 group"
             >
               <div className="mb-4">
-                <benefit.icon className="h-10 w-10 text-accent transition-transform duration-300 group-hover:scale-110" />
+                <benefit.icon className="h-10 w-10 text-accent group-hover:text-white transition-all duration-500 group-hover:scale-110" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-white mb-3 transition-colors duration-500">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground">{benefit.description}</p>
+              <p className="text-muted-foreground group-hover:text-white transition-colors duration-500">
+                {benefit.description}
+              </p>
             </div>
           ))}
         </div>

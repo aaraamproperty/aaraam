@@ -40,10 +40,12 @@ const FeaturedPropertiesGrid = () => {
   ];
 
   return (
-    <section className="py-20 bg-card">
+    <section className="pb-20 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary mb-4">Featured Properties</h2>
+          <h2 className="text-4xl font-bold text-[#004861] mb-4">
+            Featured Properties
+          </h2>
           <p className="text-lg text-muted-foreground">
             Explore our curated selection of commercial spaces
           </p>
@@ -53,43 +55,50 @@ const FeaturedPropertiesGrid = () => {
           {properties.map((property, index) => (
             <div
               key={property.id}
-              className="bg-background rounded-3xl overflow-hidden border border-border hover:border-accent transition-all hover:shadow-lg group animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-white rounded-3xl overflow-hidden border-2 border-[#004861]/10 hover:border-[#16A34A] transition-all hover:shadow-xl group flex flex-col"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+              }}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden h-48 flex-shrink-0">
                 <img
                   src={property.image}
                   alt={property.name}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-4 py-2 rounded-full font-bold text-sm">
-                  {property.price}
-                </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="font-bold text-lg text-foreground mb-2">
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-bold text-lg text-[#004861] mb-2 h-14 line-clamp-2">
                   {property.name}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4 flex items-center gap-1">
-                  <MapPin className="h-4 w-4" />
-                  {property.location}
+                <p className="text-sm text-muted-foreground mb-4 flex items-center gap-1 h-5">
+                  <MapPin className="h-4 w-4 flex-shrink-0" />
+                  <span className="truncate">{property.location}</span>
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 min-h-[60px]">
                   {property.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
-                      className="text-xs bg-secondary text-muted-foreground px-3 py-1 rounded-full"
+                      className="text-xs bg-[#F7F7F7] text-[#004861] px-3 py-1.5 rounded-full border border-[#004861]/20 h-fit"
                     >
                       {highlight}
                     </span>
                   ))}
                 </div>
 
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-                  View Details
-                </Button>
+                {/* Price with fixed height */}
+                <div className="text-[#16A34A] font-bold text-xl mb-4 h-8 flex items-center">
+                  {property.price}
+                </div>
+
+                {/* Button at the bottom with fixed position */}
+                <div className="mt-auto pt-2">
+                  <Button className="w-full bg-[#16A34A] hover:bg-[#16A34A]/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all h-11">
+                    View Details
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

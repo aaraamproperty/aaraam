@@ -2,7 +2,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingChatbot from "@/components/FloatingChatbot";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import officeImage from "@/assets/office-space.jpg";
 
 const Contact = () => {
@@ -12,7 +20,7 @@ const Contact = () => {
       <FloatingChatbot />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-[#004861] overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -37,16 +45,18 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-3xl p-8 border border-border shadow-lg animate-fade-in">
-              <h2 className="text-3xl font-bold text-primary mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-[#004861] mb-6">
+                Send Us a Message
+              </h2>
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Your Name
+                  <label className="block text-sm font-medium text-[#004861] mb-2">
+                    Full Name
                   </label>
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-full border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-full border border-border bg-[#F7F7F7] text-foreground focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
                   />
                 </div>
 
@@ -62,53 +72,58 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-[#004861] mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
                     placeholder="john@company.com"
-                    className="w-full px-4 py-3 rounded-full border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-full border border-border bg-[#F7F7F7] text-foreground focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-[#004861] mb-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-3 rounded-full border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-full border border-border bg-[#F7F7F7] text-foreground focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-[#004861] mb-2">
                     Message
                   </label>
                   <textarea
                     rows={4}
                     placeholder="Tell us about your requirements..."
-                    className="w-full px-4 py-3 rounded-3xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+                    className="w-full px-4 py-3 rounded-3xl border border-border bg-[#F7F7F7] text-foreground focus:outline-none focus:ring-2 focus:ring-[#16A34A] resize-none"
                   ></textarea>
                 </div>
 
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-6 text-lg rounded-full">
+                <Button className="w-full bg-[#16A34A] hover:bg-[#16A34A]/90 text-white py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
                   Submit Message
                 </Button>
               </form>
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div
+              className="space-y-6 animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="bg-card rounded-3xl p-8 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Email Us</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      Email Us
+                    </h3>
                     <p className="text-muted-foreground mb-2">
                       Send us an email and we'll respond within 24 hours
                     </p>
@@ -128,7 +143,9 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Call Us</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      Call Us
+                    </h3>
                     <p className="text-muted-foreground mb-2">
                       Speak directly with our property experts
                     </p>
@@ -148,10 +165,14 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Visit Us</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      Visit Us
+                    </h3>
                     <p className="text-muted-foreground">
-                      Aaraam Properties Headquarters<br />
-                      123 Business District, BKC<br />
+                      Aaraam Properties Headquarters
+                      <br />
+                      123 Business District, BKC
+                      <br />
                       Mumbai, Maharashtra 400051
                     </p>
                   </div>
@@ -216,7 +237,8 @@ const Contact = () => {
             Ready to View Your Next Space?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Schedule a site visit and let our experts guide you through the perfect property
+            Schedule a site visit and let our experts guide you through the
+            perfect property
           </p>
           <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg rounded-full">
             Book Site Visit

@@ -62,12 +62,35 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/0aa81f87-0ce8-4f32-9c50-51e382e558d4) and click on Share -> Publish.
+### Automatic Deployment (GitHub Pages)
+
+This project is configured for automatic deployment to **aaraamproperties.com** via GitHub Actions.
+
+**Simply push to main branch:**
+```sh
+git add .
+git commit -m "Your changes"
+git push origin main
+```
+
+The site will automatically build and deploy in 1-2 minutes.
+
+**First-time setup:**
+- See [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md) for required GitHub settings
+- Full documentation in [DEPLOYMENT.md](DEPLOYMENT.md)
+
+**Monitor deployments:**
+- View status: https://github.com/aaraamproperty/aaraam/actions
+- Live site: https://aaraamproperties.com
+
+### Alternative: Lovable
+
+You can also deploy via [Lovable](https://lovable.dev/projects/0aa81f87-0ce8-4f32-9c50-51e382e558d4) by clicking Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
+Yes! This project is already connected to **aaraamproperties.com** via GitHub Pages.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+For Lovable deployment, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
