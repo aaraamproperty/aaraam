@@ -31,8 +31,8 @@ const HeroSection = () => {
         </video>
         {/* Blue Overlay */}
         <div
-          className="absolute inset-0 bg-[#004861]"
-          style={{ opacity: 0.35 }}
+          className="absolute inset-0 bg-black"
+          style={{ opacity: 0.05 }}
         />
       </div>
 

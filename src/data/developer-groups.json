@@ -1,0 +1,113 @@
+{
+  "groups": [
+    {
+      "id": "tescon",
+      "name": "Tescon",
+      "logo": "/src/assets/Properies/Tescon/logo-1.png",
+      "excerpt": "Innovative residential layouts and modern township planning.",
+      "color": "#004861",
+      "projects": [
+        {
+          "id": "plan-i",
+          "title": "Plan I",
+          "location": "Mumbai, Maharashtra",
+          "excerpt": "Modern residential layout with innovative design",
+          "brochure": ""
+        },
+        {
+          "id": "plan-m",
+          "title": "Plan M",
+          "location": "Mumbai, Maharashtra",
+          "excerpt": "Township planning with modern infrastructure",
+          "brochure": ""
+        }
+      ]
+    },
+    {
+      "id": "kaamdhenu-builders",
+      "name": "The Kaamdhenu Builders",
+      "logo": "/src/assets/Properies/The Kamdhenu Builders/Kamdhenu_Builders.png",
+      "excerpt": "Growth-oriented residential communities with strong value proposition.",
+      "color": "#16A34A",
+      "projects": [
+        {
+          "id": "kaamdhenu-growth-master",
+          "title": "Kaamdhenu Growth Master",
+          "location": "Navi Mumbai, Maharashtra",
+          "excerpt": "Premium residential community focused on growth and value",
+          "brochure": ""
+        }
+      ]
+    },
+    {
+      "id": "paradise-group",
+      "name": "Paradise Group",
+      "logo": "/src/assets/Properies/Paradise Group/Paradise Logo.png",
+      "hero_image": "/assets/hero-images/paradise-group-hero.png",
+      "excerpt": "Premium residential & mixed-use developments offering iconic lifestyle experiences.",
+      "color": "#004861",
+      "projects": [
+        {
+          "id": "sai-world-one",
+          "title": "Sai World One",
+          "location": "Nerul, Navi Mumbai",
+          "excerpt": "Premium Grade-A office & mixed-use",
+          "brochure": "/assets/brochures/sai-world-one-leaflet.pdf"
+        },
+        {
+          "id": "sai-world-pyramid",
+          "title": "Sai World Pyramid",
+          "location": "Nerul, Navi Mumbai",
+          "excerpt": "Iconic mixed-use development",
+          "brochure": ""
+        }
+      ]
+    },
+    {
+      "id": "greenscape",
+      "name": "GreenScape",
+      "logo": "/src/assets/Properies/GreenScape/greenscape-logo.png",
+      "excerpt": "Sustainable, modern commercial developments built for future-ready workspaces.",
+      "color": "#10B981",
+      "projects": [
+        {
+          "id": "cybersquare",
+          "title": "CyberSquare",
+          "location": "Pune, Maharashtra",
+          "excerpt": "Future-ready sustainable commercial complex",
+          "brochure": ""
+        }
+      ]
+    },
+    {
+      "id": "dreams-group",
+      "name": "Dreams Group",
+      "logo": "/src/assets/Properies/Dreams Group/Dreams Group.jpg",
+      "excerpt": "Residential and mixed-use projects designed for lifestyle-centric living.",
+      "color": "#8B5CF6",
+      "projects": [
+        {
+          "id": "dream-digit",
+          "title": "Dream Digit",
+          "location": "Thane, Maharashtra",
+          "excerpt": "Digital-age smart residential community",
+          "brochure": ""
+        },
+        {
+          "id": "dream-gateway",
+          "title": "Dream Gateway",
+          "location": "Navi Mumbai, Maharashtra",
+          "excerpt": "Gateway to modern lifestyle living",
+          "brochure": ""
+        },
+        {
+          "id": "dream-ikon",
+          "title": "Dream Ikon",
+          "location": "Mumbai, Maharashtra",
+          "excerpt": "Iconic mixed-use development for modern living",
+          "brochure": ""
+        }
+      ]
+    }
+  ]
+}
