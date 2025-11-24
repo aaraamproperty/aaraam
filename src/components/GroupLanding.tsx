@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -14,6 +14,11 @@ interface GroupLandingProps {
 
 const GroupLanding = ({ group }: GroupLandingProps) => {
   const navigate = useNavigate();
+
+  // Scroll to hero section on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleExploreProjects = () => {
     const projectsSection = document.getElementById("properties");
@@ -145,7 +150,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
             </p>
           </motion.div>
 
-          <div className={`grid ${group.projects.length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
+          <div className={`grid ${group.projects.length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : group.projects.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
             {group.projects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -224,38 +229,6 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section 
-        className="py-16"
-        style={{
-          background: `linear-gradient(to right, ${group.color}, #16A34A)`
-        }}
-      >
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Invest in Your Future?
-            </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Connect with our sales team to learn more about {group.name} projects and schedule a site visit
-            </p>
-            <Button
-              onClick={handleContactSales}
-              size="lg"
-              className="bg-white text-[#004861] hover:bg-gray-100 px-8 py-6 text-lg rounded-full"
-            >
-              Get in Touch
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </motion.div>
         </div>
       </section>
 

@@ -13,6 +13,7 @@ interface DeveloperCard {
   projectCount: number;
   color: string;
   linkTo: string;
+  firstProjectId?: string;
 }
 
 interface CardProps {
@@ -96,7 +97,7 @@ const Card = ({ developer, i, progress, range, targetScale }: CardProps) => {
             <div className="mb-4 pb-3 border-b border-[#004861]/10">
               <div className="flex items-center gap-2 text-[#16A34A] font-semibold">
                 <FileText className="h-4 w-4" />
-                <span className="text-sm">View All Projects</span>
+                <span className="text-sm">Brochure Available</span>
               </div>
             </div>
 
@@ -142,15 +143,19 @@ const PremiumProperties = () => {
     requestAnimationFrame(raf);
   }, []);
 
-  // Convert developer groups to card format
-  const developers: DeveloperCard[] = developerGroups.map(group => ({
+  // Convert developer groups to card format - ONLY FIRST 5
+  const developers: DeveloperCard[] = developerGroups.slice(0, 5).map(group => ({
     id: group.id,
     logo: group.logo,
     name: group.name,
     excerpt: group.excerpt,
     projectCount: group.projects.length,
     color: group.color,
-    linkTo: `/groups/${group.id}`
+    firstProjectId: group.projects[0]?.id,
+    // For single-project groups, link directly to project page
+    linkTo: group.projects.length === 1 
+      ? `/properties/${group.id}/${group.projects[0].id}`
+      : `/groups/${group.id}`
   }));
 
   const [isSticky, setIsSticky] = useState(false);

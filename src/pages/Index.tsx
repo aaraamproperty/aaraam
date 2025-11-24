@@ -3,7 +3,6 @@ import Preloader from "@/components/Preloader";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import PremiumProperties from "@/components/PremiumProperties";
-import FeaturedPropertiesGrid from "@/components/FeaturedPropertiesGrid";
 import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -34,7 +33,6 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <PremiumProperties />
-        <FeaturedPropertiesGrid />
         <StatsSection />
         <WhyChooseUs />
         <ClientsSection />

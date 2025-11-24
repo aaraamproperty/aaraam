@@ -68,6 +68,12 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      scale: {
+        "103": "1.03",
+      },
+      transitionTimingFunction: {
+        "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
       keyframes: {
         "accordion-down": {
           from: {

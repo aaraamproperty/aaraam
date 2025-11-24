@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -17,18 +17,111 @@ interface ProjectDetailProps {
 const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
   const navigate = useNavigate();
   const [showBrochure, setShowBrochure] = useState(false);
+  const [showBrochure404, setShowBrochure404] = useState(false);
+  const [brochureUrl, setBrochureUrl] = useState("");
 
-  const handleViewBrochure = () => {
-    if (project.brochure) {
-      setShowBrochure(true);
-      // Track button click for analytics
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'view_details_click', {
-          event_category: group.name,
-          event_label: project.title,
-          value: 'Brochure Button'
-        });
+  // Set page title, meta tags, and JSON-LD on mount
+  useEffect(() => {
+    document.title = `${project.title} — ${group.name} | Aaraam Properties`;
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `${project.excerpt} - ${project.title} by ${group.name}. Located in ${project.location}.`);
+    }
+
+    // Add JSON-LD structured data for SEO
+    const scriptTag = document.createElement('script');
+    scriptTag.type = 'application/ld+json';
+    scriptTag.id = 'project-structured-data';
+    scriptTag.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": project.title,
+      "description": project.description,
+      "provider": {
+        "@type": "RealEstateAgent",
+        "name": group.name
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": project.location
+      },
+      "image": project.images,
+      "amenityFeature": project.amenities.map(a => ({
+        "@type": "LocationFeatureSpecification",
+        "name": a
+      }))
+    });
+    document.head.appendChild(scriptTag);
+
+    return () => {
+      const existingScript = document.getElementById('project-structured-data');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
       }
+    };
+  }, [project, group]);
+
+  // Handle Escape key for 404 modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showBrochure404) {
+        setShowBrochure404(false);
+      }
+    };
+
+    if (showBrochure404) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [showBrochure404]);
+
+  const handleViewBrochure = async () => {
+    const brochureUrlToCheck = project.brochure_url || `/brochures/${project.id}.pdf`;
+    
+    try {
+      // Check if the brochure exists
+      const response = await fetch(brochureUrlToCheck, { method: 'HEAD' });
+      
+      if (response.status === 404) {
+        // Show 404 modal
+        setShowBrochure404(true);
+      } else if (response.ok) {
+        // Open brochure modal
+        setBrochureUrl(brochureUrlToCheck);
+        setShowBrochure(true);
+        
+        // Track button click for analytics
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'view_brochure_click', {
+            event_category: group.name,
+            event_label: project.title,
+            value: 'Brochure Button'
+          });
+        }
+        
+        // Track with dataLayer if available
+        if (typeof window !== 'undefined' && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'view_brochure',
+            group: group.name,
+            project: project.title
+          });
+        }
+      } else {
+        // Other errors
+        setShowBrochure404(true);
+      }
+    } catch (error) {
+      // Network error or CORS issue - show 404 modal
+      console.error('Error checking brochure:', error);
+      setShowBrochure404(true);
     }
   };
 
@@ -47,10 +140,11 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
       <FloatingChatbot />
 
       {/* Hero Banner */}
-      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+      <section id="hero" className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
         <img
           src={project.images[0]}
-          alt={project.title}
+          srcSet={`${project.images[0]} 1x, ${project.images[0]} 2x`}
+          alt={`${project.title} - ${group.name} property hero image`}
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -58,18 +152,11 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
         
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 lg:px-8 pb-12">
-            <button
-              onClick={handleBackToGroup}
-              className="inline-flex items-center gap-2 text-white mb-6 hover:text-[#16A34A] transition-colors"
-            >
-              <ArrowLeft className="h-5 w-5" />
-              Back to {group.name}
-            </button>
-            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              data-project-slug={project.id}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
                 {project.title}
@@ -78,26 +165,35 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 <MapPin className="h-6 w-6 text-[#16A34A]" />
                 <span>{project.location}</span>
               </div>
-              <div className="flex flex-wrap gap-3">
-                {project.brochure && (
-                  <Button
-                    onClick={handleViewBrochure}
-                    size="lg"
-                    className="bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full px-8"
-                  >
-                    <FileText className="mr-2 h-5 w-5" />
-                    View Brochure
-                  </Button>
-                )}
+              <div className="flex flex-wrap gap-3" role="group" aria-label="Project actions">
                 <Button
                   onClick={handleEnquire}
                   size="lg"
                   variant="outline"
                   className="bg-white/10 hover:bg-white/20 text-white border-white rounded-full px-8 backdrop-blur-sm"
+                  aria-label={`Enquire about ${project.title}`}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Enquire Now
                 </Button>
+                <Button
+                  onClick={handleViewBrochure}
+                  size="lg"
+                  className="bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full px-8"
+                  data-brochure-url={project.brochure_url || `/brochures/${project.id}.pdf`}
+                  aria-label={`View brochure for ${project.title}`}
+                >
+                  <FileText className="mr-2 h-5 w-5" />
+                  View Brochure
+                </Button>
+                <button
+                  onClick={handleBackToGroup}
+                  className="inline-flex items-center gap-2 text-white hover:text-[#16A34A] transition-colors px-4"
+                  aria-label={`Back to ${group.name}`}
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                  Back to {group.name}
+                </button>
               </div>
             </motion.div>
           </div>
@@ -241,16 +337,15 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 </div>
 
                 <div className="space-y-3">
-                  {project.brochure && (
-                    <Button
-                      onClick={handleViewBrochure}
-                      size="lg"
-                      className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full"
-                    >
-                      <FileText className="mr-2 h-5 w-5" />
-                      Download Brochure
-                    </Button>
-                  )}
+                  <Button
+                    onClick={handleViewBrochure}
+                    size="lg"
+                    className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full"
+                    aria-label={`View brochure for ${project.title}`}
+                  >
+                    <FileText className="mr-2 h-5 w-5" />
+                    View Brochure
+                  </Button>
                   
                   <Button
                     onClick={handleEnquire}
@@ -273,13 +368,57 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
       </section>
 
       {/* Brochure Modal */}
-      {project.brochure && (
-        <BrochureModal
-          isOpen={showBrochure}
-          onClose={() => setShowBrochure(false)}
-          brochureUrl={project.brochure}
-          title={project.title}
-        />
+      <BrochureModal
+        isOpen={showBrochure}
+        onClose={() => setShowBrochure(false)}
+        brochureUrl={brochureUrl || project.brochure_url || ""}
+        title={project.title}
+      />
+
+      {/* Brochure 404 Modal */}
+      {showBrochure404 && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setShowBrochure404(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="brochure-404-title"
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center">
+              <div className="mb-6">
+                <FileText className="h-16 w-16 text-gray-400 mx-auto" />
+              </div>
+              <h2 id="brochure-404-title" className="text-2xl font-bold text-[#004861] mb-4">
+                Brochure Not Available
+              </h2>
+              <p className="text-gray-600 mb-8">
+                We haven't uploaded the brochure for this project yet. Please check back later or contact us for more information.
+              </p>
+              <div className="space-y-3">
+                <Button
+                  onClick={handleEnquire}
+                  size="lg"
+                  className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Contact Sales Team
+                </Button>
+                <Button
+                  onClick={() => setShowBrochure404(false)}
+                  size="lg"
+                  variant="outline"
+                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
 
       <Footer />

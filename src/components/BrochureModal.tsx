@@ -57,17 +57,24 @@ const BrochureModal = ({ isOpen, onClose, brochureUrl, title }: BrochureModalPro
           PDF brochure viewer for {title}. Use Escape key to close.
         </div>
 
-        <div className="flex-1 h-full overflow-hidden">
+        <div className="flex-1 h-full overflow-hidden relative">
+          {/* Overlay to prevent right-click on iframe */}
+          <div 
+            className="absolute inset-0 pointer-events-none z-10"
+            onContextMenu={(e) => e.preventDefault()}
+          />
           <iframe
-            src={`${brochureUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+            src={`${brochureUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
             className="w-full h-full border-0"
             title={`${title} Brochure PDF`}
             loading="lazy"
+            sandbox="allow-same-origin allow-scripts"
+            onContextMenu={(e) => e.preventDefault()}
           />
         </div>
 
-        <div className="px-6 py-3 bg-gray-50 text-sm text-gray-600 text-center">
-          For the full experience, please contact our sales team
+        <div className="px-6 py-3 bg-gray-50 text-sm text-gray-600 text-center border-t">
+          🔒 For download access and detailed information, please contact our sales team
         </div>
       </DialogContent>
     </Dialog>
