@@ -108,6 +108,23 @@
           "brochure": ""
         }
       ]
+    },
+    {
+      "id": "shree-laxmi",
+      "name": "Shree Laxmi Developers",
+      "logo": "/src/assets/Properies/BLANCA Shreelaxmi Developers/Blanca Shreelaxmi Developers img.jpeg",
+      "hero_image": "/assets/hero-images/blanca-hero.jpeg",
+      "excerpt": "Iconic commercial towers designed for business excellence and growth.",
+      "color": "#D97706",
+      "projects": [
+        {
+          "id": "blanca",
+          "title": "Blanca",
+          "location": "Juinagar, Navi Mumbai",
+          "excerpt": "The Only Business Address Your Business Deserves",
+          "brochure": "/assets/brochures/blanca-it-park-brochure.pdf"
+        }
+      ]
     }
   ]
 }

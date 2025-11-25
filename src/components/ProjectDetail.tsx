@@ -130,7 +130,7 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
   };
 
   const handleBackToGroup = () => {
-    navigate(`/groups/${group.id}`);
+    navigate(`/properties/${group.id}`);
     window.scrollTo(0, 0);
   };
 
@@ -152,50 +152,71 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
         
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 lg:px-8 pb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              data-project-slug={project.id}
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                {project.title}
-              </h1>
-              <div className="flex items-center gap-3 text-white text-lg mb-6">
-                <MapPin className="h-6 w-6 text-[#16A34A]" />
-                <span>{project.location}</span>
-              </div>
-              <div className="flex flex-wrap gap-3" role="group" aria-label="Project actions">
-                <Button
-                  onClick={handleEnquire}
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 hover:bg-white/20 text-white border-white rounded-full px-8 backdrop-blur-sm"
-                  aria-label={`Enquire about ${project.title}`}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-end justify-between">
+              {/* Content - Left Side */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                data-project-slug={project.id}
+                className="flex-1"
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                  {project.title}
+                </h1>
+                <div className="flex items-center gap-3 text-white text-lg mb-6">
+                  <MapPin className="h-6 w-6 text-[#16A34A]" />
+                  <span>{project.location}</span>
+                </div>
+                <div className="flex flex-wrap gap-3" role="group" aria-label="Project actions">
+                  <Button
+                    onClick={handleEnquire}
+                    size="lg"
+                    variant="outline"
+                    className="bg-white/10 hover:bg-white/20 text-white border-white rounded-full px-8 backdrop-blur-sm"
+                    aria-label={`Enquire about ${project.title}`}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Enquire Now
+                  </Button>
+                  <Button
+                    onClick={handleViewBrochure}
+                    size="lg"
+                    className="bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full px-8"
+                    data-brochure-url={project.brochure_url || `/brochures/${project.id}.pdf`}
+                    aria-label={`View brochure for ${project.title}`}
+                  >
+                    <FileText className="mr-2 h-5 w-5" />
+                    View Brochure
+                  </Button>
+                  <button
+                    onClick={handleBackToGroup}
+                    className="inline-flex items-center gap-2 text-white hover:text-[#16A34A] transition-colors px-4"
+                    aria-label={`Back to ${group.name}`}
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                    Back to {group.name}
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Building Image - Right Side */}
+              {project.images.length > 2 && (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="hidden lg:flex flex-shrink-0 w-full lg:w-2/5 items-end justify-end"
                 >
-                  <Phone className="mr-2 h-5 w-5" />
-                  Enquire Now
-                </Button>
-                <Button
-                  onClick={handleViewBrochure}
-                  size="lg"
-                  className="bg-[#16A34A] hover:bg-[#15803d] text-white rounded-full px-8"
-                  data-brochure-url={project.brochure_url || `/brochures/${project.id}.pdf`}
-                  aria-label={`View brochure for ${project.title}`}
-                >
-                  <FileText className="mr-2 h-5 w-5" />
-                  View Brochure
-                </Button>
-                <button
-                  onClick={handleBackToGroup}
-                  className="inline-flex items-center gap-2 text-white hover:text-[#16A34A] transition-colors px-4"
-                  aria-label={`Back to ${group.name}`}
-                >
-                  <ArrowLeft className="h-5 w-5" />
-                  Back to {group.name}
-                </button>
-              </div>
-            </motion.div>
+                  <img
+                    src={project.images[1]}
+                    alt={`${project.title} Building`}
+                    className="w-full h-auto max-h-[55vh] object-contain drop-shadow-2xl"
+                    loading="eager"
+                  />
+                </motion.div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -268,6 +289,96 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 </div>
               </motion.div>
 
+              {/* Connectivity - Show only if available */}
+              {project.connectivity && project.connectivity.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-3xl font-bold text-[#004861] mb-6">
+                    Seamless Connectivity
+                  </h2>
+                  <div className="bg-gradient-to-br from-[#004861] to-[#16A34A] rounded-xl p-6 text-white">
+                    <p className="text-lg mb-4 font-semibold">
+                      Strategic Location with Multi-Corridor Access
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {project.connectivity.map((connection, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 bg-white/10 backdrop-blur-sm p-3 rounded-lg"
+                        >
+                          <MapPin className="h-4 w-4 flex-shrink-0" />
+                          <span className="text-sm">{connection}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Highlights - Show only if available */}
+              {project.highlights && project.highlights.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.35 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-3xl font-bold text-[#004861] mb-6">
+                    Key Highlights
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {project.highlights.map((highlight, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg border border-green-100"
+                      >
+                        <div className="bg-[#16A34A] rounded-full p-1 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Special Offer Banner - Show for Kaamdhenu Growth Master */}
+              {project.id === "kaamdhenu-growth-master" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.38 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-[#16A34A] to-[#15803d] rounded-2xl p-8 text-white shadow-2xl">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="bg-white/20 rounded-full p-3">
+                        <Phone className="h-8 w-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-1">Complimentary Site Visit</h3>
+                        <p className="text-white/90">Free Pickup & Drop across Mumbai & Navi Mumbai</p>
+                      </div>
+                    </div>
+                    <p className="text-lg mb-6">
+                      Experience the project firsthand with our complimentary site visit service. 
+                      We provide pickup and drop facilities across Mumbai and Navi Mumbai for your convenience.
+                    </p>
+                    <Button
+                      onClick={handleEnquire}
+                      size="lg"
+                      className="bg-white text-[#16A34A] hover:bg-gray-100 rounded-full font-semibold"
+                    >
+                      Book Your Site Visit Now
+                    </Button>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Image Gallery */}
               {project.images.length > 1 && (
                 <motion.div
@@ -309,6 +420,17 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 <h3 className="text-2xl font-bold text-[#004861] mb-6">
                   Interested in this project?
                 </h3>
+                
+                {/* Pricing Section - Show only if available */}
+                {project.pricing && (
+                  <div className="mb-6 p-4 bg-gradient-to-br from-[#004861] to-[#16A34A] rounded-xl text-white">
+                    <p className="text-sm opacity-90 mb-1">Starting Price</p>
+                    <p className="text-2xl font-bold mb-1">{project.pricing.starting}</p>
+                    {project.pricing.note && (
+                      <p className="text-xs opacity-80">{project.pricing.note}</p>
+                    )}
+                  </div>
+                )}
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
@@ -356,7 +478,33 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                     <Phone className="mr-2 h-5 w-5" />
                     Contact Sales Team
                   </Button>
+
+                  {/* Map Location Button - Show only if available */}
+                  {project.mapUrl && (
+                    <Button
+                      onClick={() => window.open(project.mapUrl, '_blank')}
+                      size="lg"
+                      variant="outline"
+                      className="w-full border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-full"
+                    >
+                      <MapPin className="mr-2 h-5 w-5" />
+                      View on Map
+                    </Button>
+                  )}
                 </div>
+
+                {/* Contact Info - Show only if available */}
+                {project.contact && (
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <p className="text-sm font-semibold text-gray-700 mb-2">Sales Contact</p>
+                    <div className="space-y-1 text-sm text-gray-600">
+                      <p className="font-semibold text-[#004861]">{project.contact.name}</p>
+                      <p>{project.contact.designation}</p>
+                      <p className="font-medium text-[#16A34A]">{project.contact.phone}</p>
+                      <p className="text-xs">{project.contact.company}</p>
+                    </div>
+                  </div>
+                )}
 
                 <p className="text-sm text-gray-500 text-center mt-6">
                   Our team will get back to you within 24 hours

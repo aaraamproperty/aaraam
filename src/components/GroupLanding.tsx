@@ -47,7 +47,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
 
       {/* Hero Section */}
       <section 
-        className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden"
+        className={`relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden ${group.heroImage ? 'hero--with-overlay' : ''}`}
         style={{
           background: group.heroImage 
             ? 'linear-gradient(to bottom right, #004861, #003347)' 
@@ -55,13 +55,13 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
         }}
       >
         <div className="container mx-auto px-4 lg:px-8 py-12">
-          <div className={`grid ${group.heroImage ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-8 lg:gap-12 items-center`}>
-            {/* Content */}
+          <div className={`flex ${group.heroImage ? 'flex-col lg:flex-row' : 'flex-col'} gap-8 lg:gap-12 items-center justify-between`}>
+            {/* Content - Left Side */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className={`text-white z-10 ${!group.heroImage ? 'text-center max-w-4xl mx-auto' : ''}`}
+              className={`text-white z-10 ${!group.heroImage ? 'text-center max-w-4xl mx-auto' : 'flex-1'}`}
             >
               {!group.heroImage && (
                 <div className="mb-8 flex justify-center">
@@ -101,24 +101,20 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
               </div>
             </motion.div>
 
-            {/* Hero Image (if available) */}
+            {/* Building Image Overlay - Right Side */}
             {group.heroImage && (
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
+                className="flex-shrink-0 w-full lg:w-2/5 flex items-center justify-center py-6 lg:py-8"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src={group.heroImage}
-                    alt={`${group.name} Hero`}
-                    className="w-full h-auto object-cover"
-                    loading="eager"
-                    srcSet={`${group.heroImage} 1x, ${group.heroImage} 2x`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                </div>
+                <img
+                  src={group.heroImage}
+                  alt={`${group.name} Building`}
+                  className="w-full h-auto max-h-[60vh] object-contain drop-shadow-2xl"
+                  loading="eager"
+                />
               </motion.div>
             )}
           </div>
@@ -150,7 +146,15 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
             </p>
           </motion.div>
 
-          <div className={`grid ${group.projects.length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : group.projects.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
+          <div className={`grid gap-8 ${
+            group.projects.length === 1 
+              ? 'md:grid-cols-1 max-w-2xl mx-auto' 
+              : group.projects.length === 2 
+              ? 'md:grid-cols-2 max-w-5xl mx-auto' 
+              : group.projects.length === 3
+              ? 'md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto'
+              : 'md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto'
+          }`}>
             {group.projects.map((project, index) => (
               <motion.div
                 key={project.id}

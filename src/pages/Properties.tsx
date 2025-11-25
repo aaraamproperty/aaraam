@@ -76,41 +76,22 @@ const Properties = () => {
                 aria-label={`${group.name} property group`}
               >
                 {/* Image/Logo Section */}
-                <div className="relative overflow-hidden bg-muted h-64">
-                  {group.heroImage ? (
-                    <img
-                      src={group.heroImage}
-                      alt={`${group.name} hero`}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300 will-change-transform"
-                      style={{
-                        transform:
-                          hoveredCard === group.id
-                            ? "scale(1.06)"
-                            : "scale(1.02)",
-                        transitionTimingFunction:
-                          "cubic-bezier(0.22, 0.9, 0.35, 1)",
-                      }}
-                    />
-                  ) : (
-                    <div
-                      className="w-full h-full flex items-center justify-center p-8 transition-transform duration-300"
-                      style={{
-                        backgroundColor: group.color || "#F3F4F6",
-                        transform:
-                          hoveredCard === group.id
-                            ? "scale(1.02)"
-                            : "scale(1)",
-                      }}
-                    >
-                      <img
-                        src={group.logo}
-                        alt={`${group.name} logo`}
-                        loading="lazy"
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                  )}
+                <div className="relative overflow-hidden bg-gray-50 h-48 md:h-56 w-full flex items-center justify-center p-4">
+                  <img
+                    src={group.logo}
+                    alt={`${group.name} logo`}
+                    loading="lazy"
+                    className="w-full h-full object-contain transition-transform duration-300"
+                    style={{
+                      transform:
+                        hoveredCard === group.id
+                          ? "scale(1.05)"
+                          : "scale(1)",
+                      transitionTimingFunction:
+                        "cubic-bezier(0.22, 0.9, 0.35, 1)",
+                      objectPosition: "center",
+                    }}
+                  />
                   
                   {/* Brochure Available Badge */}
                   <div className="absolute top-4 right-4">
@@ -147,7 +128,7 @@ const Properties = () => {
                           navigate(`/properties/${group.id}/${group.projects[0].id}`);
                         } else {
                           // For groups with multiple projects, go to group landing page
-                          navigate(`/groups/${group.id}`);
+                          navigate(`/properties/${group.id}`);
                         }
                       }}
                       className="flex-1 bg-[#16A34A] hover:bg-[#16A34A]/90 text-white text-sm py-2.5"

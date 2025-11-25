@@ -25,6 +25,7 @@ import KaamdhenurealtiesLanding from "./pages/KaamdhenurealtiesLanding";
 import RahejaprimeLanding from "./pages/RahejaprimeLanding";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import NotFound from "./pages/NotFound";
+import Redirect from "./components/Redirect";
 
 const queryClient = new QueryClient();
 
@@ -45,19 +46,34 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           {/* Developer Group Routes - All 11 Groups */}
-          <Route path="/groups/tescon" element={<TesconLanding />} />
-          <Route path="/groups/kaamdhenu-builders" element={<KaamdhenubuildersLanding />} />
-          <Route path="/groups/paradise-group" element={<ParadiseGroupLanding />} />
-          <Route path="/groups/greenscape" element={<GreenscapeLanding />} />
-          <Route path="/groups/dreams-group" element={<DreamsgroupLanding />} />
-          <Route path="/groups/shree-laxmi" element={<ShreelaxmiLanding />} />
-          <Route path="/groups/delta-groups" element={<DeltagroupsLanding />} />
-          <Route path="/groups/dreamapex" element={<DreamapexLanding />} />
-          <Route path="/groups/emporia-world" element={<EmporiaworldLanding />} />
-          <Route path="/groups/kaamdhenu-realties" element={<KaamdhenurealtiesLanding />} />
-          <Route path="/groups/raheja-prime" element={<RahejaprimeLanding />} />
+          <Route path="/properties/tescon" element={<TesconLanding />} />
+          <Route path="/properties/kaamdhenu-builders" element={<KaamdhenubuildersLanding />} />
+          <Route path="/properties/paradise-group" element={<ParadiseGroupLanding />} />
+          <Route path="/properties/greenscape" element={<GreenscapeLanding />} />
+          <Route path="/properties/dreams-group" element={<DreamsgroupLanding />} />
+          <Route path="/properties/shree-laxmi" element={<ShreelaxmiLanding />} />
+          <Route path="/properties/delta-groups" element={<DeltagroupsLanding />} />
+          <Route path="/properties/dreamapex" element={<DreamapexLanding />} />
+          <Route path="/properties/emporia-world" element={<EmporiaworldLanding />} />
+          <Route path="/properties/kaamdhenu-realties" element={<KaamdhenurealtiesLanding />} />
+          <Route path="/properties/raheja-prime" element={<RahejaprimeLanding />} />
           {/* Project Detail Routes - Dynamic */}
           <Route path="/properties/:groupId/:projectId" element={<ProjectDetailPage />} />
+          
+          {/* 301 Redirects: Old /groups/* URLs to new /properties/* URLs */}
+          <Route path="/groups/tescon" element={<Redirect to="/properties/tescon" />} />
+          <Route path="/groups/kaamdhenu-builders" element={<Redirect to="/properties/kaamdhenu-builders" />} />
+          <Route path="/groups/paradise-group" element={<Redirect to="/properties/paradise-group" />} />
+          <Route path="/groups/greenscape" element={<Redirect to="/properties/greenscape" />} />
+          <Route path="/groups/dreams-group" element={<Redirect to="/properties/dreams-group" />} />
+          <Route path="/groups/shree-laxmi" element={<Redirect to="/properties/shree-laxmi" />} />
+          <Route path="/groups/delta-groups" element={<Redirect to="/properties/delta-groups" />} />
+          <Route path="/groups/dreamapex" element={<Redirect to="/properties/dreamapex" />} />
+          <Route path="/groups/emporia-world" element={<Redirect to="/properties/emporia-world" />} />
+          <Route path="/groups/kaamdhenu-realties" element={<Redirect to="/properties/kaamdhenu-realties" />} />
+          <Route path="/groups/raheja-prime" element={<Redirect to="/properties/raheja-prime" />} />
+          <Route path="/groups/:groupId/:projectId" element={<Redirect to="/properties/:groupId/:projectId" />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

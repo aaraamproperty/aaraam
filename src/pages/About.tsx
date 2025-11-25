@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { Building2, Users, Award, TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import officeImage from "@/assets/office-space.jpg";
+import rajuSahaImage from "@/assets/Members/Raju Saha.jpeg";
+import sauravGuhaImage from "@/assets/Members/Saurav Guha.jpeg";
+import sanupRoyImage from "@/assets/Members/Sanup Roy.jpeg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -51,21 +54,16 @@ const About = () => {
   ];
 
   const team = [
-    { name: "Rajesh Kumar", role: "Founder & CEO", image: officeImage },
+    { name: "Raju Saha", role: "Co-Founder & CEO", image: rajuSahaImage },
     {
-      name: "Priya Sharma",
-      role: "Chief Operations Officer",
-      image: officeImage,
+      name: "Saurav Guha",
+      role: "Co-Founder & COO",
+      image: sauravGuhaImage,
     },
     {
-      name: "Amit Patel",
-      role: "Head of Business Development",
-      image: officeImage,
-    },
-    {
-      name: "Sneha Reddy",
-      role: "Director of Client Relations",
-      image: officeImage,
+      name: "Sanup Roy",
+      role: "Co-Founder & CMO",
+      image: sanupRoyImage,
     },
   ];
 
@@ -283,7 +281,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -294,13 +292,13 @@ const About = () => {
                 className="group"
               >
                 <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="relative overflow-hidden h-64">
+                  <div className="relative overflow-hidden h-80">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      style={{ objectPosition: 'center top' }}
                     />
-                    <div className="absolute inset-0 bg-[#004861]/30" />
                   </div>
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-[#004861] mb-2">

@@ -1,5 +1,5 @@
 import { MessageCircle, X, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 interface Message {
@@ -9,8 +9,13 @@ interface Message {
   timestamp: Date;
 }
 
-const FloatingChatbot = () => {
+interface FloatingChatbotProps {
+  isHidden?: boolean;
+}
+
+const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -19,6 +24,19 @@ const FloatingChatbot = () => {
       timestamp: new Date(),
     },
   ]);
+
+  // Check if brochure is open
+  useEffect(() => {
+    const checkBrochureState = () => {
+      setIsBrochureOpen(document.body.hasAttribute('data-brochure-open'));
+    };
+    
+    checkBrochureState();
+    const observer = new MutationObserver(checkBrochureState);
+    observer.observe(document.body, { attributes: true });
+    
+    return () => observer.disconnect();
+  }, []);
   const [inputValue, setInputValue] = useState("");
 
   const predefinedOptions = [
@@ -236,6 +254,10 @@ const FloatingChatbot = () => {
       handleSendMessage();
     }
   };
+
+  if (isHidden || isBrochureOpen) {
+    return null;
+  }
 
   return (
     <>

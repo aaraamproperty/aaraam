@@ -155,7 +155,7 @@ const PremiumProperties = () => {
     // For single-project groups, link directly to project page
     linkTo: group.projects.length === 1 
       ? `/properties/${group.id}/${group.projects[0].id}`
-      : `/groups/${group.id}`
+      : `/properties/${group.id}`
   }));
 
   const [isSticky, setIsSticky] = useState(false);

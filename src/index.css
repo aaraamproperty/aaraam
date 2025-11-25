@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  Print Protection: Hide brochure content when printing
+  This prevents users from printing the PDF via browser's print function
+  Note: Users can still print via PDF viewer if they access the PDF directly
+*/
+@media print {
+  .no-print-brochure,
+  .no-print-brochure * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Also hide the dialog backdrop and other modal elements */
+  [role="dialog"],
+  [data-radix-dialog-content],
+  [data-radix-dialog-overlay] {
+    display: none !important;
+  }
+  
+  /* Show a message instead */
+  body::before {
+    content: "This content is protected and cannot be printed. Please use the official Download button to request the brochure.";
+    display: block;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #004861;
+  }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
