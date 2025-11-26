@@ -151,7 +151,7 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
         
         <div className="absolute inset-0 flex items-end">
-          <div className="container mx-auto px-4 lg:px-8 pb-12">
+          <div className="container mx-auto px-4 lg:px-8 pb-6">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-end justify-between">
               {/* Content - Left Side */}
               <motion.div
@@ -206,12 +206,14 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="hidden lg:flex flex-shrink-0 w-full lg:w-2/5 items-end justify-end"
+                  className="hidden lg:flex flex-shrink-0 w-full lg:w-2/5 items-end justify-center -mb-6"
+                  style={{ height: '480px' }}
                 >
                   <img
                     src={project.images[1]}
                     alt={`${project.title} Building`}
-                    className="w-full h-auto max-h-[55vh] object-contain drop-shadow-2xl"
+                    className="w-auto object-contain drop-shadow-2xl block"
+                    style={{ maxHeight: '460px' }}
                     loading="eager"
                   />
                 </motion.div>
@@ -300,7 +302,7 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                   <h2 className="text-3xl font-bold text-[#004861] mb-6">
                     Seamless Connectivity
                   </h2>
-                  <div className="bg-gradient-to-br from-[#004861] to-[#16A34A] rounded-xl p-6 text-white">
+                  <div className="bg-[#16A34A] rounded-xl p-6 text-white">
                     <p className="text-lg mb-4 font-semibold">
                       Strategic Location with Multi-Corridor Access
                     </p>
@@ -334,7 +336,7 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                     {project.highlights.map((highlight, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg border border-green-100"
+                        className="flex items-start gap-3 p-4 bg-[#16A34A]/10 rounded-lg border border-[#16A34A]/20"
                       >
                         <div className="bg-[#16A34A] rounded-full p-1 mt-0.5">
                           <CheckCircle className="h-4 w-4 text-white" />
@@ -423,7 +425,7 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 
                 {/* Pricing Section - Show only if available */}
                 {project.pricing && (
-                  <div className="mb-6 p-4 bg-gradient-to-br from-[#004861] to-[#16A34A] rounded-xl text-white">
+                  <div className="mb-6 p-4 bg-[#16A34A] rounded-xl text-white">
                     <p className="text-sm opacity-90 mb-1">Starting Price</p>
                     <p className="text-2xl font-bold mb-1">{project.pricing.starting}</p>
                     {project.pricing.note && (

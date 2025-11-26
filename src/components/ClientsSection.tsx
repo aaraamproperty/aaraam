@@ -1,26 +1,31 @@
 import { useEffect, useRef } from "react";
-import saiAaradhya from "@/partner_logos/Sai Aaradhya Logo.png";
-import paradise from "@/partner_logos/Paradise Logo.png";
-import saiIcon from "@/partner_logos/Sai Icon Logo.png";
-import positiveLife from "@/partner_logos/Codename Positive Life.png";
-import saiPrerna from "@/partner_logos/Sai Prerna Logo.png";
-import saiSymphony from "@/partner_logos/Sai Symphony Logo.png";
-import saiWorldEmpire from "@/partner_logos/Sai World Empire Logo.png";
-import saiWorldDreams from "@/partner_logos/Sai World Dreams Logo_new.png";
-import sunCity from "@/partner_logos/Sun City Logo.png";
-import swl from "@/partner_logos/SWL Logo.jpg";
+import tesconLogo from "@/partner_logos/1 Tescon logo.png";
+import kaamdhenubuildersLogo from "@/partner_logos/2 Kamdhenu_Builders.png";
+import paradiseLogo from "@/partner_logos/3 Paradise Logo.png";
+import greenscapeLogo from "@/partner_logos/4 GreenScape.png";
+import dreamsLogo from "@/partner_logos/5 Dream Group.png";
+import deltaLogo from "@/partner_logos/6 Delta Groups.svg";
+import dreamapexLogo from "@/partner_logos/7 Dreamapex Realty.webp";
+import kaamdhenurealtiesLogo from "@/partner_logos/8 Kaamdhenu Realties.png";
+import rahejaLogo from "@/partner_logos/9 Raheja Prime.jpg";
+import blancaLogo from "@/partner_logos/10 shree laxmi developers.jpg";
+import emporiaWorldLogo from "@/partner_logos/11 Emporia World.jpeg";
 
-const clients = [
-  { name: "Sai Aaradhya", logo: saiAaradhya },
-  { name: "Paradise", logo: paradise },
-  { name: "Sai Icon", logo: saiIcon },
-  { name: "Codename Positive Life", logo: positiveLife },
-  { name: "Sai Prerna", logo: saiPrerna },
-  { name: "Sai Symphony", logo: saiSymphony },
-  { name: "Sai World Empire", logo: saiWorldEmpire },
-  { name: "Sai World Dreams", logo: saiWorldDreams },
-  { name: "Sun City", logo: sunCity },
-  { name: "SWL", logo: swl },
+const clientsRow1Data = [
+  { name: "Tescon", logo: tesconLogo },
+  { name: "The Kaamdhenu Builders", logo: kaamdhenubuildersLogo },
+  { name: "Paradise Group", logo: paradiseLogo },
+  { name: "GreenScape", logo: greenscapeLogo },
+  { name: "Dreams Group", logo: dreamsLogo },
+  { name: "DELTA Groups", logo: deltaLogo },
+];
+
+const clientsRow2Data = [
+  { name: "Dreamapex Realty", logo: dreamapexLogo },
+  { name: "Kaamdhenu Realties", logo: kaamdhenurealtiesLogo },
+  { name: "Raheja Prime", logo: rahejaLogo },
+  { name: "Shree Laxmi Developers", logo: blancaLogo },
+  { name: "Emporia World", logo: emporiaWorldLogo },
 ];
 
 const ClientsSection = () => {
@@ -28,8 +33,8 @@ const ClientsSection = () => {
   const scrollRef2 = useRef<HTMLDivElement>(null);
 
   // Duplicate clients for seamless loop
-  const clientsRow1 = [...clients, ...clients, ...clients];
-  const clientsRow2 = [...clients, ...clients, ...clients];
+  const clientsRow1 = [...clientsRow1Data, ...clientsRow1Data, ...clientsRow1Data];
+  const clientsRow2 = [...clientsRow2Data, ...clientsRow2Data, ...clientsRow2Data];
 
   return (
     <section className="py-20 bg-white overflow-hidden">

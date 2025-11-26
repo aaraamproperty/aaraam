@@ -127,12 +127,26 @@ const Contact = () => {
                     <p className="text-muted-foreground mb-2">
                       Send us an email and we'll respond within 24 hours
                     </p>
-                    <a
-                      href="mailto:info@aaraamproperties.com"
-                      className="text-accent hover:text-accent/80 font-medium"
-                    >
-                      info@aaraamproperties.com
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="mailto:raju@aaraamproperties.com"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        raju@aaraamproperties.com
+                      </a>
+                      <a
+                        href="mailto:saurav@aaraamproperties.com"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        saurav@aaraamproperties.com
+                      </a>
+                      <a
+                        href="mailto:sanup@aaraamproperties.com"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        sanup@aaraamproperties.com
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,12 +163,28 @@ const Contact = () => {
                     <p className="text-muted-foreground mb-2">
                       Speak directly with our property experts
                     </p>
-                    <a
-                      href="tel:+911234567890"
-                      className="text-accent hover:text-accent/80 font-medium"
-                    >
-                      +91 123 456 7890
-                    </a>
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href="tel:+918104124183"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        8104124183
+                      </a>
+                      <span className="text-muted-foreground">|</span>
+                      <a
+                        href="tel:+917738915066"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        7738915066
+                      </a>
+                      <span className="text-muted-foreground">|</span>
+                      <a
+                        href="tel:+919136636577"
+                        className="text-accent hover:text-accent/80 font-medium"
+                      >
+                        9136636577
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -168,41 +198,47 @@ const Contact = () => {
                     <h3 className="text-xl font-bold text-foreground mb-2">
                       Visit Us
                     </h3>
-                    <p className="text-muted-foreground">
-                      Aaraam Properties Headquarters
+                    <address className="text-muted-foreground not-italic">
+                      Office no. 3108, Plan S Business Park,
                       <br />
-                      123 Business District, BKC
+                      MIDC Industrial Area, Shiravane, Nerul,
                       <br />
-                      Mumbai, Maharashtra 400051
-                    </p>
+                      Navi Mumbai, Maharashtra 400706
+                    </address>
                   </div>
                 </div>
               </div>
 
               <div className="bg-accent rounded-3xl p-8 text-accent-foreground">
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+                <p className="text-accent-foreground/80 mb-4 text-sm">
+                  Connect with us on social media
+                </p>
                 <div className="flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=61580910826912"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-full flex items-center justify-center transition-colors"
+                    aria-label="Follow Aaraam Properties on Facebook"
                   >
                     <Facebook className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/aaraamproperties/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-full flex items-center justify-center transition-colors"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-full flex items-center justify-center transition-colors"
+                    aria-label="Follow Aaraam Properties on Instagram"
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/raju-shah-583232392/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-full flex items-center justify-center transition-colors"
+                    aria-label="Connect with Raju Shah on LinkedIn"
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
@@ -218,7 +254,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="bg-card rounded-3xl overflow-hidden border border-border shadow-lg h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1906538154846!2d72.86384431490092!3d19.062117787092848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8d9ff34e5df%3A0x4c4c4c4c4c4c4c4c!2sBandra%20Kurla%20Complex%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4807896852944!2d73.01456267516848!3d19.03698448212237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3d5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sPlan%20S%20Business%20Park!5e0!3m2!1sen!2sin!4v1732620000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

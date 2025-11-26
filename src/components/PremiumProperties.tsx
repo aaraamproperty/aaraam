@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { developerGroups } from "@/data/developerGroups";
-import { MapPin, ArrowRight, FileText, Building2 } from "lucide-react";
+import { MapPin, ArrowRight, FileText } from "lucide-react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 
@@ -46,23 +46,33 @@ const Card = ({ developer, i, progress, range, targetScale }: CardProps) => {
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-[80px] px-4 z-10"
+      className="h-[600px] flex items-center justify-center sticky top-[150px] md:top-[60px] px-4"
+      style={{ zIndex: 10 + i }}
     >
       <motion.div
         style={{
           scale,
-          top: `calc(-10vh + ${i * 25}px)`,
+          top: `${i * 25}px`,
         }}
-        className="relative -top-[25%] w-full max-w-[1100px] h-[320px] rounded-[25px] overflow-hidden origin-top shadow-2xl bg-white"
+        className="relative w-full max-w-[1100px] h-[400px] md:h-[320px] rounded-[25px] overflow-hidden origin-top shadow-2xl bg-white cursor-pointer"
+        onClick={handleViewDetails}
+        onKeyDown={(e) => e.key === "Enter" && handleViewDetails()}
+        role="button"
+        tabIndex={0}
+        aria-label={`View ${developer.name} properties`}
+        whileHover={{
+          boxShadow: "0 30px 70px rgba(18,40,30,0.15)",
+        }}
+        transition={{ duration: 0.3 }}
       >
         {/* Fixed Height Card Layout: Logo Left, Content Right */}
         <div className="flex flex-col md:flex-row h-full">
           {/* Left Side - Logo */}
-          <div className="relative w-full md:w-[45%] h-[180px] md:h-full overflow-hidden bg-white flex items-center justify-center p-8">
+          <div className="relative w-full md:w-[45%] h-[180px] md:h-full overflow-hidden bg-gray-50 flex items-center justify-center p-6">
             <img
               src={developer.logo}
               alt={developer.name}
-              className="max-w-[80%] max-h-[80%] object-contain"
+              className="w-full h-full object-contain"
               loading="lazy"
               srcSet={`${developer.logo} 1x, ${developer.logo} 2x`}
             />
@@ -76,20 +86,12 @@ const Card = ({ developer, i, progress, range, targetScale }: CardProps) => {
           {/* Right Side - Content */}
           <div className="flex-1 p-5 md:p-6 flex flex-col justify-between bg-white overflow-hidden">
             {/* Title */}
-            <h3 className="text-xl md:text-2xl font-bold text-[#004861] mb-2 leading-tight line-clamp-2">
+            <h3 className="text-xl md:text-2xl font-bold text-[#004861] mb-4 leading-tight line-clamp-2">
               {developer.name}
             </h3>
 
-            {/* Project Count */}
-            <p className="flex items-center gap-2 text-muted-foreground mb-3">
-              <Building2 className="h-4 w-4 text-[#16A34A] flex-shrink-0" />
-              <span className="text-xs md:text-sm">
-                {developer.projectCount} {developer.projectCount === 1 ? 'Project' : 'Projects'}
-              </span>
-            </p>
-
             {/* Excerpt */}
-            <p className="text-xs md:text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+            <p className="text-xs md:text-sm text-muted-foreground mb-6 leading-relaxed line-clamp-3">
               {developer.excerpt}
             </p>
 
@@ -104,7 +106,10 @@ const Card = ({ developer, i, progress, range, targetScale }: CardProps) => {
             {/* Action Buttons */}
             <div className="flex gap-3">
               <button 
-                onClick={handleViewDetails}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleViewDetails();
+                }}
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803d] text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg group"
               >
                 View Details
@@ -112,7 +117,10 @@ const Card = ({ developer, i, progress, range, targetScale }: CardProps) => {
               </button>
               
               <button
-                onClick={handleEnquire}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEnquire();
+                }}
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-[#004861] hover:bg-[#003347] text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg"
               >
                 Enquire

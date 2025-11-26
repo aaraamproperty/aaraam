@@ -10,37 +10,37 @@ import {
 const benefits = [
   {
     icon: Shield,
-    title: "No Brokerage Hassles",
+    title: "Specialized in Residential & Commercial Assets",
     description:
-      "Direct listings with transparent pricing and no hidden charges.",
+      "From premium apartments and retail spaces to offices and pre-leased units, we understand the nuances of each segment and guide you accordingly.",
   },
   {
     icon: FileCheck,
-    title: "Corporate-Friendly Agreements",
+    title: "Curated Project & Developer Network",
     description:
-      "Legal documentation tailored for business needs and compliance.",
+      "We work only with selected, reputed developers, ensuring you get options that are legally sound, structurally robust, and future-ready.",
   },
   {
     icon: Clock,
-    title: "Verified Commercial Spaces",
+    title: "End-to-End Advisory, Not Just Brokerage",
     description:
-      "Every property is verified, documented, and ready to move in.",
+      "We don't just show properties – we help you evaluate location, pricing, future growth, rental potential, and exit strategy.",
   },
   {
     icon: Users,
-    title: "Quick Leasing Support",
-    description: "Fast-track your search with dedicated support from our team.",
+    title: "Transparent, Data-Backed Guidance",
+    description: "Clear comparisons, project insights, and market intelligence so that every decision is based on facts, not pressure.",
   },
   {
     icon: MapPin,
-    title: "Local Experts in Every City",
+    title: "Strong After-Sales Support",
     description:
-      "Pan-India presence with local market knowledge and expertise.",
+      "Assistance with documentation, bank loans via partners, registration, and any post-transaction coordination you may need.",
   },
   {
     icon: TrendingUp,
-    title: "Growth-Oriented Solutions",
-    description: "Flexible spaces that scale with your business requirements.",
+    title: "Local Market Expertise",
+    description: "Deep familiarity with Navi Mumbai and surrounding corridors – ideal for end-users, NRIs, and investors looking for trustworthy ground support.",
   },
 ];
 
@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
             Why Choose Aaraam Properties
           </h2>
           <p className="text-lg text-muted-foreground">
-            Your trusted partner for commercial real estate across India
+            Your trusted partner for residential, commercial, and investment real estate
           </p>
         </div>
 

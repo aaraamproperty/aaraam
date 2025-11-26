@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
-            Find the Perfect Commercial Space for Your Business
+            Unlock Premium Real Estate & Commercial Opportunities in Navi Mumbai
           </h1>
           <div className="inline-block">
             <p
@@ -49,8 +49,7 @@ const HeroSection = () => {
                 animate ? "hero-underline-animate" : ""
               }`}
             >
-              Pan-India corporate rentals and commercial listings curated for
-              your needs.
+              Discover curated residential, commercial, and investment-grade properties from trusted developers – guided by a team that treats your goals like their own.
             </p>
           </div>
         </div>

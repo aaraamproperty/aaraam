@@ -9,12 +9,12 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { icon: Building2, label: "Years of Service", value: 15, suffix: "+" },
-  { icon: MapPin, label: "Cities Covered", value: 50, suffix: "+" },
-  { icon: Store, label: "Shops Leased", value: 2500, suffix: "+" },
-  { icon: Briefcase, label: "Commercial Spaces", value: 5000, suffix: "+" },
-  { icon: Users, label: "Corporate Clients", value: 1200, suffix: "+" },
-  { icon: Globe, label: "Pan-India Projects", value: 350, suffix: "+" },
+  { icon: Building2, label: "Successful Transactions", value: 500, suffix: "+" },
+  { icon: MapPin, label: "Leading Developers", value: 50, suffix: "+" },
+  { icon: Store, label: "Commercial Spaces Closed", value: 150, suffix: "+" },
+  { icon: Briefcase, label: "Years of Experience", value: 7, suffix: "+" },
+  { icon: Users, label: "Happy Families & Businesses", value: 450, suffix: "+" },
+  { icon: Globe, label: "Cr+ Real Estate Value", value: 300, suffix: "" },
 ];
 
 const StatsSection = () => {
@@ -48,7 +48,7 @@ const StatsSection = () => {
             Our Achievements
           </h2>
           <p className="text-lg text-primary-foreground/80">
-            Numbers that reflect our commitment to excellence
+            Every number represents a family, business, or investor who trusted us to get it right the first time
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

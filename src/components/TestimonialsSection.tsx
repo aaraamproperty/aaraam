@@ -2,27 +2,27 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Rajesh Kumar",
-    company: "TechVentures Pvt Ltd",
-    role: "CEO",
+    name: "Rahul & Sneha",
+    company: "Kharghar",
+    role: "First-time Homebuyers",
     content:
-      "Aaraam Properties made our office search incredibly smooth. They understood our needs and delivered the perfect space in just two weeks. Highly professional!",
+      "As first-time homebuyers, we were overwhelmed with options. Aaraam Properties simplified everything – they explained pros and cons of each project, arranged multiple site visits, and coordinated with the developer and banker. The entire journey felt transparent and stress-free.",
     rating: 5,
   },
   {
-    name: "Priya Sharma",
-    company: "Retail Solutions Inc",
-    role: "Operations Head",
-    content:
-      "We needed a retail space in a prime location. Their team was transparent, efficient, and helped us negotiate a great deal. Absolutely recommend them!",
-    rating: 5,
-  },
-  {
-    name: "Amit Patel",
-    company: "Innovation Labs",
+    name: "Sachin",
+    company: "IT Services Firm",
     role: "Founder",
     content:
-      "The corporate-friendly agreements and quick leasing process saved us months. Aaraam Properties is now our go-to partner for all commercial properties.",
+      "We were looking for a larger office space with good connectivity and future appreciation potential. The team at Aaraam Properties understood our business requirements and showed only relevant options. Their negotiation support saved us both time and money.",
+    rating: 5,
+  },
+  {
+    name: "Priya",
+    company: "NRI Investor",
+    role: "Investment Professional",
+    content:
+      "Being based abroad, I needed someone I could trust on the ground. Aaraam Properties handled everything – from evaluating projects to coordinating possession. Communication was clear and regular, which gave me full confidence.",
     rating: 5,
   },
 ];
@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
             What Our Clients Say
           </h2>
           <p className="text-lg text-muted-foreground">
-            Real feedback from businesses we've helped grow
+            Real stories from families, businesses, and investors we've guided
           </p>
         </div>
 

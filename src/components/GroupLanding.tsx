@@ -49,19 +49,22 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
       <section 
         className={`relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden ${group.heroImage ? 'hero--with-overlay' : ''}`}
         style={{
-          background: group.heroImage 
-            ? 'linear-gradient(to bottom right, #004861, #003347)' 
-            : `linear-gradient(to bottom right, ${group.color}, ${group.color}dd)`
+          backgroundImage: group.heroImage 
+            ? `linear-gradient(to bottom right, rgba(0, 72, 97, 0.35), rgba(0, 51, 71, 0.35)), url(${group.heroImage})`
+            : `linear-gradient(to bottom right, ${group.color}, ${group.color}dd)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="container mx-auto px-4 lg:px-8 py-12">
-          <div className={`flex ${group.heroImage ? 'flex-col lg:flex-row' : 'flex-col'} gap-8 lg:gap-12 items-center justify-between`}>
-            {/* Content - Left Side */}
+          <div className={`flex ${group.heroImage ? 'flex-col items-center justify-center text-center' : 'flex-col'} gap-8 lg:gap-12 items-center justify-between`}>
+            {/* Content - Centered */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className={`text-white z-10 ${!group.heroImage ? 'text-center max-w-4xl mx-auto' : 'flex-1'}`}
+              className={`text-white z-10 ${!group.heroImage ? 'text-center max-w-4xl mx-auto' : 'text-center max-w-4xl mx-auto'}`}
             >
               {!group.heroImage && (
                 <div className="mb-8 flex justify-center">
@@ -82,7 +85,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
               <p className="text-base md:text-lg mb-8 text-gray-200">
                 Explore our portfolio of {group.projects.length} premium {group.projects.length === 1 ? 'project' : 'projects'} designed to exceed expectations.
               </p>
-              <div className={`flex flex-wrap gap-4 ${!group.heroImage ? 'justify-center' : ''}`}>
+              <div className={`flex flex-wrap gap-4 ${!group.heroImage ? 'justify-center' : 'justify-center'}`}>
                 <Button
                   onClick={handleExploreProjects}
                   className="bg-[#16A34A] hover:bg-[#15803d] text-white px-8 py-6 text-lg rounded-full"
@@ -100,23 +103,6 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                 </Button>
               </div>
             </motion.div>
-
-            {/* Building Image Overlay - Right Side */}
-            {group.heroImage && (
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex-shrink-0 w-full lg:w-2/5 flex items-center justify-center py-6 lg:py-8"
-              >
-                <img
-                  src={group.heroImage}
-                  alt={`${group.name} Building`}
-                  className="w-full h-auto max-h-[60vh] object-contain drop-shadow-2xl"
-                  loading="eager"
-                />
-              </motion.div>
-            )}
           </div>
         </div>
 
@@ -155,83 +141,110 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
               ? 'md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto'
               : 'md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto'
           }`}>
-            {group.projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    srcSet={`${project.images[0]} 1x, ${project.images[0]} 2x`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-block bg-[#16A34A] text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      {project.specifications.status}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#004861] mb-3">
-                    {project.title}
-                  </h3>
-                  
-                  <div className="flex items-center gap-2 text-gray-600 mb-4">
-                    <MapPin className="h-5 w-5 text-[#16A34A] flex-shrink-0" />
-                    <span>{project.location}</span>
-                  </div>
-
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {project.excerpt}
-                  </p>
-
-                  <div className="space-y-2 mb-6 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Type:</span>
-                      <span className="font-semibold text-[#004861]">
-                        {project.specifications.type}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500">Possession:</span>
-                      <span className="font-semibold text-[#004861]">
-                        {project.specifications.possession}
+            {group.projects.map((project, index) => {
+              const projectLink = `/properties/${group.id}/${project.id}`;
+              
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -6,
+                    scale: 1.02,
+                  }}
+                  className="bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(18,40,30,0.06)] hover:shadow-[0_20px_60px_rgba(18,40,30,0.12)] transition-all duration-300 ease-smooth cursor-pointer"
+                  onClick={() => {
+                    navigate(projectLink);
+                    window.scrollTo(0, 0);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      navigate(projectLink);
+                      window.scrollTo(0, 0);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View ${project.title} details`}
+                >
+                  {/* Project Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={project.images[3] || project.images[1] || project.images[0]}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-103"
+                      loading="lazy"
+                      srcSet={`${project.images[3] || project.images[1] || project.images[0]} 1x, ${project.images[3] || project.images[1] || project.images[0]} 2x`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <span className="inline-block bg-[#16A34A] text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        {project.specifications.status}
                       </span>
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button
-                      onClick={() => handleViewDetails(project.id)}
-                      className="flex-1 bg-[#004861] hover:bg-[#003347] text-white rounded-full"
-                    >
-                      View Details
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button
-                      onClick={handleEnquire}
-                      variant="outline"
-                      className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-full"
-                    >
-                      Enquire
-                      <Phone className="ml-2 h-4 w-4" />
-                    </Button>
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-[#004861] mb-3">
+                      {project.title}
+                    </h3>
+                    
+                    <div className="flex items-center gap-2 text-gray-600 mb-4">
+                      <MapPin className="h-5 w-5 text-[#16A34A] flex-shrink-0" />
+                      <span>{project.location}</span>
+                    </div>
+
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      {project.excerpt}
+                    </p>
+
+                    <div className="space-y-2 mb-6 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">Type:</span>
+                        <span className="font-semibold text-[#004861]">
+                          {project.specifications.type}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">Possession:</span>
+                        <span className="font-semibold text-[#004861]">
+                          {project.specifications.possession}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-row items-center justify-between gap-3">
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleViewDetails(project.id);
+                        }}
+                        className="flex-1 bg-[#004861] hover:bg-[#003347] text-white rounded-full"
+                      >
+                        View Details
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleEnquire();
+                        }}
+                        variant="outline"
+                        className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-full"
+                      >
+                        Enquire
+                        <Phone className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

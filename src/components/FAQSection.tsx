@@ -4,30 +4,29 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What documents do I need for commercial rentals?",
+    question: "Do you only deal in residential properties, or commercial as well?",
     answer:
-      "For commercial rentals, you typically need business registration documents, GST certificate, identity proof, and address proof. Our team will guide you through the complete documentation process.",
+      "We actively handle both. Our portfolio includes residential apartments, retail shops, office spaces, and investment-grade pre-leased properties across Navi Mumbai and key growth corridors.",
   },
   {
-    question: "Can I negotiate rental prices?",
+    question: "Do you charge brokerage to buyers or tenants?",
     answer:
-      "Yes, rental prices are negotiable. Our team works with both property owners and businesses to find mutually beneficial terms that work for everyone involved.",
+      "Our fee structure depends on the type of transaction (primary sale, resale, lease, or commercial deal) and is always communicated transparently at the start. In many primary sales, the developer compensates us, so there is no additional cost to the buyer.",
   },
   {
-    question: "Do you offer corporate leasing support?",
+    question: "How do you shortlist properties for me?",
     answer:
-      "Absolutely! We specialize in corporate leasing with dedicated support for businesses. We handle all legal documentation, compliance, and provide flexible lease terms.",
+      "We first understand your budget, purpose (self-use, business, or investment), preferred locations, and timeline. Based on that, we curate a shortlist from trusted developers and projects that align with your goals.",
   },
   {
-    question: "How fast can I get a property?",
+    question: "Can you help with home loans and documentation?",
     answer:
-      "Once you shortlist a property, we can arrange immediate site visits. The entire process from selection to handover typically takes 7-14 days, depending on documentation.",
+      "Yes. Through our network of banking and financial partners, we can connect you for loan processing and assist with the documentation and registration flow.",
   },
   {
-    question:
-      "Do you assist with corporate lease agreements and documentation?",
+    question: "I'm an NRI. Can you assist me remotely?",
     answer:
-      "Yes, we provide comprehensive assistance with corporate lease agreements and documentation. Our legal team ensures all paperwork is compliant, handles stamp duty, registration, and coordinates with lawyers to make the process seamless for your business.",
+      "Absolutely. We can coordinate virtual walkthroughs, share detailed project information, and manage most of the process digitally, with clear guidance on compliance and documentation.",
   },
 ];
 
@@ -42,7 +41,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about leasing commercial properties
+            Everything you need to know about buying, leasing, and investing in properties
           </p>
         </div>
 

@@ -15,6 +15,7 @@ interface FloatingChatbotProps {
 
 const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -264,11 +265,11 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className="fixed bottom-24 right-6 z-[100] w-80 md:w-96 bg-card border border-border rounded-3xl shadow-2xl animate-in slide-in-from-bottom-4 duration-300"
+          className="fixed bottom-20 sm:bottom-24 right-2 sm:right-4 md:right-6 z-[100] w-[calc(100vw-1rem)] sm:w-80 md:w-96 max-w-md bg-card border border-border rounded-2xl sm:rounded-3xl shadow-2xl animate-in slide-in-from-bottom-4 duration-300"
           onWheel={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
         >
-          <div className="bg-[#16A34A] text-white p-4 rounded-t-3xl flex items-center justify-between">
+          <div className="bg-[#16A34A] text-white p-3 sm:p-4 rounded-t-2xl sm:rounded-t-3xl flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                 <MessageCircle className="h-5 w-5" />
@@ -279,8 +280,12 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                setIsMinimized(true);
+              }}
               className="hover:bg-white/10 p-1.5 rounded-full transition-colors"
+              aria-label="Minimize chat"
             >
               <X className="h-5 w-5" />
             </button>
@@ -288,7 +293,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
 
           {/* Messages Area */}
           <div
-            className="p-4 space-y-4 max-h-96 overflow-y-auto bg-[#F7F7F7]"
+            className="p-3 sm:p-4 space-y-3 sm:space-y-4 max-h-[50vh] sm:max-h-96 overflow-y-auto bg-[#F7F7F7]"
             onWheel={(e) => e.stopPropagation()}
           >
             {messages.map((message) => (
@@ -330,7 +335,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
           )}
 
           {/* Input Area */}
-          <div className="p-4 border-t border-border bg-white rounded-b-3xl">
+          <div className="p-3 sm:p-4 border-t border-border bg-white rounded-b-2xl sm:rounded-b-3xl">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -338,11 +343,11 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2.5 rounded-full border border-border focus:outline-none focus:ring-2 focus:ring-[#16A34A] bg-[#F7F7F7] text-foreground"
+                className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm rounded-full border border-border focus:outline-none focus:ring-2 focus:ring-[#16A34A] bg-[#F7F7F7] text-foreground"
               />
               <Button
                 onClick={handleSendMessage}
-                className="bg-[#16A34A] hover:bg-[#16A34A]/90 text-white rounded-full px-4"
+                className="bg-[#16A34A] hover:bg-[#16A34A]/90 text-white rounded-full px-3 sm:px-4"
               >
                 <Send className="h-4 w-4" />
               </Button>
@@ -351,35 +356,59 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
         </div>
       )}
 
-      {/* Floating Button with "Need help?" bubble */}
-      <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-3">
-        {/* Speech Bubble */}
-        {!isOpen && (
-          <div className="bg-[#16A34A] text-white px-5 py-3 rounded-3xl shadow-lg animate-in slide-in-from-right-4 duration-300 relative">
-            <div className="text-sm font-semibold">Need help?</div>
-            <div className="text-xs opacity-90">Chat with Agent</div>
-            {/* Bubble tail pointing to the avatar */}
-            <div className="absolute -bottom-2 right-8 w-4 h-4 bg-[#16A34A] transform rotate-45"></div>
-          </div>
-        )}
-
-        {/* Avatar Button with white border */}
+      {/* Minimized Vertical Tab on Right Edge - Shows when chatbot is minimized */}
+      {isMinimized && !isOpen && (
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 duration-300 border-4 border-[#16A34A] overflow-hidden"
+          onClick={() => {
+            setIsMinimized(false);
+            setIsOpen(true);
+          }}
+          className="fixed right-0 bottom-6 z-[100] bg-[#16A34A] hover:bg-[#16A34A]/90 text-white shadow-2xl transition-all duration-300 ease-out hover:shadow-[0_8px_30px_rgba(22,163,74,0.4)] group"
+          style={{
+            writingMode: 'vertical-rl',
+            padding: '1rem 0.75rem',
+            borderRadius: '0.75rem 0 0 0.75rem',
+          }}
           aria-label="Open chat"
         >
-          {isOpen ? (
-            <X className="h-7 w-7 text-[#16A34A]" />
-          ) : (
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
-              alt="Chat Agent"
-              className="w-full h-full object-cover"
-            />
-          )}
+          <div className="flex flex-col items-center gap-2">
+            <MessageCircle className="h-5 w-5 rotate-90 group-hover:scale-110 transition-transform" />
+            <span className="text-sm font-semibold tracking-wide">Need Help?</span>
+          </div>
         </button>
-      </div>
+      )}
+
+      {/* Floating Button with "Need help?" bubble - Shows when not minimized */}
+      {!isMinimized && (
+        <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[100] flex flex-col items-end gap-2 sm:gap-3">
+          {/* Speech Bubble */}
+          {!isOpen && (
+            <div className="bg-[#16A34A] text-white px-4 sm:px-5 py-2 sm:py-3 rounded-2xl sm:rounded-3xl shadow-lg animate-in slide-in-from-right-4 duration-300 relative">
+              <div className="text-xs sm:text-sm font-semibold">Need help?</div>
+              <div className="text-[10px] sm:text-xs opacity-90">Chat with Agent</div>
+              {/* Bubble tail pointing to the avatar */}
+              <div className="absolute -bottom-1.5 sm:-bottom-2 right-6 sm:right-8 w-3 h-3 sm:w-4 sm:h-4 bg-[#16A34A] transform rotate-45"></div>
+            </div>
+          )}
+
+          {/* Avatar Button with white border */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 duration-300 border-4 border-[#16A34A] overflow-hidden"
+            aria-label="Toggle chat"
+          >
+            {isOpen ? (
+              <X className="h-6 w-6 sm:h-7 sm:w-7 text-[#16A34A]" />
+            ) : (
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                alt="Chat Agent"
+                className="w-full h-full object-cover"
+              />
+            )}
+          </button>
+        </div>
+      )}
     </>
   );
 };

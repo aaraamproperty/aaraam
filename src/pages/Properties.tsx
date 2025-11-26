@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { developerGroups } from "@/data/developerGroups";
 import heroImage from "@/assets/hero-commercial.jpg";
 
@@ -62,92 +63,88 @@ const Properties = () => {
       <section className="py-12 bg-background" id="main-content">
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {developerGroups.map((group, index) => (
-              <article
-                key={group.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-[#16A34A] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] animate-fade-in"
-                style={{
-                  animationDelay: `${index * 50}ms`,
-                  animationFillMode: "backwards",
-                }}
-                onMouseEnter={() => setHoveredCard(group.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                role="article"
-                aria-label={`${group.name} property group`}
-              >
-                {/* Image/Logo Section */}
-                <div className="relative overflow-hidden bg-gray-50 h-48 md:h-56 w-full flex items-center justify-center p-4">
-                  <img
-                    src={group.logo}
-                    alt={`${group.name} logo`}
-                    loading="lazy"
-                    className="w-full h-full object-contain transition-transform duration-300"
-                    style={{
-                      transform:
-                        hoveredCard === group.id
-                          ? "scale(1.05)"
-                          : "scale(1)",
-                      transitionTimingFunction:
-                        "cubic-bezier(0.22, 0.9, 0.35, 1)",
-                      objectPosition: "center",
-                    }}
-                  />
-                  
-                  {/* Brochure Available Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#16A34A] text-white shadow-md">
-                      Brochure Available
-                    </span>
+            {developerGroups.map((group, index) => {
+              const linkTo = group.projects.length === 1 
+                ? `/properties/${group.id}/${group.projects[0].id}`
+                : `/properties/${group.id}`;
+              
+              return (
+                <motion.article
+                  key={group.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: index * 0.08,
+                    duration: 0.5,
+                  }}
+                  whileHover={{
+                    y: -6,
+                    scale: 1.02,
+                  }}
+                  className="group bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(18,40,30,0.06)] hover:shadow-[0_20px_60px_rgba(18,40,30,0.12)] transition-all duration-300 ease-smooth cursor-pointer"
+                  onClick={() => navigate(linkTo)}
+                  onKeyDown={(e) => e.key === "Enter" && navigate(linkTo)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View ${group.name} properties`}
+                >
+                  {/* Image/Logo Section */}
+                  <div className="relative overflow-hidden bg-gray-50 h-48 md:h-56 w-full flex items-center justify-center p-4">
+                    <img
+                      src={group.logo}
+                      alt={`${group.name} logo`}
+                      loading="lazy"
+                      className="w-full h-full object-contain transition-transform duration-500 ease-smooth group-hover:scale-103"
+                    />
+                    
+                    {/* Brochure Available Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#16A34A] text-white shadow-md">
+                        Brochure Available
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Card Content */}
-                <div className="p-6">
-                  {/* Group Name */}
-                  <h3 className="font-bold text-xl text-[#004861] mb-2 group-hover:text-[#16A34A] transition-colors">
-                    {group.name}
-                  </h3>
+                  {/* Card Content */}
+                  <div className="p-6">
+                    {/* Group Name */}
+                    <h3 className="font-bold text-xl text-[#004861] mb-4 group-hover:text-[#16A34A] transition-colors duration-300">
+                      {group.name}
+                    </h3>
 
-                  {/* Project Count */}
-                  <p className="text-sm font-semibold text-foreground mb-3">
-                    {group.projects.length}{" "}
-                    {group.projects.length === 1 ? "Project" : "Projects"}
-                  </p>
+                    {/* Excerpt */}
+                    <p className="text-sm text-muted-foreground mb-6 line-clamp-2 min-h-[2.5rem]">
+                      {group.excerpt}
+                    </p>
 
-                  {/* Excerpt */}
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2 min-h-[2.5rem]">
-                    {group.excerpt}
-                  </p>
-
-                  {/* CTA Buttons - Always Visible */}
-                  <div className="flex gap-3 mt-4">
-                    <Button
-                      onClick={() => {
-                        // For groups with only 1 project, go directly to project page
-                        if (group.projects.length === 1) {
-                          navigate(`/properties/${group.id}/${group.projects[0].id}`);
-                        } else {
-                          // For groups with multiple projects, go to group landing page
-                          navigate(`/properties/${group.id}`);
-                        }
-                      }}
-                      className="flex-1 bg-[#16A34A] hover:bg-[#16A34A]/90 text-white text-sm py-2.5"
-                      aria-label={`View details for ${group.name}`}
-                    >
-                      View Details
-                    </Button>
-                    <Button
-                      onClick={() => setShowBookingModal(true)}
-                      variant="outline"
-                      className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white text-sm py-2.5"
-                      aria-label={`Enquire about ${group.name}`}
-                    >
-                      Enquire
-                    </Button>
+                    {/* CTA Buttons */}
+                    <div className="flex gap-3 mt-4">
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(linkTo);
+                        }}
+                        className="flex-1 bg-[#16A34A] hover:bg-[#16A34A]/90 text-white text-sm py-2.5"
+                        aria-label={`View details for ${group.name}`}
+                      >
+                        View Details
+                      </Button>
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowBookingModal(true);
+                        }}
+                        variant="outline"
+                        className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white text-sm py-2.5"
+                        aria-label={`Enquire about ${group.name}`}
+                      >
+                        Enquire
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </section>
