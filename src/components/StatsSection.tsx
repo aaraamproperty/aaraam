@@ -101,12 +101,12 @@ const StatCard = ({
 
   return (
     <div
-      className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-3xl p-8 text-center hover:bg-primary-foreground/15 hover:scale-105 transition-all animate-fade-in"
+      className="rounded-3xl p-8 text-center hover:bg-primary-foreground/15  hover:border-primary-foreground/20 hover:shadow-lg hover:scale-95 transition-all animate-fade-in"
       style={{ animationDelay: `${delay}ms` }}
     >
       <Icon
-        className="h-12 w-12 text-accent mx-auto mb-4 animate-slide-up"
-        style={{ animationDelay: `${delay}ms` }}
+        className="h-12 w-12 mx-auto mb-4 animate-slide-up"
+        style={{ animationDelay: `${delay}ms`, color: '#16A34A' }}
       />
       <div
         className="text-4xl font-bold mb-2 animate-slide-up"

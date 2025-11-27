@@ -47,7 +47,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
 
       {/* Hero Section */}
       <section 
-        className={`relative min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden ${group.heroImage ? 'hero--with-overlay' : ''}`}
+        className={`relative min-h-[50vh] lg:min-h-[60vh] flex items-center overflow-hidden ${group.heroImage ? 'hero--with-overlay' : ''}`}
         style={{
           backgroundImage: group.heroImage 
             ? `linear-gradient(to bottom right, rgba(0, 72, 97, 0.35), rgba(0, 51, 71, 0.35)), url(${group.heroImage})`

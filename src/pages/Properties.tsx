@@ -34,7 +34,7 @@ const Properties = () => {
             className="w-full h-full object-cover"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-[#004861]/90" />
+          <div className="absolute inset-0 bg-[#004861]/20" />
         </div>
 
         <div className="relative container mx-auto px-4 lg:px-8 max-w-7xl text-center">

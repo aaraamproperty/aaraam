@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import FloatingChatbot from "@/components/FloatingChatbot";
 import BlogCard from "@/components/BlogCard";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-commercial.jpg";
+import heroImage from "@/assets/property-showcase.jpg";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -68,9 +68,9 @@ const Blog = () => {
           <img
             src={heroImage}
             alt="Blog Hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-75"
           />
-          <div className="absolute inset-0 bg-[#004861]/95" />
+          <div className="absolute inset-0 bg-[#004861]/70" />
         </div>
 
         <div className="relative container mx-auto px-4 lg:px-8">

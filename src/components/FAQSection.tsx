@@ -1,4 +1,4 @@
-import officeImage from "@/assets/office-space.jpg";
+import officeImage from "@/assets/FAQ image.jpg";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -45,7 +45,7 @@ const FAQSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="order-2 lg:order-1 overflow-hidden rounded-3xl group cursor-pointer">
             <img
               src={officeImage}

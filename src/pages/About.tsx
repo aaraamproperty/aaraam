@@ -5,7 +5,7 @@ import MilestonesTimeline from "@/components/MilestonesTimeline";
 import { Link } from "react-router-dom";
 import { Building2, Users, Award, TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import officeImage from "@/assets/office-space.jpg";
+import officeImage from "@/assets/Who We Are image.jpg";
 import rajuSahaImage from "@/assets/Members/Raju Saha.jpeg";
 import sauravGuhaImage from "@/assets/Members/Saurav Guha.jpeg";
 import sanupRoyImage from "@/assets/Members/Sanup Roy.jpeg";
@@ -54,15 +54,20 @@ const About = () => {
   ];
 
   const team = [
-    { name: "Raju Saha", role: "Co-Founder & CEO", image: rajuSahaImage },
+    { name: "Raju Saha",
+       role: "Co-Founder & CEO",
+       experience : "Carries an illustrious 20-year legacy shaping landmark real estate developments.",
+       image: rajuSahaImage },
     {
       name: "Saurav Guha",
       role: "Co-Founder & COO",
+      experience : "Brings 8 years of strategic leadership in elevating large-scale real estate operations.",
       image: sauravGuhaImage,
     },
     {
       name: "Sanup Roy",
       role: "Co-Founder & CMO",
+      experience : "Drives brand excellence through visionary marketing and growth innovation.",
       image: sanupRoyImage,
     },
   ];
@@ -113,7 +118,7 @@ const About = () => {
             className="w-full h-full object-cover"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-[#004861]/90" />
+          <div className="absolute inset-0 bg-[#004861]/20" />
         </div>
 
         <div className="relative container mx-auto px-4 lg:px-8 text-center">
@@ -150,8 +155,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#16A34A] mb-4">
-              Vision
-            </h2>
+              Who We Are           </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
@@ -177,7 +181,7 @@ const About = () => {
               className="order-2 lg:order-2 h-[500px] flex flex-col justify-center space-y-6"
             >
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-justify">
-                Founded in 2015, Aaraam Properties was established with a vision
+                Founded in 2018, Aaraam Properties was established with a vision
                 to revolutionize commercial real estate in India. We are
                 dedicated to connecting businesses with verified, transparent,
                 and hassle-free commercial spaces—from corporate offices to
@@ -305,6 +309,7 @@ const About = () => {
                       {member.name}
                     </h3>
                     <p className="text-muted-foreground">{member.role}</p>
+                    <p className="text-muted-foreground">{member.experience}</p>
                   </div>
                 </div>
               </motion.div>

@@ -93,7 +93,7 @@ export const developerGroups: DeveloperGroup[] = [
         images: [universalHeroBg, planIBuilding, tesconLogo],
         brochure_url: "/assets/brochures/tescon-plan-i-brochure.pdf",
         pricing: {
-          starting: "₹69 Lakhs",
+          starting: "₹69 Lakhs + Taxes",
           note: "Investment starting price | Bare shell units"
         },
         highlights: [
@@ -135,7 +135,7 @@ export const developerGroups: DeveloperGroup[] = [
           "Professional Property Management"
         ],
         specifications: {
-          type: "Commercial - Office Spaces",
+          type: "Commercial - Office Spaces,\n Retail and Showrooms",
           area: "From 387 sq.ft carpet onwards",
           status: "Full CC Received - Ready for Investment",
           possession: "As per RERA"
@@ -146,8 +146,8 @@ export const developerGroups: DeveloperGroup[] = [
         id: "plan-m",
         title: "PLAN M Business Park",
         location: "Thane-Belapur Highway,Near Turbhe Station, Navi Mumbai",
-        excerpt: "High ROI Opportunity (5–7%) | Starting ₹79.40 Lakhs + taxes | Possession: Nov 2025",
-        description: "PLAN M Business Park is a prestigious 2.5-acre commercial development offering high ROI opportunities of 5–7% with investments starting at ₹79.40 Lakhs + taxes. Located on the Navi Mumbai growth corridor with direct Thane-Belapur highway access and just 200m from Turbhe railway station, this project features an impressive three-wing elevation: MIDAS Wing (G+5), West Wing (G+36), and East Wing (G+36). The development includes G+8 car parking with 800+ slots, 14 Miconic high-speed lifts, and a 30-ft wide driveway. With exceptional ceiling heights (11 ft for offices, 13 ft for commercial), PLAN M offers bare shell units with possession in Nov 2025 as per RERA. Modern amenities include fitness centre, yoga & meditation, swimming pool with jacuzzi, steam & sauna, themed library, food court, children's creche, and concierge services. Located 18 km from the upcoming international airport with central access to Thane–Panvel–Mumbai.",
+        excerpt: "High ROI Opportunity (5–7%) | Starting ₹79.40 Lakhs + taxes | Possession: Dec 2026",
+        description: "PLAN M Business Park is a prestigious 2.5-acre commercial development offering high ROI opportunities of 5–7% with investments starting at ₹79.40 Lakhs + taxes. Located on the Navi Mumbai growth corridor with direct Thane-Belapur highway access and just 200m from Turbhe railway station, this project features an impressive three-wing elevation: MIDAS Wing (G+5), West Wing (G+36), and East Wing (G+36). The development includes G+8 car parking with 800+ slots, 14 Miconic high-speed lifts, and a 30-ft wide driveway. With exceptional ceiling heights (11 ft for offices, 13 ft for commercial), PLAN M offers bare shell units with possession in Dec 2026. Modern amenities include fitness centre, yoga & meditation, swimming pool with jacuzzi, steam & sauna, themed library, food court, children's creche, and concierge services. Located 18 km from the upcoming international airport with central access to Thane–Panvel–Mumbai.",
         images: [universalHeroBg, planMChatGpt, tesconLogo, planMCard],
         brochure_url: "/assets/brochures/tescon-plan-m-brochure.pdf",
         pricing: {
@@ -159,7 +159,7 @@ export const developerGroups: DeveloperGroup[] = [
           "Investment starting at ₹79.40 Lakhs + taxes",
           "Navi Mumbai growth corridor location",
           "Unit condition: Bare shell",
-          "Possession: Nov 2025 (as per RERA)",
+          "Possession: Dec 2026",
           "2.5-acre development",
           "Three-wing elevation: MIDAS (G+5), West (G+36), East (G+36)",
           "G+8 car parking with 800+ slots",
@@ -196,8 +196,8 @@ export const developerGroups: DeveloperGroup[] = [
         specifications: {
           type: "Commercial - Business Park",
           area: "Multiple configurations available",
-          status: "Ready for Possession",
-          possession: "November 2025 (As per RERA)"
+          status: "Under Construction",
+          possession: "Dec 2026"
         },
         mapUrl: "https://maps.app.goo.gl/kqi3uFXCLsQe5RGc9"
       }
@@ -244,7 +244,7 @@ The development features an elegant grand lobby with secure access and a dedicat
           type: "Commercial - Premium Offices",
           area: "500 - 6,500 sq.ft. Carpet",
           status: "Pre-Launch - Plinth Level Completed",
-          possession: "2026 (Expected)"
+          possession: "Dec 2028"
         },
         highlights: [
           "Plinth Level Completed | G+20 Tower | CC Received",
@@ -269,12 +269,6 @@ The development features an elegant grand lobby with secure access and a dedicat
         pricing: {
           starting: "₹75 Lakhs + onwards",
           note: "Exclusive Pre-Launch | Pay only 1% Per Slab"
-        },
-        contact: {
-          name: "Kabir Menda",
-          designation: "Sales Representative",
-          phone: "8655347705",
-          company: "The Kaamdhenu Builders"
         },
         mapUrl: "https://maps.app.goo.gl/d57J48Ea87dThpXD8?g_st=iwb"
       }
@@ -341,9 +335,9 @@ The development features an elegant grand lobby with secure access and a dedicat
         ],
         specifications: {
           type: "Integrated Development - Residential + Commercial + Retail",
-          area: "2 & 3 BHK Luxury Homes | Commercial Offices | High-Street Retail",
+          area: "Commercial + Retail",
           status: "New Launch",
-          possession: "2027-2028 (Expected)"
+          possession: "Dec 2029"
         },
         mapUrl: "https://maps.google.com/?q=DY+Patil+Stadium+Thane+Belapur+Road+Nerul"
       },
@@ -399,10 +393,10 @@ The development features an elegant grand lobby with secure access and a dedicat
           "Fire Safety Systems"
         ],
         specifications: {
-          type: "Integrated - Commercial + Residential + Retail",
+          type: "Integrated - Commercial + Retail",
           area: "2 BHK: 805-1436 CA | 3 BHK: 1240-1436 CA | Commercial: Variable",
           status: "Ready to Move / Near Completion",
-          possession: "Immediate to 2026"
+          possession: "Immediate to Dec 2029"
         },
         mapUrl: "https://maps.google.com/?q=Nerul+Navi+Mumbai+Juinagar"
       }
@@ -454,7 +448,7 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
           type: "Commercial - Mixed Use (IT/ITES Offices & Retail)",
           area: "Offices: 901 - 49,000 sq.ft. Carpet | Retail: High Street Plaza 3 Lakh sq.ft.",
           status: "New Launch",
-          possession: "2027 (Expected)"
+          possession: "2031"
         },
         highlights: [
           "Location Advantage: Nerul (LP) – Opp. D.Y. Patil University",
@@ -546,7 +540,7 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
           type: "Commercial - Office Spaces",
           area: "382 sq.ft & 500 sq.ft",
           status: "Nearby Possession",
-          possession: "2025-2026"
+          possession: "As Per RERA"
         },
         mapUrl: "https://maps.google.com/?q=Thane+Belapur+Road+Navi+Mumbai"
       },

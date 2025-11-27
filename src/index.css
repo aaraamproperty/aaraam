@@ -555,7 +555,7 @@ All colors MUST be HSL.
   z-index: 99999;
   display: grid;
   place-items: center;
-  background: #ffffff; /* Clean white background */
+  background: #0A3629;
   will-change: opacity;
   transition: opacity 500ms ease-in-out;
   pointer-events: all;

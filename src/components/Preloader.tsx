@@ -6,7 +6,7 @@ interface PreloaderProps {
   timeout?: number;
 }
 
-const Preloader = ({ onLoadComplete, timeout = 3000 }: PreloaderProps) => {
+const Preloader = ({ onLoadComplete, timeout = 4000 }: PreloaderProps) => {
   const [isAnimating, setIsAnimating] = useState(true);
   const [isHiding, setIsHiding] = useState(false);
   const hasCompletedRef = useRef(false);
@@ -28,7 +28,7 @@ const Preloader = ({ onLoadComplete, timeout = 3000 }: PreloaderProps) => {
         }, 50);
       } else {
         // 3000ms animation
-        const animationDuration = 3000;
+        const animationDuration = 4000;
         const waitTime = Math.max(0, animationDuration - performance.now());
 
         setTimeout(() => {

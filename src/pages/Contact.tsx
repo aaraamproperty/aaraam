@@ -22,7 +22,7 @@ const Contact = () => {
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-[#004861] overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-75"
           style={{
             backgroundImage: `url(${officeImage})`,
             backgroundSize: "cover",
