@@ -132,74 +132,76 @@ const Blog = () => {
       {/* Blog Grid Section */}
       <section id="blog-grid" className="py-16 bg-white scroll-mt-20">
         <div className="container mx-auto px-4 lg:px-8">
-          {/* Results count */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: prefersReducedMotion ? 0 : 0.1,
-              duration: prefersReducedMotion ? 0 : 0.5,
-            }}
-            className="mb-8"
-          >
-            <p className="text-sm text-gray-600">
-              Showing{" "}
-              <span className="font-semibold text-primary">
-                {articlesToShow.length}
-              </span>{" "}
-              of{" "}
-              <span className="font-semibold text-primary">
-                {displayedArticles.length}
-              </span>{" "}
-              {displayedArticles.length === 1 ? "article" : "articles"}
-            </p>
-          </motion.div>
-
-          {/* Cards Grid - Full Width */}
-          <div
-            role="tabpanel"
-            id={`panel-${selectedCategory}`}
-            aria-labelledby={selectedCategory}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
-          >
-            {articlesToShow.map((article, index) => (
-              <BlogCard key={article.id} article={article} index={index} />
-            ))}
-          </div>
-
-          {/* No articles message */}
-          {articlesToShow.length === 0 && (
+          <div className="max-w-6xl mx-auto">
+            {/* Results count */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
-              className="text-center py-16"
-            >
-              <p className="text-gray-500 text-lg">
-                No articles found in this category yet.
-              </p>
-            </motion.div>
-          )}
-
-          {/* Load More Button */}
-          {hasMore && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               transition={{
-                delay: prefersReducedMotion ? 0 : 0.3,
+                delay: prefersReducedMotion ? 0 : 0.1,
                 duration: prefersReducedMotion ? 0 : 0.5,
               }}
-              className="mt-12 text-center"
+              className="mb-8"
             >
-              <Button
-                onClick={handleLoadMore}
-                className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-12 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Load More Articles
-              </Button>
+              <p className="text-sm text-gray-600">
+                Showing{" "}
+                <span className="font-semibold text-primary">
+                  {articlesToShow.length}
+                </span>{" "}
+                of{" "}
+                <span className="font-semibold text-primary">
+                  {displayedArticles.length}
+                </span>{" "}
+                {displayedArticles.length === 1 ? "article" : "articles"}
+              </p>
             </motion.div>
-          )}
+
+            {/* Cards Grid - Full Width */}
+            <div
+              role="tabpanel"
+              id={`panel-${selectedCategory}`}
+              aria-labelledby={selectedCategory}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
+            >
+              {articlesToShow.map((article, index) => (
+                <BlogCard key={article.id} article={article} index={index} />
+              ))}
+            </div>
+
+            {/* No articles message */}
+            {articlesToShow.length === 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+                className="text-center py-16"
+              >
+                <p className="text-gray-500 text-lg">
+                  No articles found in this category yet.
+                </p>
+              </motion.div>
+            )}
+
+            {/* Load More Button */}
+            {hasMore && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  delay: prefersReducedMotion ? 0 : 0.3,
+                  duration: prefersReducedMotion ? 0 : 0.5,
+                }}
+                className="mt-12 text-center"
+              >
+                <Button
+                  onClick={handleLoadMore}
+                  className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-12 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  Load More Articles
+                </Button>
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
 

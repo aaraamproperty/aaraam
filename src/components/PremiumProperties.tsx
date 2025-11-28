@@ -198,7 +198,7 @@ const PremiumProperties = () => {
         className={`bg-white py-6 ${isSticky ? "sticky top-[80px] z-40" : ""}`}
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004861] mb-2">
               Premium Properties
             </h2>

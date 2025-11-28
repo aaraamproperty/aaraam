@@ -36,16 +36,17 @@ const FAQSection = () => {
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Everything you need to know about buying, leasing, and investing in properties
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Everything you need to know about buying, leasing, and investing in properties
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="order-2 lg:order-1 overflow-hidden rounded-3xl group cursor-pointer">
             <img
               src={officeImage}
@@ -83,6 +84,7 @@ const FAQSection = () => {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>

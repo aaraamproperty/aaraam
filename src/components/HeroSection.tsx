@@ -1,23 +1,35 @@
 import heroImage from "@/assets/hero-commercial.jpg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const HeroSection = () => {
   const [animate, setAnimate] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Trigger animation after component mounts with delay to ensure preloader is done
     const timer = setTimeout(() => setAnimate(true), 3200);
     return () => clearTimeout(timer);
   }, []);
+
+  // Handle video end to ensure smooth restart
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
       {/* Video Background with Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          onEnded={handleVideoEnd}
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImage}
         >
@@ -45,7 +57,7 @@ const HeroSection = () => {
           </h1>
           <div className="inline-block">
             <p
-              className={`text-xl md:text-2xl text-white/90 mb-12 animate-fade-in relative ${
+              className={`text-xl md:text-2xl text-white mb-12 animate-fade-in relative px-4 py-2 bg-black/0 backdrop-blur-md rounded-2xl ${
               animate ? "hero-underline-animate" : ""
               }`}
             >

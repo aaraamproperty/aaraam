@@ -19,15 +19,10 @@ const About = () => {
   >("idle");
   const milestones = [
     {
-      year: "2015",
+      year: "2018",
       title: "Foundation",
       description:
         "Aaraam Properties was established with a vision to revolutionize commercial real estate in India",
-    },
-    {
-      year: "2017",
-      title: "Expansion",
-      description: "Expanded operations to 5 major cities across India",
     },
     {
       year: "2019",
@@ -147,18 +142,19 @@ const About = () => {
       {/* Vision Hero Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#16A34A] mb-4">
-              Who We Are           </h2>
-          </motion.div>
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-[#16A34A] mb-4">
+                Who We Are           </h2>
+            </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -207,7 +203,7 @@ const About = () => {
           </div>
 
           {/* Mission & Vision Cards - Inside Vision Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Mission Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -264,19 +260,21 @@ const About = () => {
               </div>
             </motion.div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Leadership Team */}
       <section className="py-20 bg-[#F7F7F7]">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
             <h2 className="text-4xl md:text-5xl font-bold text-[#004861] mb-4">
               Meet Our Leadership
             </h2>
@@ -285,7 +283,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -315,19 +313,21 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+          </div>
         </div>
       </section>
 
       {/* Core Values */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
             <h2 className="text-4xl md:text-5xl font-bold text-[#004861] mb-4">
               Our Core Values
             </h2>
@@ -357,6 +357,7 @@ const About = () => {
                 </p>
               </motion.div>
             ))}
+          </div>
           </div>
         </div>
       </section>

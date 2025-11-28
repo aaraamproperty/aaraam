@@ -43,16 +43,17 @@ const StatsSection = () => {
       className="py-20 bg-primary text-primary-foreground"
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Achievements
-          </h2>
-          <p className="text-lg text-primary-foreground/80">
-            Every number represents a family, business, or investor who trusted us to get it right the first time
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Our Achievements
+            </h2>
+            <p className="text-lg text-primary-foreground/80">
+              Every number represents a family, business, or investor who trusted us to get it right the first time
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
             <StatCard
               key={`${index}-${animationKey}`}
               icon={stat.icon}
@@ -61,7 +62,8 @@ const StatsSection = () => {
               suffix={stat.suffix}
               delay={index * 100}
             />
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

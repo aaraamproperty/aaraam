@@ -48,16 +48,17 @@ const WhyChooseUs = () => {
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Why Choose Aaraam Properties
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Your trusted partner for residential, commercial, and investment real estate
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Why Choose Aaraam Properties
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Your trusted partner for residential, commercial, and investment real estate
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -74,6 +75,7 @@ const WhyChooseUs = () => {
               </p>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

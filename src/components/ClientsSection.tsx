@@ -39,14 +39,15 @@ const ClientsSection = () => {
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#004861] mb-4">
-            Trusted by Leading Businesses
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Partnering with India's top corporates and retail brands
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#004861] mb-4">
+              Trusted by Leading Businesses
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Partnering with India's top corporates and retail brands
+            </p>
+          </div>
 
         <div className="space-y-8">
           {/* Row 1: Left to Right */}
@@ -96,6 +97,7 @@ const ClientsSection = () => {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

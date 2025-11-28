@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingChatbot from "@/components/FloatingChatbot";
+import BookSiteVisitModal from "@/components/BookSiteVisitModal";
 import { Button } from "@/components/ui/button";
 import {
   Mail,
@@ -14,10 +16,16 @@ import {
 import officeImage from "@/assets/office-space.jpg";
 
 const Contact = () => {
+  const [isBookVisitOpen, setIsBookVisitOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <FloatingChatbot />
+      <BookSiteVisitModal 
+        isOpen={isBookVisitOpen} 
+        onClose={() => setIsBookVisitOpen(false)} 
+      />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-[#004861] overflow-hidden">
@@ -42,7 +50,8 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-3xl p-8 border border-border shadow-lg animate-fade-in">
               <h2 className="text-3xl font-bold text-[#004861] mb-6">
@@ -246,22 +255,25 @@ const Contact = () => {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Map */}
       <section className="py-12">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="bg-card rounded-3xl overflow-hidden border border-border shadow-lg h-96">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4807896852944!2d73.01456267516848!3d19.03698448212237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3d5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sPlan%20S%20Business%20Park!5e0!3m2!1sen!2sin!4v1732620000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-card rounded-3xl overflow-hidden border border-border shadow-lg h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4252670676233!2d73.02610617454926!3d19.045031052945365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6bd8a509f37bf47b%3A0xca931ed198c19d5!2sHype%20Marketing%20Agency!5e0!3m2!1sen!2sin!4v1764308947899!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -276,7 +288,10 @@ const Contact = () => {
             Schedule a site visit and let our experts guide you through the
             perfect property
           </p>
-          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg rounded-full">
+          <Button 
+            onClick={() => setIsBookVisitOpen(true)}
+            className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg rounded-full"
+          >
             Book Site Visit
           </Button>
         </div>

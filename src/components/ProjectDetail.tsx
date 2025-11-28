@@ -4,10 +4,91 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingChatbot from "@/components/FloatingChatbot";
 import BrochureModal from "@/components/BrochureModal";
+import ImageGallery from "@/components/ImageGallery";
 import { Project, DeveloperGroup } from "@/data/developerGroups";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, FileText, CheckCircle, ArrowLeft, Calendar, Maximize2 } from "lucide-react";
 import { motion } from "framer-motion";
+
+// CyberSquare Gallery Images
+import cyberSquareImage1 from "@/assets/Properies/Cyber Square Greenscape/Cyber Square/CyberSquare image1.webp";
+import cyberSquareImage2 from "@/assets/Properies/Cyber Square Greenscape/Cyber Square/CyberSquare image2.webp";
+import cyberSquareImage3 from "@/assets/Properies/Cyber Square Greenscape/Cyber Square/CyberSquare image3.webp";
+import cyberSquareImage4 from "@/assets/Properies/Cyber Square Greenscape/Cyber Square/CyberSquare image4.webp";
+
+// Kaamdhenu Growth Master Gallery Images
+import growthMasterImage1 from "@/assets/Properies/THE KAAMDHENU BUILDERS/Kaamdhenu Growth Master/Gallery/TheKaamdhenuBuilderGrowthMaster image1.webp";
+import growthMasterImage2 from "@/assets/Properies/THE KAAMDHENU BUILDERS/Kaamdhenu Growth Master/Gallery/TheKaamdhenuBuilderGrowthMaster image2.webp";
+import growthMasterImage3 from "@/assets/Properies/THE KAAMDHENU BUILDERS/Kaamdhenu Growth Master/Gallery/TheKaamdhenuBuilderGrowthMaster image3.webp";
+import growthMasterImage4 from "@/assets/Properies/THE KAAMDHENU BUILDERS/Kaamdhenu Growth Master/Gallery/TheKaamdhenuBuilderGrowthMaster image4.webp";
+
+// Delta Stellar Gallery Images
+import deltaSteller1 from "@/assets/Properies/Delta Group/DELTA STELLAR/Gallery/DeltaSteller image1.jpg";
+import deltaSteller2 from "@/assets/Properies/Delta Group/DELTA STELLAR/Gallery/DelteaSteller image2.jpg";
+import deltaSteller3 from "@/assets/Properies/Delta Group/DELTA STELLAR/Gallery/DeltaSteller image3.jpg";
+import deltaSteller4 from "@/assets/Properies/Delta Group/DELTA STELLAR/Gallery/DeltaSteller image4.jpg";
+
+// 24 High Gallery Images
+import high24Image1 from "@/assets/Properies/Dreamapex realty/24 High/Gallery/DreamApex24high image1.png";
+import high24Image2 from "@/assets/Properies/Dreamapex realty/24 High/Gallery/DreamApx24high image2.png";
+import high24Image3 from "@/assets/Properies/Dreamapex realty/24 High/Gallery/DreamApex24high image3.jpeg";
+import high24Image4 from "@/assets/Properies/Dreamapex realty/24 High/Gallery/DreamApex24high image4.jpeg";
+
+// Equirise Gallery Images
+import equiriseImage1 from "@/assets/Properies/KAMDHENU Realities/EQUIRISE/Gallery/KaamDhenuEquirise image1.jpg";
+import equiriseImage2 from "@/assets/Properies/KAMDHENU Realities/EQUIRISE/Gallery/KaamdhenuEquirise image2.jpg";
+import equiriseImage3 from "@/assets/Properies/KAMDHENU Realities/EQUIRISE/Gallery/KaamdhenuEquirise image3.jpg";
+
+// Emporia Business Square Gallery Images
+import emporiaImage1 from "@/assets/Properies/Emporia world/Gallery/EmphoriaBusinessSquare image1.jpeg";
+
+// Raheja World Trade Center Gallery Images
+import rahejaImage1 from "@/assets/Properies/Raheja Prime 2/Gallery/RahejaWorldTradeCenter image1.webp";
+import rahejaImage2 from "@/assets/Properies/Raheja Prime 2/Gallery/RahejaWorldTradeCenter image2.webp";
+
+// Plan I Gallery Images
+import planIImage1 from "@/assets/Properies/Tescon Group/Plan i Tescon/Gallery/TesconGroupPlani image1.webp";
+import planIImage2 from "@/assets/Properies/Tescon Group/Plan i Tescon/Gallery/TesconGroupPlani image2.webp";
+import planIImage3 from "@/assets/Properies/Tescon Group/Plan i Tescon/Gallery/TesconGroupPlani image3.webp";
+import planIImage4 from "@/assets/Properies/Tescon Group/Plan i Tescon/Gallery/TesconGroupPlani image4.webp";
+
+// Plan M Gallery Images
+import planMImage1 from "@/assets/Properies/Tescon Group/Plan M Tescon/Gallery/TesconGroupPlanM image1.jpg";
+import planMImage2 from "@/assets/Properies/Tescon Group/Plan M Tescon/Gallery/TesconGroupPlanM image2.jpg";
+import planMImage3 from "@/assets/Properies/Tescon Group/Plan M Tescon/Gallery/TesconGroupPlanM image3.jpg";
+
+// Sai World One Gallery Images
+import saiWorldOneImage1 from "@/assets/Properies/Paradise Group/Sai World One/Gallery/ParadiseGroupSaiWorldOne image1.webp";
+import saiWorldOneImage2 from "@/assets/Properies/Paradise Group/Sai World One/Gallery/ParadiseGroupSaiWorldOne image2.webp";
+import saiWorldOneImage3 from "@/assets/Properies/Paradise Group/Sai World One/Gallery/ParadiseGroupSaiWorldOne image3.webp";
+import saiWorldOneImage4 from "@/assets/Properies/Paradise Group/Sai World One/Gallery/ParadiseGroupSaiWorldOne image4.webp";
+
+// Sai World Pyramid Gallery Images
+import saiWorldPyramidImage1 from "@/assets/Properies/Paradise Group/Sai World Pyramid/Gallery/ParadiseGroupSaiWorldPyamid image1.webp";
+import saiWorldPyramidImage2 from "@/assets/Properies/Paradise Group/Sai World Pyramid/Gallery/ParadiseGroupSaiWorldPyamid image2.webp";
+import saiWorldPyramidImage3 from "@/assets/Properies/Paradise Group/Sai World Pyramid/Gallery/ParadiseGroupSaiWorldPyamid image3.webp";
+import saiWorldPyramidImage4 from "@/assets/Properies/Paradise Group/Sai World Pyramid/Gallery/ParadiseGroupSaiWorldPyamid image4.webp";
+
+// Dream Digit Gallery Images
+import dreamDigitImage1 from "@/assets/Properies/Dream Group/Dream Digit/Gallery/DreamDigit image1.jpg";
+import dreamDigitImage2 from "@/assets/Properies/Dream Group/Dream Digit/Gallery/DreamDigit image2.jpg";
+import dreamDigitImage3 from "@/assets/Properies/Dream Group/Dream Digit/Gallery/DreamDigit image3.jpg";
+import dreamDigitImage4 from "@/assets/Properies/Dream Group/Dream Digit/Gallery/DreamDigit image4.jpg";
+
+// Dream Ikon Gallery Images
+import dreamIkonImage1 from "@/assets/Properies/Dream Group/Dream Ikon/Gallery/DreamIkon image1.jpg";
+import dreamIkonImage2 from "@/assets/Properies/Dream Group/Dream Ikon/Gallery/DreamIkon image2.jpg";
+import dreamIkonImage3 from "@/assets/Properies/Dream Group/Dream Ikon/Gallery/DreamIkon image3.jpg";
+import dreamIkonImage4 from "@/assets/Properies/Dream Group/Dream Ikon/Gallery/DreamIkon image4.jpg";
+
+// Dream Gateway Gallery Images
+import dreamGatewayImage1 from "@/assets/Properies/Dream Group/Dream Gateway/Gallery/Dream Gateway image.webp";
+import dreamGatewayImage2 from "@/assets/Properies/Dream Group/Dream Gateway/Gallery/Dream_Gateway_image bg.png";
+
+// Blanca Gallery Images
+import blancaImage1 from "@/assets/Properies/BLANCA Shreelaxmi Developers/Gallery/Blanca Shreelaxmi Developers bg.png";
+import blancaImage2 from "@/assets/Properies/BLANCA Shreelaxmi Developers/Gallery/Blanca Shreelaxmi Developers img.jpeg";
+import blancaImage3 from "@/assets/Properies/BLANCA Shreelaxmi Developers/Gallery/shree laxmi developers.jpg";
 
 interface ProjectDetailProps {
   project: Project;
@@ -189,14 +270,17 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                     <FileText className="mr-2 h-5 w-5" />
                     View Brochure
                   </Button>
-                  <button
-                    onClick={handleBackToGroup}
-                    className="inline-flex items-center gap-2 text-white hover:text-[#16A34A] transition-colors px-4"
-                    aria-label={`Back to ${group.name}`}
-                  >
-                    <ArrowLeft className="h-5 w-5" />
-                    Back to {group.name}
-                  </button>
+                  {/* Show Back button only for groups with multiple projects */}
+                  {group.projects.length > 1 && (
+                    <button
+                      onClick={handleBackToGroup}
+                      className="inline-flex items-center gap-2 text-white hover:text-[#16A34A] transition-colors px-4"
+                      aria-label={`Back to ${group.name}`}
+                    >
+                      <ArrowLeft className="h-5 w-5" />
+                      Back to {group.name}
+                    </button>
+                  )}
                 </div>
               </motion.div>
 
@@ -382,7 +466,553 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
               )}
 
               {/* Image Gallery */}
-              {project.images.length > 1 && (
+              {project.id === "cybersquare" && group.id === "greenscape" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "cyber-1",
+                        thumb: cyberSquareImage1,
+                        src: cyberSquareImage1,
+                        alt: "Greenscape CyberSquare exterior view - angle 1",
+                        caption: "Greenscape CyberSquare — Front facade with highway frontage"
+                      },
+                      {
+                        id: "cyber-2",
+                        thumb: cyberSquareImage2,
+                        src: cyberSquareImage2,
+                        alt: "Greenscape CyberSquare architectural design",
+                        caption: "Mixed-use development with retail plaza and office tower"
+                      },
+                      {
+                        id: "cyber-3",
+                        thumb: cyberSquareImage3,
+                        src: cyberSquareImage3,
+                        alt: "Greenscape CyberSquare central plaza",
+                        caption: "Open-to-sky central green area with double height lobby"
+                      },
+                      {
+                        id: "cyber-4",
+                        thumb: cyberSquareImage4,
+                        src: cyberSquareImage4,
+                        alt: "Greenscape CyberSquare aerial view",
+                        caption: "6 acres prime land parcel in Nerul (LP)"
+                      }
+                    ]}
+                    title="Gallery Of Greenscape Cyber Square"
+                    downloadUrl="/assets/brochures/cybersquare-gallery.zip"
+                  />
+                </motion.div>
+              ) : project.id === "kaamdhenu-growth-master" && group.id === "kaamdhenu-builders" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "growth-1",
+                        thumb: growthMasterImage1,
+                        src: growthMasterImage1,
+                        alt: "Kaamdhenu Growth Master exterior view",
+                        caption: "Kaamdhenu Growth Master — Premium commercial development"
+                      },
+                      {
+                        id: "growth-2",
+                        thumb: growthMasterImage2,
+                        src: growthMasterImage2,
+                        alt: "Kaamdhenu Growth Master architectural design",
+                        caption: "Modern office spaces with state-of-the-art amenities"
+                      },
+                      {
+                        id: "growth-3",
+                        thumb: growthMasterImage3,
+                        src: growthMasterImage3,
+                        alt: "Kaamdhenu Growth Master facilities",
+                        caption: "Premium business infrastructure"
+                      },
+                      {
+                        id: "growth-4",
+                        thumb: growthMasterImage4,
+                        src: growthMasterImage4,
+                        alt: "Kaamdhenu Growth Master overview",
+                        caption: "Strategic location in MIDC Nerul"
+                      }
+                    ]}
+                    title="Gallery Of Kaamdhenu Growth Master"
+                  />
+                </motion.div>
+              ) : project.id === "delta-steller" && group.id === "delta-groups" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "delta-1",
+                        thumb: deltaSteller1,
+                        src: deltaSteller1,
+                        alt: "Delta Stellar exterior view",
+                        caption: "Delta Stellar — Modern IT/Commercial building"
+                      },
+                      {
+                        id: "delta-2",
+                        thumb: deltaSteller2,
+                        src: deltaSteller2,
+                        alt: "Delta Stellar architectural design",
+                        caption: "Contemporary commercial spaces"
+                      },
+                      {
+                        id: "delta-3",
+                        thumb: deltaSteller3,
+                        src: deltaSteller3,
+                        alt: "Delta Stellar facilities",
+                        caption: "Premium office infrastructure"
+                      },
+                      {
+                        id: "delta-4",
+                        thumb: deltaSteller4,
+                        src: deltaSteller4,
+                        alt: "Delta Stellar overview",
+                        caption: "Strategic location in Nerul"
+                      }
+                    ]}
+                    title="Gallery Of Delta Stellar"
+                  />
+                </motion.div>
+              ) : project.id === "24-high" && group.id === "dreamapex" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "24high-1",
+                        thumb: high24Image1,
+                        src: high24Image1,
+                        alt: "24 High Business Park exterior view",
+                        caption: "24 High Business Park — Premium commercial tower"
+                      },
+                      {
+                        id: "24high-2",
+                        thumb: high24Image2,
+                        src: high24Image2,
+                        alt: "24 High Business Park design",
+                        caption: "Modern business infrastructure in Nerul"
+                      },
+                      {
+                        id: "24high-3",
+                        thumb: high24Image3,
+                        src: high24Image3,
+                        alt: "24 High Business Park facilities",
+                        caption: "State-of-the-art office spaces"
+                      },
+                      {
+                        id: "24high-4",
+                        thumb: high24Image4,
+                        src: high24Image4,
+                        alt: "24 High Business Park overview",
+                        caption: "Prime location with excellent connectivity"
+                      }
+                    ]}
+                    title="Gallery Of 24 High Business Park"
+                  />
+                </motion.div>
+              ) : project.id === "equirise-nerul-lp" && group.id === "kaamdhenu-realties" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "equirise-1",
+                        thumb: equiriseImage1,
+                        src: equiriseImage1,
+                        alt: "Kaamdhenu Equirise exterior view",
+                        caption: "Kaamdhenu Equirise — Premium office development"
+                      },
+                      {
+                        id: "equirise-2",
+                        thumb: equiriseImage2,
+                        src: equiriseImage2,
+                        alt: "Kaamdhenu Equirise design",
+                        caption: "Modern office infrastructure in Nerul LP"
+                      },
+                      {
+                        id: "equirise-3",
+                        thumb: equiriseImage3,
+                        src: equiriseImage3,
+                        alt: "Kaamdhenu Equirise facilities",
+                        caption: "State-of-the-art business amenities"
+                      }
+                    ]}
+                    title="Gallery Of Kaamdhenu Equirise"
+                  />
+                </motion.div>
+              ) : project.id === "business-square" && group.id === "emporia-world" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "emporia-1",
+                        thumb: emporiaImage1,
+                        src: emporiaImage1,
+                        alt: "Emporia Business Square view",
+                        caption: "Emporia Business Square — Modern commercial space"
+                      }
+                    ]}
+                    title="Gallery Of Emporia Business Square"
+                  />
+                </motion.div>
+              ) : project.id === "dummy-project" && group.id === "raheja-prime" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "raheja-1",
+                        thumb: rahejaImage1,
+                        src: rahejaImage1,
+                        alt: "Raheja World Trade Center exterior",
+                        caption: "Raheja World Trade Center — Premium business destination"
+                      },
+                      {
+                        id: "raheja-2",
+                        thumb: rahejaImage2,
+                        src: rahejaImage2,
+                        alt: "Raheja World Trade Center design",
+                        caption: "Iconic commercial tower in Navi Mumbai"
+                      }
+                    ]}
+                    title="Gallery Of Raheja World Trade Center"
+                  />
+                </motion.div>
+              ) : project.id === "plan-i" && group.id === "tescon" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "plan-i-1",
+                        thumb: planIImage1,
+                        src: planIImage1,
+                        alt: "PLAN I Business Park exterior view",
+                        caption: "PLAN I Business Park — Ultra-modern commercial development"
+                      },
+                      {
+                        id: "plan-i-2",
+                        thumb: planIImage2,
+                        src: planIImage2,
+                        alt: "PLAN I Business Park design",
+                        caption: "G+23 tower with robotic car parking"
+                      },
+                      {
+                        id: "plan-i-3",
+                        thumb: planIImage3,
+                        src: planIImage3,
+                        alt: "PLAN I Business Park facilities",
+                        caption: "Premium amenities with infinity pool"
+                      },
+                      {
+                        id: "plan-i-4",
+                        thumb: planIImage4,
+                        src: planIImage4,
+                        alt: "PLAN I Business Park overview",
+                        caption: "Strategic location in Nerul MIDC"
+                      }
+                    ]}
+                    title="Gallery Of PLAN I Business Park"
+                  />
+                </motion.div>
+              ) : project.id === "plan-m" && group.id === "tescon" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "plan-m-1",
+                        thumb: planMImage1,
+                        src: planMImage1,
+                        alt: "PLAN M Business Park exterior view",
+                        caption: "PLAN M Business Park — Modern commercial spaces"
+                      },
+                      {
+                        id: "plan-m-2",
+                        thumb: planMImage2,
+                        src: planMImage2,
+                        alt: "PLAN M Business Park design",
+                        caption: "Premium office infrastructure in Nerul"
+                      },
+                      {
+                        id: "plan-m-3",
+                        thumb: planMImage3,
+                        src: planMImage3,
+                        alt: "PLAN M Business Park facilities",
+                        caption: "State-of-the-art business amenities"
+                      }
+                    ]}
+                    title="Gallery Of PLAN M Business Park"
+                  />
+                </motion.div>
+              ) : project.id === "sai-world-one" && group.id === "paradise-group" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "sai-world-one-1",
+                        thumb: saiWorldOneImage1,
+                        src: saiWorldOneImage1,
+                        alt: "Sai World One exterior view",
+                        caption: "Sai World One — Iconic commercial tower"
+                      },
+                      {
+                        id: "sai-world-one-2",
+                        thumb: saiWorldOneImage2,
+                        src: saiWorldOneImage2,
+                        alt: "Sai World One architectural design",
+                        caption: "Premium business destination in Nerul"
+                      },
+                      {
+                        id: "sai-world-one-3",
+                        thumb: saiWorldOneImage3,
+                        src: saiWorldOneImage3,
+                        alt: "Sai World One facilities",
+                        caption: "Modern office spaces with luxury amenities"
+                      },
+                      {
+                        id: "sai-world-one-4",
+                        thumb: saiWorldOneImage4,
+                        src: saiWorldOneImage4,
+                        alt: "Sai World One overview",
+                        caption: "Strategic location near Palm Beach Marg"
+                      }
+                    ]}
+                    title="Gallery Of Sai World One"
+                  />
+                </motion.div>
+              ) : project.id === "sai-world-pyramid" && group.id === "paradise-group" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "sai-world-pyramid-1",
+                        thumb: saiWorldPyramidImage1,
+                        src: saiWorldPyramidImage1,
+                        alt: "Sai World Pyramid exterior view",
+                        caption: "Sai World Pyramid — Unique architectural marvel"
+                      },
+                      {
+                        id: "sai-world-pyramid-2",
+                        thumb: saiWorldPyramidImage2,
+                        src: saiWorldPyramidImage2,
+                        alt: "Sai World Pyramid design",
+                        caption: "Distinctive pyramid-shaped commercial building"
+                      },
+                      {
+                        id: "sai-world-pyramid-3",
+                        thumb: saiWorldPyramidImage3,
+                        src: saiWorldPyramidImage3,
+                        alt: "Sai World Pyramid facilities",
+                        caption: "Premium office spaces with modern amenities"
+                      },
+                      {
+                        id: "sai-world-pyramid-4",
+                        thumb: saiWorldPyramidImage4,
+                        src: saiWorldPyramidImage4,
+                        alt: "Sai World Pyramid overview",
+                        caption: "Landmark commercial property in Nerul"
+                      }
+                    ]}
+                    title="Gallery Of Sai World Pyramid"
+                  />
+                </motion.div>
+              ) : project.id === "dream-digit" && group.id === "dreams-group" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "dream-digit-1",
+                        thumb: dreamDigitImage1,
+                        src: dreamDigitImage1,
+                        alt: "Dream Digit exterior view",
+                        caption: "Dream Digit — Modern IT/Commercial space"
+                      },
+                      {
+                        id: "dream-digit-2",
+                        thumb: dreamDigitImage2,
+                        src: dreamDigitImage2,
+                        alt: "Dream Digit architectural design",
+                        caption: "Contemporary office infrastructure"
+                      },
+                      {
+                        id: "dream-digit-3",
+                        thumb: dreamDigitImage3,
+                        src: dreamDigitImage3,
+                        alt: "Dream Digit facilities",
+                        caption: "Premium business amenities"
+                      },
+                      {
+                        id: "dream-digit-4",
+                        thumb: dreamDigitImage4,
+                        src: dreamDigitImage4,
+                        alt: "Dream Digit overview",
+                        caption: "Strategic location in Nerul"
+                      }
+                    ]}
+                    title="Gallery Of Dream Digit"
+                  />
+                </motion.div>
+              ) : project.id === "dream-ikon" && group.id === "dreams-group" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "dream-ikon-1",
+                        thumb: dreamIkonImage1,
+                        src: dreamIkonImage1,
+                        alt: "Dream Ikon exterior view",
+                        caption: "Dream Ikon — Premium commercial tower"
+                      },
+                      {
+                        id: "dream-ikon-2",
+                        thumb: dreamIkonImage2,
+                        src: dreamIkonImage2,
+                        alt: "Dream Ikon design",
+                        caption: "Modern office spaces in Nerul"
+                      },
+                      {
+                        id: "dream-ikon-3",
+                        thumb: dreamIkonImage3,
+                        src: dreamIkonImage3,
+                        alt: "Dream Ikon facilities",
+                        caption: "State-of-the-art business infrastructure"
+                      },
+                      {
+                        id: "dream-ikon-4",
+                        thumb: dreamIkonImage4,
+                        src: dreamIkonImage4,
+                        alt: "Dream Ikon overview",
+                        caption: "Prime location with excellent connectivity"
+                      }
+                    ]}
+                    title="Gallery Of Dream Ikon"
+                  />
+                </motion.div>
+              ) : project.id === "dream-gateway" && group.id === "dreams-group" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "dream-gateway-1",
+                        thumb: dreamGatewayImage1,
+                        src: dreamGatewayImage1,
+                        alt: "Dream Gateway exterior view",
+                        caption: "Dream Gateway — Premium commercial development"
+                      },
+                      {
+                        id: "dream-gateway-2",
+                        thumb: dreamGatewayImage2,
+                        src: dreamGatewayImage2,
+                        alt: "Dream Gateway architectural design",
+                        caption: "Modern office spaces in prime location"
+                      }
+                    ]}
+                    title="Gallery Of Dream Gateway"
+                  />
+                </motion.div>
+              ) : project.id === "blanca" && group.id === "shree-laxmi" ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <ImageGallery
+                    images={[
+                      {
+                        id: "blanca-1",
+                        thumb: blancaImage1,
+                        src: blancaImage1,
+                        alt: "Blanca exterior view",
+                        caption: "Blanca — Premium residential development by Shree Laxmi Developers"
+                      },
+                      {
+                        id: "blanca-2",
+                        thumb: blancaImage2,
+                        src: blancaImage2,
+                        alt: "Blanca architectural design",
+                        caption: "Modern residential spaces with luxury amenities"
+                      },
+                      {
+                        id: "blanca-3",
+                        thumb: blancaImage3,
+                        src: blancaImage3,
+                        alt: "Shree Laxmi Developers logo",
+                        caption: "Trusted developer with quality construction"
+                      }
+                    ]}
+                    title="Gallery Of Blanca"
+                  />
+                </motion.div>
+              ) : project.images.length > 1 && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

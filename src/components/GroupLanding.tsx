@@ -117,13 +117,14 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
       {/* Projects Section */}
       <section id="properties" className="py-16 lg:py-24 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#004861] mb-4">
               Our Projects
             </h2>
@@ -218,13 +219,13 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-row items-center justify-between gap-3">
+                    <div className="flex flex-row items-stretch gap-3">
                       <Button
                         onClick={(e) => {
                           e.stopPropagation();
                           handleViewDetails(project.id);
                         }}
-                        className="flex-1 bg-[#004861] hover:bg-[#003347] text-white rounded-full"
+                        className="flex-1 bg-[#004861] hover:bg-[#003347] text-white rounded-full h-auto py-3"
                       >
                         View Details
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -235,7 +236,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                           handleEnquire();
                         }}
                         variant="outline"
-                        className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-full"
+                        className="flex-1 border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-full h-auto py-3"
                       >
                         Enquire
                         <Phone className="ml-2 h-4 w-4" />
@@ -245,6 +246,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                 </motion.div>
               );
             })}
+          </div>
           </div>
         </div>
       </section>

@@ -87,21 +87,21 @@ export const developerGroups: DeveloperGroup[] = [
       {
         id: "plan-i",
         title: "PLAN I Business Park",
-        location: "Nerul MIDC, Opposite DY Patil Stadium, Navi Mumbai",
-        excerpt: "Investment Starting ₹69 Lakhs | Ultra-modern office spaces from 387 sq.ft | Full CC received",
-        description: "PLAN I Business Park is an ultra-modern commercial development offering office spaces from 387 sq.ft carpet onwards, starting at just ₹69 Lakhs. Located in prime Nerul MIDC opposite DY Patil Stadium, this G+23 tower on a 1-acre land parcel features unique elevation design and robotic car parking with each unit. With full CC (Commencement Certificate) received and all approvals in place, PLAN I offers bare shell units with possession as per RERA. The project features exceptional ceiling heights (10 ft for offices, 13 ft for commercial), modern amenities including fitness centre, infinity swimming pool, food court, and common conference rooms. Strategic location with 3-minute walk to bus stand, 10-minute walk to Juinagar station, and 100m from highway makes this an ideal investment opportunity.",
+        location: "Opposite D Y Patil Stadium, Nerul, Navi Mumbai",
+        excerpt: "1 Acre Premium Development | Starting ₹60 Lakhs onwards | 870 sq. ft. Onwards | G+23 | Possession: Dec 2026",
+        description: "PLAN I Business Park is an ultra-modern commercial development offering office spaces from 870 sq.ft onwards, starting at ₹60 Lakhs onwards. Located in prime Nerul MIDC opposite DY Patil Stadium, this G+23 tower on a 1-acre land parcel features unique elevation design and robotic car parking with each unit. With full CC (Commencement Certificate) received and all approvals in place, PLAN I offers bare shell units with possession in December 2026. The project features exceptional ceiling heights (10 ft for offices, 13 ft for commercial), modern amenities including fitness centre, infinity swimming pool, food court, and common conference rooms. Strategic location with 3-minute walk to bus stand, 10-minute walk to Juinagar station, and 100m from highway makes this an ideal investment opportunity.",
         images: [universalHeroBg, planIBuilding, tesconLogo],
         brochure_url: "/assets/brochures/tescon-plan-i-brochure.pdf",
         pricing: {
-          starting: "₹69 Lakhs + Taxes",
-          note: "Investment starting price | Bare shell units"
+          starting: "₹60 Lakhs+",
+          note: "1 acre land parcel | Bare shell units"
         },
         highlights: [
-          "Ultra-modern office spaces from 387 sq.ft carpet onwards",
-          "Investment starting at ₹69 Lakhs",
-          "Located in Nerul MIDC, opposite DY Patil Stadium",
+          "Ultra-modern office spaces from 870 sq.ft onwards",
+          "Investment starting at ₹60 Lakhs onwards",
+          "Located opposite DY Patil Stadium, Nerul",
           "Full CC received & all approvals in place",
-          "Possession: As per RERA",
+          "Possession: December 2026",
           "Unit condition: Bare shell",
           "1-acre land parcel",
           "G+23 floor configuration",
@@ -135,34 +135,34 @@ export const developerGroups: DeveloperGroup[] = [
           "Professional Property Management"
         ],
         specifications: {
-          type: "Commercial - Office Spaces,\n Retail and Showrooms",
-          area: "From 387 sq.ft carpet onwards",
+          type: "Commercial - Office Spaces, Retail and Showrooms",
+          area: "From 870 sq.ft onwards",
           status: "Full CC Received - Ready for Investment",
-          possession: "As per RERA"
+          possession: "December 2026"
         },
         mapUrl: "https://maps.google.com/?q=Nerul+MIDC+DY+Patil+Stadium+Navi+Mumbai"
       },
       {
         id: "plan-m",
         title: "PLAN M Business Park",
-        location: "Thane-Belapur Highway,Near Turbhe Station, Navi Mumbai",
-        excerpt: "High ROI Opportunity (5–7%) | Starting ₹79.40 Lakhs + taxes | Possession: Dec 2026",
-        description: "PLAN M Business Park is a prestigious 2.5-acre commercial development offering high ROI opportunities of 5–7% with investments starting at ₹79.40 Lakhs + taxes. Located on the Navi Mumbai growth corridor with direct Thane-Belapur highway access and just 200m from Turbhe railway station, this project features an impressive three-wing elevation: MIDAS Wing (G+5), West Wing (G+36), and East Wing (G+36). The development includes G+8 car parking with 800+ slots, 14 Miconic high-speed lifts, and a 30-ft wide driveway. With exceptional ceiling heights (11 ft for offices, 13 ft for commercial), PLAN M offers bare shell units with possession in Dec 2026. Modern amenities include fitness centre, yoga & meditation, swimming pool with jacuzzi, steam & sauna, themed library, food court, children's creche, and concierge services. Located 18 km from the upcoming international airport with central access to Thane–Panvel–Mumbai.",
+        location: "Thane-Belapur Highway , Opposite Turbhe Railway station",
+        excerpt: "2.5 Acre Premium Development | Starting ₹80 Lakhs Onwards | 370 Sqft onwards | G+36 | Possession: Oct 2026",
+        description: "PLAN M Business Park is a prestigious 2.5-acre commercial development offering high ROI opportunities with investments starting at ₹80 Lakhs onwards. Located on the Navi Mumbai growth corridor with direct Thane-Belapur highway access and opposite Turbhe railway station, this project features an impressive three-wing elevation: MIDAS Wing (G+5), West Wing (G+36), and East Wing (G+36). The development includes G+8 car parking with 800+ slots, 14 Miconic high-speed lifts, and a 30-ft wide driveway. With exceptional ceiling heights (11 ft for offices, 13 ft for commercial), PLAN M offers bare shell units with possession in October 2026. Modern amenities include fitness centre, yoga & meditation, swimming pool with jacuzzi, steam & sauna, themed library, food court, children's creche, and concierge services. Located 18 km from the upcoming international airport with central access to Thane–Panvel–Mumbai.",
         images: [universalHeroBg, planMChatGpt, tesconLogo, planMCard],
         brochure_url: "/assets/brochures/tescon-plan-m-brochure.pdf",
         pricing: {
-          starting: "₹79.40 Lakhs + taxes",
-          note: "High ROI: 5–7% | Bare shell units"
+          starting: "₹80 Lakhs+",
+          note: "2.5 Acre development | Bare shell units"
         },
         highlights: [
-          "High ROI Opportunity: 5–7% returns",
-          "Investment starting at ₹79.40 Lakhs + taxes",
-          "Navi Mumbai growth corridor location",
+          "2.5 Acre premium commercial development",
+          "Investment starting at ₹80 Lakhs+",
+          "Office spaces from 370 sq.ft+",
+          "G+36 tower with three-wing elevation",
           "Unit condition: Bare shell",
-          "Possession: Dec 2026",
-          "2.5-acre development",
-          "Three-wing elevation: MIDAS (G+5), West (G+36), East (G+36)",
-          "G+8 car parking with 800+ slots",
+          "Possession: October 2026",
+          "Located on Thane-Belapur Highway, opposite Turbhe Station",
+          "800+ parking slots (G+8)",
           "14 Miconic high-speed lifts",
           "30-ft wide driveway",
           "Office ceiling height: 11 ft",
@@ -195,9 +195,9 @@ export const developerGroups: DeveloperGroup[] = [
         ],
         specifications: {
           type: "Commercial - Business Park",
-          area: "Multiple configurations available",
+          area: "From 370 sq.ft+",
           status: "Under Construction",
-          possession: "Dec 2026"
+          possession: "October 2026"
         },
         mapUrl: "https://maps.app.goo.gl/kqi3uFXCLsQe5RGc9"
       }
@@ -215,13 +215,13 @@ export const developerGroups: DeveloperGroup[] = [
       {
         id: "kaamdhenu-growth-master",
         title: "Kaamdhenu Growth Master",
-        location: "Nerul, Navi Mumbai",
-        excerpt: "Exclusive Pre-Launch Opportunity – Pay only 1% Per Slab with a flexible payment plan!",
-        description: `Kaamdhenu Growth Master is an exclusive pre-launch commercial opportunity offering premium warm-shell offices in a G+20 storey tower at Nerul, Navi Mumbai. Located opposite DY Patil Stadium & Courtyard by Marriott, just 2 minutes from Sion-Panvel Highway, this project represents a smart investment opportunity with strong ROI potential.
+        location: "Opposite D Y Patil Stadium, Nerul, Navi Mumbai",
+        excerpt: "0.51 Acres Development | Starting ₹62 Lakhs onwards | 500 Sqft Onwards | G+20 | Possession: Dec 2028",
+        description: `Kaamdhenu Growth Master is an exclusive commercial opportunity offering premium warm-shell offices in a G+20 storey tower at Nerul, Navi Mumbai. Located opposite DY Patil Stadium & Courtyard by Marriott, just 2 minutes from Sion-Panvel Highway, this project represents a smart investment opportunity with strong ROI potential on a 0.51 acres land parcel.
 
-With the plinth level completed and CC (Commencement Certificate) received, investors can secure prime office spaces from 500 to 6,500 sq.ft. carpet area starting from ₹75 Lakhs onwards. Expected post-possession rentals of ₹70,000+ per month offer potential returns of up to 9%+ yield.
+With the plinth level completed and CC (Commencement Certificate) received, investors can secure prime office spaces from 500 sq.ft. onwards starting from ₹62 Lakhs onwards. Expected post-possession rentals offer potential returns of up to 9%+ yield with possession scheduled for December 2028.
 
-The development features an elegant grand lobby with secure access and a dedicated amenities floor including lounge, conference rooms, meeting hubs, and cafeteria. This is a future-ready office opportunity with a flexible payment plan of just 1% per slab.`,
+The development features an elegant grand lobby with secure access and a dedicated amenities floor including lounge, conference rooms, meeting hubs, and cafeteria. This is a future-ready office opportunity with a flexible payment plan.`,
         images: [universalHeroBg, "/assets/hero-images/Kaamdhenu_Growth_Master_image bg.png", kaamdhenubuildersLogo],
         brochure_url: "/assets/brochures/kaamdhenu-growth-master-gm-brochure.pdf",
         amenities: [
@@ -242,21 +242,21 @@ The development features an elegant grand lobby with secure access and a dedicat
         ],
         specifications: {
           type: "Commercial - Premium Offices",
-          area: "500 - 6,500 sq.ft. Carpet",
+          area: "From 500 sq.ft+",
           status: "Pre-Launch - Plinth Level Completed",
-          possession: "Dec 2028"
+          possession: "December 2028"
         },
         highlights: [
-          "Plinth Level Completed | G+20 Tower | CC Received",
-          "Office Spaces: 500 – 6,500 sq.ft Carpet",
-          "Prices from ₹75 Lakhs + onwards",
-          "Expected rentals up to ₹70,000+/month",
-          "Up to 9%+ ROI potential",
-          "Pay only 1% Per Slab - Flexible Payment Plan",
+          "0.51 Acres land parcel",
+          "Starting ₹62 Lakhs+",
+          "Office spaces from 500 sq.ft+",
+          "G+20 tower | CC Received",
+          "Possession: December 2028",
           "Opposite DY Patil Stadium & Courtyard by Marriott",
           "2 minutes from Sion-Panvel Highway",
-          "Plinth Ready | Future-Ready Offices",
-          "Smart Investment Opportunity"
+          "Expected rentals up to 9%+ ROI potential",
+          "Warm-shell offices",
+          "Flexible payment plan"
         ],
         connectivity: [
           "DY Patil Stadium: Opposite",
@@ -267,7 +267,7 @@ The development features an elegant grand lobby with secure access and a dedicat
           "Palm Beach Road: 5 minutes"
         ],
         pricing: {
-          starting: "₹75 Lakhs + onwards",
+          starting: "₹62 Lakhs+",
           note: "Exclusive Pre-Launch | Pay only 1% Per Slab"
         },
         mapUrl: "https://maps.app.goo.gl/d57J48Ea87dThpXD8?g_st=iwb"
@@ -286,9 +286,9 @@ The development features an elegant grand lobby with secure access and a dedicat
       {
         id: "sai-world-one",
         title: "Sai World One — One World. One Life.",
-        location: "Opposite D.Y. Patil Stadium, Thane-Belapur Road, Nerul, Navi Mumbai",
-        excerpt: "6-acre integrated world | Residences + Business Spaces + High-Street Retail | 2 Iconic G+36 Towers",
-        description: "Sai World One is a prestigious 6-acre integrated development offering a complete world-class lifestyle experience. This landmark project features 2 iconic G+36 residential towers with 2 & 3 BHK world luxury homes, a G+28 storey commercial business landmark with mountain & sea-view offices, and G+2 high-street retail ideal for lifestyle brands, auto showrooms, and restaurants. Located opposite D.Y. Patil Stadium on Thane-Belapur Road, the development includes designer lobby, lavish clubhouse, infinity pool, Navi Mumbai's first-ever pickleball court, dual gyms, multipurpose sports turf, and 3-tier security. With exceptional connectivity (Nerul Station: 5 mins, Airport: 15 mins, MTHL: 20 mins), Sai World One offers an unparalleled integrated living and business ecosystem.",
+        location: "Opposite D Y Patil Stadium, Nerul, Navi Mumbai",
+        excerpt: "6 Acre Integrated Development | Starting ₹1.48Cr onwards | 603 Sqft | G+28 | Possession: December 2028",
+        description: "Sai World One is a prestigious 6-acre integrated development offering a complete world-class lifestyle experience. This landmark project features 2 iconic G+36 residential towers with 2 & 3 BHK world luxury homes, a G+28 storey commercial business landmark with mountain & sea-view offices starting from 603 Sqft at ₹1.48 Cr onwards, and G+2 high-street retail ideal for lifestyle brands, auto showrooms, and restaurants. Located opposite D.Y. Patil Stadium on Thane-Belapur Road, the development includes designer lobby, lavish clubhouse, infinity pool, Navi Mumbai's first-ever pickleball court, dual gyms, multipurpose sports turf, and 3-tier security. With exceptional connectivity (Nerul Station: 5 mins, Airport: 15 mins, MTHL: 20 mins) and possession scheduled for December 2028, Sai World One offers an unparalleled integrated living and business ecosystem.",
         images: [universalHeroBg, saiWorldOneHero, paradiseLogo],
         brochure_url: "/assets/brochures/sai-world-one-brochure.pdf",
         highlights: [
@@ -335,39 +335,40 @@ The development features an elegant grand lobby with secure access and a dedicat
         ],
         specifications: {
           type: "Integrated Development - Residential + Commercial + Retail",
-          area: "Commercial + Retail",
+          area: "Commercial from 603 sq.ft | 6 Acre Development",
           status: "New Launch",
-          possession: "Dec 2029"
+          possession: "December 2028"
         },
         mapUrl: "https://maps.google.com/?q=DY+Patil+Stadium+Thane+Belapur+Road+Nerul"
       },
       {
         id: "sai-world-pyramid",
         title: "Sai World Pyramid — Positive Life, Positive Energy",
-        location: "Nerul, Navi Mumbai",
-        excerpt: "Retail + Business Park + Residential | 2-acre development | G+27 Commercial + G+40 Residential",
-        description: "Sai World Pyramid is a unique 2-acre integrated development with a positive energy theme, featuring a G+27 commercial tower (IT/ITES floors 10-27) with rooftop garden & restaurant, and a G+40 residential tower with 2 & 3 BHK homes featuring hill & waterfall-facing units. The commercial tower offers offices from ₹1.18 Cr++ to ₹2.99 Cr++ with 6-level parking and 8 lifts. The residential tower includes 2 BHK (1320 SA/805 CA at ₹1.87 Cr++) and 3 BHK (2035-2335 SA/1240-1436 CA at ₹2.81-3.23 Cr++) with grand lobby, podium amenities, and 5 lifts. G+1 retail features 31 ground floor shops and 30 first floor shops with front-facing double-height units. With parking from P2-P7, amenities on 8th floor, and units starting from 10th floor, this project offers exceptional connectivity: Juinagar Station (2 mins), Sion-Panvel Highway (1 min), Airport (15 mins).",
+        location: "Shiravane, Nerul, Navi Mumbai",
+        excerpt: "2.2 Acres Development | Starting ₹1.1Cr Onwards | 509 Sqft | G+28 | Possession: December 2028",
+        description: "Sai World Pyramid is a unique 2.2-acre integrated development with a positive energy theme, featuring a G+28 commercial tower (IT/ITES floors 10-27) with rooftop garden & restaurant, and a G+40 residential tower with 2 & 3 BHK homes featuring hill & waterfall-facing units. The commercial tower offers offices starting from 509 Sqft at ₹1.1 Cr onwards with 6-level parking and 8 lifts. The residential tower includes 2 BHK (1320 SA/805 CA at ₹1.87 Cr++) and 3 BHK (2035-2335 SA/1240-1436 CA at ₹2.81-3.23 Cr++) with grand lobby, podium amenities, and 5 lifts. G+1 retail features 31 ground floor shops and 30 first floor shops with front-facing double-height units. With parking from P2-P7, amenities on 8th floor, units starting from 10th floor, and possession scheduled for December 2028, this project offers exceptional connectivity: Juinagar Station (2 mins), Sion-Panvel Highway (1 min), Airport (15 mins).",
         images: [universalHeroBg, saiWorldPyramidBuilding, paradiseLogo],
         brochure_url: "/assets/brochures/sai-world-pyramid-brochure.pdf",
         pricing: {
-          starting: "₹1.18 Cr++",
-          note: "Commercial: ₹1.18-2.99 Cr++ | 2 BHK: ₹1.87 Cr++ | 3 BHK: ₹2.81-3.23 Cr++"
+          starting: "₹1.1 Cr+",
+          note: "2.2 acres | Commercial from 509 sq.ft"
         },
         highlights: [
           "Theme: Positive Life, Positive Energy",
-          "2-acre land parcel with 2 towers",
+          "2.2-acre land parcel with 2 towers",
           "Retail + Business Park + Residential",
-          "Commercial Tower (G+27): IT/ITES floors 10-27",
+          "Commercial Tower (G+28): IT/ITES floors 10-27",
+          "Starting from 509 Sqft at ₹1.1 Cr onwards",
           "Rooftop garden + restaurant",
           "6-level parking | 8 lifts",
-          "Commercial pricing: ₹1.18 Cr++ – ₹2.99 Cr++",
           "Residential Tower (G+40): 2 & 3 BHK homes",
           "2 BHK: 1320 SA/805 CA — ₹1.87 Cr++",
           "3 BHK: 2035-2335 SA/1240-1436 CA — ₹2.81-3.23 Cr++",
           "Grand lobby | Podium amenities",
           "Hill & waterfall-facing units | 5 lifts",
           "Retail (G+1): 31 + 30 shops with double-height units",
-          "Parking: P2-P7 | Amenities: 8th floor | Units: From 10th floor"
+          "Parking: P2-P7 | Amenities: 8th floor | Units: From 10th floor",
+          "Possession: December 2028"
         ],
         connectivity: [
           "Juinagar Station: 2 minutes - Harbour Line connectivity",
@@ -394,9 +395,9 @@ The development features an elegant grand lobby with secure access and a dedicat
         ],
         specifications: {
           type: "Integrated - Commercial + Retail",
-          area: "2 BHK: 805-1436 CA | 3 BHK: 1240-1436 CA | Commercial: Variable",
+          area: "Commercial: 509 Sqft | 2 BHK: 805-1436 CA | 3 BHK: 1240-1436 CA",
           status: "Ready to Move / Near Completion",
-          possession: "Immediate to Dec 2029"
+          possession: "December 2028"
         },
         mapUrl: "https://maps.google.com/?q=Nerul+Navi+Mumbai+Juinagar"
       }
@@ -414,13 +415,13 @@ The development features an elegant grand lobby with secure access and a dedicat
       {
         id: "cybersquare",
         title: "Cyber Square",
-        location: "Nerul (LP) – Opp. D.Y. Patil University, Navi Mumbai",
-        excerpt: "Unlock the future with our brand-new commercial project featuring a stunning Retail Plaza spanning 3 Lakh sq.ft. on 6 acres of prime land.",
-        description: `Cyber Square is a landmark mixed-use development by GreenScape, strategically located in Nerul (LP) opposite D.Y. Patil University. This iconic project spans 6 acres of prime land featuring a Ground + 25 Story tower with Highway Frontage.
+        location: "Opposite D Y Patil Stadium, Nerul, Navi Mumbai",
+        excerpt: "6 Acre Premium Development | Starting ₹1.98Cr Onwards | 1041 Sq.ft onwards | G+25 | Possession: Dec 2031",
+        description: `Cyber Square is a landmark mixed-use development by GreenScape, strategically located in Nerul (LP) opposite D.Y. Patil Stadium. This iconic project spans 6 acres of prime land featuring a Ground + 25 Story tower with Highway Frontage.
 
-The development offers 3 lakh sq.ft of High Street Retail Plaza with double-height lobby spaces, complemented by state-of-the-art IT/ITES office floors with large floor plates of approximately 49,000 sq.ft carpet area. Office spaces start from 901 sq.ft carpet with impressive 12 ft floor-to-ceiling heights.
+The development offers 3 lakh sq.ft of High Street Retail Plaza with double-height lobby spaces, complemented by state-of-the-art IT/ITES office floors with large floor plates of approximately 49,000 sq.ft carpet area. Office spaces start from 1041 sq.ft with impressive 12 ft floor-to-ceiling heights, starting at ₹1.98 Cr onwards.
 
-With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators, and an open-to-sky central green area, Cyber Square sets new standards in commercial excellence. The project also includes indoor amenities spanning ~50,000 sq.ft, creating a complete business ecosystem.`,
+With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators, and an open-to-sky central green area, Cyber Square sets new standards in commercial excellence. Possession is scheduled for December 2031. The project also includes indoor amenities spanning ~50,000 sq.ft, creating a complete business ecosystem.`,
         images: [universalHeroBg, cyberSquareBuilding, greenscapeLogo],
         brochure_url: "/assets/brochures/cybersquare-layout-plan-nerul.pdf",
         amenities: [
@@ -446,24 +447,26 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
         ],
         specifications: {
           type: "Commercial - Mixed Use (IT/ITES Offices & Retail)",
-          area: "Offices: 901 - 49,000 sq.ft. Carpet | Retail: High Street Plaza 3 Lakh sq.ft.",
+          area: "Offices: From 1041 sq.ft. | Retail: High Street Plaza 3 Lakh sq.ft. | 6 Acres",
           status: "New Launch",
-          possession: "2031"
+          possession: "December 2031"
         },
         highlights: [
-          "Location Advantage: Nerul (LP) – Opp. D.Y. Patil University",
+          "Location Advantage: Opposite D Y Patil Stadium, Nerul (LP)",
           "Highway Frontage",
           "6 Acres of Land Parcel (Mixed Use Development)",
+          "Starting from ₹1.98 Cr onwards",
           "3 Level Basement Car Parking — 1500+ slots",
           "Ground + 25 Story — IT/ITES office floors",
           "3 lac sq. ft High Street Retail Plaza",
           "Double Height Lobby Space",
           "Large floor plate ≈ 49,000 sq.ft. carpet",
-          "Office area starting from 901 sq.ft. carpet",
+          "Office area starting from 1041 sq.ft.",
           "Floor-to-Ceiling height — 12 ft",
           "22 Elevators",
           "Open-to-Sky Central Green Area",
-          "Indoor amenities ~50,000 sq.ft."
+          "Indoor amenities ~50,000 sq.ft.",
+          "Possession: December 2031"
         ],
         connectivity: [
           "D.Y. Patil University: Opposite",
@@ -489,27 +492,28 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
       {
         id: "dream-digit",
         title: "Dream Digit — Nearby Possession",
-        location: "Thane Belapur Road, Navi Mumbai",
-        excerpt: "Commercial office spaces from ₹70 Lakhs onwards | 26-storey tower on Thane Belapur Road",
-        description: "Dream Digit is a prestigious 26-storey commercial tower offering premium office spaces on the prime Thane Belapur Road. This nearby possession property features office sizes of 382 sq.ft and 500 sq.ft, starting from ₹70 Lakhs onwards. The development includes a grand arrival lobby, horizon terrace with outdoor restaurant, modern business centre with co-working spaces, club leisure avenues including a Futsal court, podium parking, and high-street retail at ground level. With excellent connectivity to Turbhe and Koperkhairane Stations, Vashi, and the upcoming airport, Dream Digit represents an ideal investment in Navi Mumbai's thriving commercial corridor.",
+        location: "Turbhe / Pawne, Navi Mumbai",
+        excerpt: "1 Acre Development | Starting ₹57 Lakhs onwards | 635 Sqft onwards | G+26 | Possession: March 2026",
+        description: "Dream Digit is a prestigious G+26 storey commercial tower offering premium office spaces on a 1-acre land parcel. This nearby possession property features office sizes starting from 635 sq.ft onwards, starting from ₹57 Lakhs onwards. The development includes a grand arrival lobby, horizon terrace with outdoor restaurant, modern business centre with co-working spaces, club leisure avenues including a Futsal court, podium parking, and high-street retail at ground level. With excellent connectivity to Turbhe and Koperkhairane Stations, Vashi, and the upcoming airport, and possession scheduled for March 2026, Dream Digit represents an ideal investment in Navi Mumbai's thriving commercial corridor.",
         images: [universalHeroBg, dreamDigitBuilding, dreamsLogo],
         brochure_url: "/assets/brochures/dream-digit-brochure.pdf",
         pricing: {
-          starting: "₹70 Lakhs",
-          note: "Onwards | 382 sq.ft & 500 sq.ft configurations"
+          starting: "₹57 Lakhs+",
+          note: "1 Acre | From 635 sq.ft+ | G+26"
         },
         highlights: [
-          "Commercial office spaces on Thane Belapur Road",
-          "Pricing from ₹70 Lakhs onwards",
-          "26-storey tower with modern architecture",
-          "Office sizes: 382 sq.ft & 500 sq.ft",
+          "Commercial office spaces in Turbhe / Pawne",
+          "Pricing from ₹57 Lakhs onwards",
+          "G+26 tower with modern architecture",
+          "Office sizes: 635 sq.ft onwards",
+          "1-acre land parcel",
           "Grand arrival lobby with premium finishes",
           "Horizon terrace & outdoor restaurant",
           "Business centre & co-working spaces",
           "Club leisure avenues + Futsal court",
           "Podium parking facilities",
           "High-street retail at ground level",
-          "Nearby Possession - Ready to move soon"
+          "Nearby Possession - March 2026"
         ],
         connectivity: [
           "Turbhe Station: 5 minutes - Western Line connectivity",
@@ -538,26 +542,29 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
         ],
         specifications: {
           type: "Commercial - Office Spaces",
-          area: "382 sq.ft & 500 sq.ft",
+          area: "From 635 sq.ft+",
           status: "Nearby Possession",
-          possession: "As Per RERA"
+          possession: "March 2026"
         },
         mapUrl: "https://maps.google.com/?q=Thane+Belapur+Road+Navi+Mumbai"
       },
       {
         id: "dream-gateway",
         title: "Dream Gateway — Prime Turbhe Address",
-        location: "Opposite Turbhe Station, Thane Belapur Highway, Navi Mumbai",
-        excerpt: "Upcoming development on 2.5-acre land parcel | Flexible payment plans | Possession: December 2028",
-        description: "Dream Gateway is an upcoming landmark development strategically located opposite Turbhe Station, directly on the Thane Belapur Highway. This premium project spans a 2.5-acre land parcel and offers flexible payment plans including CLP, 100% Down Payment, and Yearly plans. Scheduled for possession in December 2028, Dream Gateway promises the best pricing for early investors who schedule a site visit. The prime location ensures excellent connectivity to Mumbai and Navi Mumbai's key business districts, while the direct highway access makes it ideal for commercial and mixed-use purposes. This is a rare opportunity to invest in one of Navi Mumbai's most strategic locations.",
+        location: "Opposite Turbhe Station and directly on the Thane Belapur Highway",
+        excerpt: "2.7 Acre Development | Starting ₹1.18Cr | 420 Sqft Onwards | G+23 | Possession: June 2029",
+        description: "Dream Gateway is an upcoming landmark development strategically located opposite Turbhe Station, directly on the Thane Belapur Highway. This premium G+23 project spans a 2.7-acre land parcel offering office spaces from 420 Sqft onwards at ₹1.18 Cr with flexible payment plans including CLP, 100% Down Payment, and Yearly plans. Scheduled for possession in June 2029, Dream Gateway promises the best pricing for early investors who schedule a site visit. The prime location ensures excellent connectivity to Mumbai and Navi Mumbai's key business districts, while the direct highway access makes it ideal for commercial and mixed-use purposes. This is a rare opportunity to invest in one of Navi Mumbai's most strategic locations.",
         images: [universalHeroBg, dreamGatewayHero, dreamsLogo],
         brochure_url: "/assets/brochures/dream-gateway-brochure.pdf",
         highlights: [
           "Located opposite Turbhe Station - Direct access",
           "Directly on Thane Belapur Highway - Prime frontage",
-          "Upcoming development on 2.5-acre land parcel",
+          "2.7-acre land parcel development",
+          "Office spaces from 420 Sqft onwards",
+          "Starting at ₹1.18 Cr",
+          "G+23 tower configuration",
           "Flexible payment plans: CLP, 100% Down Payment, Yearly plans",
-          "Possession: December 2028",
+          "Possession: June 2029",
           "Assured best pricing on site visit",
           "Strategic location for commercial & mixed-use",
           "Excellent connectivity to Mumbai & Navi Mumbai"
@@ -574,25 +581,30 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
         ],
         specifications: {
           type: "Commercial / Mixed-Use Development",
-          area: "Multiple configurations - To be announced",
+          area: "From 420 sq.ft+",
           status: "Upcoming Launch",
-          possession: "December 2028"
+          possession: "June 2029"
         },
         mapUrl: "https://maps.google.com/?q=Turbhe+Station+Thane+Belapur+Highway"
       },
       {
         id: "dream-ikon",
         title: "Dream Ikon — Premium Commercial Landmark",
-        location: "Opposite DY Patil Stadium, Nerul, Navi Mumbai",
-        excerpt: "One of the best commercial developments | 70% units sold | Possession: December 2026 | Negotiable pricing",
-        description: "Dream Ikon is a premium commercial landmark strategically located opposite the iconic DY Patil Stadium in Nerul. Recognized as one of the best commercial developments in the area, this project has already achieved an impressive 70% sales milestone, reflecting strong market confidence and demand. With possession scheduled for December 2026, Dream Ikon offers negotiable pricing with the best rates assured on site visits. The prime Nerul location provides excellent connectivity to major business districts, transport hubs, and upcoming infrastructure including the Navi Mumbai International Airport. This limited opportunity represents an exceptional investment in one of Navi Mumbai's most sought-after commercial addresses.",
+        location: "Opposite landmark D.Y. Patil Stadium, Sion-Panvel Highway, MIDC Industrial Area, Sector 7, Nerul, Navi Mumbai",
+        excerpt: "1 Acre Development | Starting ₹64 Lakhs onwards | 375 Sqft Onwards | G+30 | Possession: December 2027",
+        description: "Dream Ikon is a premium G+30 commercial landmark strategically located opposite the iconic DY Patil Stadium in Nerul on a 1-acre land parcel. Recognized as one of the best commercial developments in the area offering office spaces from 375 Sqft onwards at ₹64 Lakhs onwards, this project has already achieved an impressive 70% sales milestone, reflecting strong market confidence and demand. With possession scheduled for December 2027, Dream Ikon offers negotiable pricing with the best rates assured on site visits. The prime Nerul location provides excellent connectivity to major business districts, transport hubs, and upcoming infrastructure including the Navi Mumbai International Airport. This limited opportunity represents an exceptional investment in one of Navi Mumbai's most sought-after commercial addresses.",
         images: [universalHeroBg, dreamIkonHero, dreamsLogo],
         brochure_url: "/assets/brochures/dream-ikon-brochure.pdf",
         highlights: [
-          "Located opposite DY Patil Stadium, Nerul",
+          "Located opposite D.Y. Patil Stadium, Nerul",
+          "Sion-Panvel Highway, MIDC Industrial Area, Sector 7",
           "One of the best commercial developments in the area",
+          "1-acre land parcel",
+          "G+30 tower configuration",
+          "Office spaces from 375 Sqft onwards",
+          "Starting at ₹64 Lakhs onwards",
           "70% units already sold - Strong market confidence",
-          "Possession: December 2026",
+          "Possession: December 2027",
           "Negotiable pricing available",
           "Best rates assured on site visit",
           "Premium commercial landmark",
@@ -614,9 +626,9 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
         ],
         specifications: {
           type: "Commercial - Premium Offices",
-          area: "Multiple configurations available",
+          area: "From 375 sq.ft+",
           status: "Under Construction - 70% Sold",
-          possession: "December 2026"
+          possession: "December 2027"
         },
         mapUrl: "https://maps.google.com/?q=DY+Patil+Stadium+Nerul+Navi+Mumbai"
       }
@@ -634,15 +646,15 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
       {
         id: "delta-steller",
         title: "Delta Stellar",
-        location: "Juinagar, Navi Mumbai – Sion Panvel Highway Corridor",
-        excerpt: "31-storied Premium Commercial Tower with Sea Views & Open Panoramic Views",
-        description: `Delta Stellar is a prestigious 31-storied high-rise commercial tower strategically located on the Sion-Panvel Highway in Juinagar, Navi Mumbai. This premium development offers stunning sea views and open panoramic vistas, making it an ideal choice for IT/ITES companies, corporates, consultants, and SMEs.
+        location: "Thane–Belapur Road, MIDC Industrial Area, Nerul, Navi Mumbai – 400706",
+        excerpt: "2.85 Acre Development | Starting ₹2.33 Cr onwards | 936 Sqft | G+24 | Possession: December 2028",
+        description: `Delta Stellar is a prestigious G+24 high-rise commercial tower strategically located on the Thane-Belapur Road in MIDC Industrial Area, Nerul, Navi Mumbai on a 2.85 acre land parcel. This premium development offers stunning sea views and open panoramic vistas, making it an ideal choice for IT/ITES companies, corporates, consultants, and SMEs.
 
 The tower features a magnificent 33 ft high Grand Entrance Lobby and G+2 to 7 levels of surface parking with EV charging points. With flexible planning options that allow combining multiple offices for larger floor plates, Delta Stellar is designed to accommodate businesses of all sizes.
 
 Located just 1 km from Juinagar Station and DY Patil Stadium, 400 meters from the upcoming Google Data Centre, and 7 km from the airport, this project offers unmatched connectivity and growth potential.
 
-Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providing excellent value in Navi Mumbai's emerging commercial hub.`,
+Office spaces start from ₹2.33 Cr onwards for 936 sq.ft., providing excellent value in Navi Mumbai's emerging commercial hub with possession scheduled for December 2028.`,
         images: [universalHeroBg, deltaStellarBuilding, deltaLogo],
         brochure_url: "/assets/brochures/delta-stellar-it-building-plans.pdf",
         amenities: [
@@ -664,21 +676,24 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
         ],
         specifications: {
           type: "Commercial - Premium Offices",
-          area: "Starting from 936 sq.ft. Carpet (Flexible planning available)",
+          area: "From 936 sq.ft (Flexible planning available)",
           status: "New Launch",
-          possession: "2027 (Expected)"
+          possession: "December 2028"
         },
         highlights: [
-          "31-storied high-rise commercial tower",
+          "G+24 high-rise commercial tower",
+          "2.85-acre land parcel",
+          "Located on Thane–Belapur Road, MIDC Industrial Area, Nerul",
           "Sea & open panoramic views",
           "G+2 to 7 levels of surface parking",
           "33 ft High Grand Entrance Lobby",
           "12m dual-side driveway for entry & exit",
           "EV charging points in parking & utility areas",
           "Flexible planning - combine offices for larger floor plates",
+          "Starting from 936 Sqft at ₹2.33 Cr onwards",
           "Ideal for IT/ITES, corporates, consultants, SMEs",
-          "Strategic location on Sion-Panvel Highway",
-          "Close to Google Data Centre & Airport"
+          "Strategic location near Google Data Centre & Airport",
+          "Possession: December 2028"
         ],
         connectivity: [
           "Juinagar Station: 1 km",
@@ -689,8 +704,8 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
           "Vashi: 5 km"
         ],
         pricing: {
-          starting: "₹2.33 Cr + taxes",
-          note: "For 936 sq.ft. carpet area"
+          starting: "₹2.33 Cr+",
+          note: "For 936 sq.ft | 2.85 Acre development"
         },
         mapUrl: "https://maps.app.goo.gl/d57J48Ea87dThpXD8?g_st=iwb"
       }
@@ -707,14 +722,14 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
       {
         id: "24-high",
         title: "24 High Business Park",
-        location: "Nerul MIDC, Opp. DY Patil Stadium, Navi Mumbai",
-        excerpt: "Boutique offices from ₹1.50 Cr+ with high rental yield & capital appreciation",
-        description: "24 High Business Park is a premium commercial development offering boutique office spaces designed for modern businesses. Located strategically opposite DY Patil Stadium in Nerul MIDC, this 100% legal, title-clear, and RERA-registered property provides excellent investment opportunities with high rental yields and strong capital appreciation potential. Ideal for investors, startups, professionals, and entrepreneurs seeking quality commercial real estate in Navi Mumbai's thriving business district.",
+        location: "Opposite DY Patil Stadium, Nerul",
+        excerpt: "2 Acre Development | Starting ₹1.5Cr onwards | 650 Sqft Onwards | G+26 | Possession: April 2026",
+        description: "24 High Business Park is a premium G+26 commercial development offering boutique office spaces designed for modern businesses on a 2-acre land parcel. Located strategically opposite DY Patil Stadium in Nerul, this 100% legal, title-clear, and RERA-registered property provides office spaces from 650 Sqft onwards starting at ₹1.5 Cr onwards, offering excellent investment opportunities with high rental yields and strong capital appreciation potential. With possession scheduled for April 2026, it is ideal for investors, startups, professionals, and entrepreneurs seeking quality commercial real estate in Navi Mumbai's thriving business district.",
         images: [universalHeroBg, twentyFourHighBuilding, dreamapexLogo],
         brochure_url: "/assets/brochures/24-high-e-brochure.pdf",
         pricing: {
-          starting: "₹1.50 Cr+",
-          note: "Boutique offices with high rental yield"
+          starting: "₹1.5 Cr+",
+          note: "2 Acre | From 650 sq.ft+ | G+26 | High rental yield"
         },
         contact: {
           name: "Sales Team",
@@ -723,14 +738,18 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
           company: "24 High Business Park"
         },
         highlights: [
-          "Boutique offices from ₹1.50 Cr+",
+          "2-acre land parcel",
+          "G+26 commercial tower",
+          "Boutique offices from 650 Sqft onwards",
+          "Starting at ₹1.5 Cr onwards",
           "High rental yield & capital appreciation",
           "100% legal | Title clear | RERA registered",
           "Strategic location opposite DY Patil Stadium",
           "Ideal for investors, startups, professionals & entrepreneurs",
-          "Premium commercial development in Nerul MIDC",
+          "Premium commercial development in Nerul",
           "Excellent connectivity to Mumbai & Navi Mumbai",
-          "Modern infrastructure with business amenities"
+          "Modern infrastructure with business amenities",
+          "Possession: April 2026"
         ],
         amenities: [
           "Premium Office Spaces",
@@ -751,9 +770,9 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
         ],
         specifications: {
           type: "Commercial - Boutique Offices",
-          area: "Various configurations available",
+          area: "From 650 sq.ft+",
           status: "Ready to Move",
-          possession: "Immediate"
+          possession: "April 2026"
         },
         mapUrl: "https://maps.google.com/?q=Nerul+MIDC+DY+Patil+Stadium+Navi+Mumbai"
       }
@@ -771,26 +790,31 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
       {
         id: "equirise-nerul-lp",
         title: "EQUIRISE — Kaamdhenu Realties",
-        location: "NMEC - Nerul LP, Navi Mumbai",
-        excerpt: "Grade-A enterprise offices at NMEC – Nerul LP | Starting @ ₹1.09 Cr+ with Easy Payment Plan",
-        description: "EQUIRISE is a premium Grade-A commercial development located at Navi Mumbai's prominent NMEC - Nerul LP address. This architectural landmark features a striking glass elevation with a premium lobby, offering column-free office spaces ranging from 484 to 1,255 sq.ft. The project boasts 9-level parking with EV charging facilities, exclusive E-Deck restaurants on the 10th floor, sky amenities on the 29th floor, and rooftop networking spaces. With multi-tier security, smart access systems, and an easy payment plan starting at ₹1.09 Cr+, EQUIRISE represents the perfect business address for modern enterprises.",
+        location: "Opposite DY Patil Stadium, Nerul, Nerul MIDC / Shiravane, just off Sion–Panvel Highway",
+        excerpt: "1.5 Acre Development | Starting ₹1 Cr Onwards | 484 Sqft Onwards | G+29 | Possession: January 2030",
+        description: "EQUIRISE is a premium Grade-A commercial G+29 development located at Navi Mumbai's prominent Nerul LP address on a 1.5-acre land parcel. This architectural landmark features a striking glass elevation with a premium lobby, offering column-free office spaces starting from 484 Sqft onwards at ₹1 Cr onwards. The project boasts 9-level parking with EV charging facilities, exclusive E-Deck restaurants on the 10th floor, sky amenities on the 29th floor, and rooftop networking spaces. With multi-tier security, smart access systems, and possession scheduled for January 2030, EQUIRISE represents the perfect business address for modern enterprises.",
         images: [universalHeroBg, equiriseNerulBuilding, kaamdhenurealtiesLogo],
         brochure_url: "/assets/brochures/kamdhenu-equirise-nerul-lp.pdf",
         pricing: {
-          starting: "₹1.09 Cr+",
-          note: "Easy Payment Plan Available | Limited Units"
+          starting: "₹1 Cr+",
+          note: "1.5 Acre | From 484 sq.ft+ | Easy Payment Plan Available"
         },
         highlights: [
-          "Grade-A enterprise offices at NMEC – Nerul LP",
-          "Starting @ ₹1.09 Cr+ with Easy Payment Plan",
+          "Grade-A enterprise offices at Nerul LP",
+          "1.5-acre land parcel",
+          "G+29 tower configuration",
+          "Starting @ ₹1 Cr onwards with Easy Payment Plan",
           "Limited units | Visit today",
           "Striking glass elevation & premium lobby",
           "9-level parking + EV charging facilities",
           "E-Deck restaurants on 10th floor",
           "Sky amenities on 29th floor",
           "Rooftop networking spaces",
-          "Column-free offices (484–1255 sq.ft.)",
-          "Multi-tier security & smart access systems"
+          "Column-free offices (484 Sqft onwards)",
+          "Multi-tier security & smart access systems",
+          "Located opposite DY Patil Stadium, Nerul MIDC / Shiravane",
+          "Just off Sion–Panvel Highway",
+          "Possession: January 2030"
         ],
         amenities: [
           "Striking Glass Elevation",
@@ -811,9 +835,9 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
         ],
         specifications: {
           type: "Commercial - Grade-A Offices",
-          area: "484 - 1,255 sq.ft. (Column-free)",
+          area: "484 Sqft onwards (Column-free)",
           status: "Ready to Move / Near Completion",
-          possession: "Immediate to Q1 2026"
+          possession: "January 2030"
         },
         mapUrl: "https://maps.google.com/?q=NMEC+Nerul+LP+Navi+Mumbai"
       }
@@ -831,15 +855,15 @@ Office spaces start from ₹2.33 Cr + taxes for 936 sq.ft. carpet area, providin
       {
         id: "dummy-project",
         title: "Raheja Prime — World Trade Center",
-        location: "Navi Mumbai, Maharashtra",
-        excerpt: "The Business Address That Sells Itself — Exclusive Pre-Launch: Starting from ₹1.47 Cr",
-        description: `WORLD TRADE CENTER – NAVI MUMBAI represents the ultimate business address in the heart of Navi Mumbai. This 39-storey landmark tower by Raheja Prime offers premium office spaces ranging from 526 to 3,621 sq.ft., designed for discerning investors and business owners.
+        location: "Juinagar / MIDC-Industrial Area, Navi Mumbai",
+        excerpt: "63 Acres Mega Development | Starting ₹1.47 Cr Onwards | 526 Sqft Onwards | G+33 | Possession: December 2030",
+        description: `WORLD TRADE CENTER – NAVI MUMBAI represents the ultimate business address in the heart of Navi Mumbai on a massive 63-acre land parcel. This G+33 landmark tower by Raheja Prime offers premium office spaces ranging from 526 Sqft onwards at ₹1.47 Cr onwards, designed for discerning investors and business owners.
 
 The development features an iconic 42 ft. Grand Lobby that creates an impressive first impression for clients and visitors. Modern amenities include outdoor dining spaces, a premium gymnasium, cricket net, and turf areas perfect for networking and team building.
 
 Strategically located just 10 minutes from Juinagar Station with easy access to Vashi, Palm Beach Road, and the upcoming Navi Mumbai International Airport, this project offers unparalleled connectivity. The flexible office configurations allow businesses to combine units for larger floor plates as needed.
 
-With pre-launch pricing starting from ₹1.47 Cr for units up to the 20th floor, this represents a rare opportunity for early investors to secure prime commercial real estate in one of Navi Mumbai's most sought-after addresses. Limited units available.`,
+With pre-launch pricing starting from ₹1.47 Cr onwards and possession scheduled for December 2030, this represents a rare opportunity for early investors to secure prime commercial real estate in one of Navi Mumbai's most sought-after addresses. Limited units available.`,
         images: [universalHeroBg, rahejaPrimeBuilding, rahejaLogo],
         brochure_url: "/assets/brochures/raheja-prime-2-plans-a3-hi-res.pdf",
         amenities: [
@@ -861,19 +885,22 @@ With pre-launch pricing starting from ₹1.47 Cr for units up to the 20th floor,
         ],
         specifications: {
           type: "Commercial - Premium Offices",
-          area: "526 - 3,621 sq.ft.",
+          area: "From 526 sq.ft+",
           status: "Pre-Launch - Limited Units",
-          possession: "2027 (Expected)"
+          possession: "December 2030"
         },
         highlights: [
-          "39-Storey Landmark Tower",
-          "Offices: 526 – 3,621 sq.ft.",
+          "63 Acres mega development",
+          "G+33 Landmark Tower",
+          "Offices: 526 Sqft onwards",
+          "Starting at ₹1.47 Cr onwards",
+          "Located in Juinagar / MIDC-Industrial Area",
           "42 ft. Iconic Grand Lobby",
           "Outdoor dining, premium gym, cricket net, turf for networking",
           "10 mins from Juinagar Station; near Vashi, Palm Beach & upcoming airport",
-          "Starting price: ₹1.47 Cr (units to 20th floor)",
           "Ideal for investors & business owners — limited units",
-          "Flexible office sizes with options to combine for larger floor plates"
+          "Flexible office sizes with options to combine for larger floor plates",
+          "Possession: December 2030"
         ],
         connectivity: [
           "Juinagar Station: 10 minutes",
@@ -884,8 +911,8 @@ With pre-launch pricing starting from ₹1.47 Cr for units up to the 20th floor,
           "CBD Belapur: 15 minutes"
         ],
         pricing: {
-          starting: "₹1.47 Cr",
-          note: "Exclusive Pre-Launch (Units to 20th floor)"
+          starting: "₹1.47 Cr+",
+          note: "63 Acres | From 526 sq.ft+ | Exclusive Pre-Launch (G+33)"
         },
         contact: {
           name: "Rahul",
@@ -908,13 +935,13 @@ With pre-launch pricing starting from ₹1.47 Cr for units up to the 20th floor,
       {
         id: "blanca",
         title: "Blanca",
-        location: "Juinagar, Navi Mumbai",
-        excerpt: "The Only Business Address Your Business Deserves",
-        description: `Blanca is redefining how ambitious brands occupy space in Navi Mumbai. Rising G+29 levels along the Sion-Panvel and Thane-Belapur growth corridor, it delivers flexible office formats from agile 452 sq.ft. suites to expansive 14,000 sq.ft. floorplates—plus high-impact retail from 1,240 to 8,100 sq.ft.
+        location: "Ttc Industrial Estate, Turbhe, Navi Mumbai, Maharashtra 400703",
+        excerpt: "1 Acre Development | Starting ₹91 Lakhs Onwards | 452 Sqft onwards | G+29 | Possession: Mid 2030",
+        description: `Blanca is redefining how ambitious brands occupy space in Navi Mumbai. Rising G+29 levels along the Sion-Panvel and Thane-Belapur growth corridor on a 1-acre land parcel, it delivers flexible office formats from agile 452 sq.ft. suites onwards at ₹91 Lakhs onwards to expansive 14,000 sq.ft. floorplates—plus high-impact retail from 1,240 to 8,100 sq.ft.
 
 Double-height retail frontage, 13 ft office ceilings, wellness and collaboration zones, and panoramic hill & sea views all converge to create an environment that attracts talent, impresses clients, and anchors long-term value.
 
-With multi-axis connectivity—rail, highway, emerging airport—and limited pre-launch inventory, Blanca presents a rare window for early investors to capture superior yield potential in a rapidly ascending micro-market.`,
+With multi-axis connectivity—rail, highway, emerging airport—and limited pre-launch inventory with possession scheduled for Mid 2030, Blanca presents a rare window for early investors to capture superior yield potential in a rapidly ascending micro-market.`,
         images: [universalHeroBg, blancaBuilding, blancaLogo],
         brochure_url: "/assets/brochures/blanca-it-park-brochure.pdf",
         amenities: [
@@ -938,9 +965,9 @@ With multi-axis connectivity—rail, highway, emerging airport—and limited pre
         ],
         specifications: {
           type: "Commercial - Offices & Retail",
-          area: "Offices: 452 - 14,000 sq.ft. Carpet \n Retail: 1,240 - 8,100 sq.ft. Carpet",
+          area: "Offices from 452 sq.ft+ | Retail: 1,240 - 8,100 sq.ft",
           status: "Pre-Launch - Limited Inventory",
-          possession: "2027 (Expected)"
+          possession: "Mid 2030"
         },
         connectivity: [
           "Juinagar Station: 2-5 mins",
@@ -952,8 +979,8 @@ With multi-axis connectivity—rail, highway, emerging airport—and limited pre
           "Upcoming Navi Mumbai International Airport: ~20 mins"
         ],
         pricing: {
-          starting: "₹91 Lakhs + Taxes",
-          note: "Limited Release / Pre-Launch Advantage"
+          starting: "₹91 Lakhs+",
+          note: "1 Acre | From 452 sq.ft+ | Limited Release / Pre-Launch Advantage"
         },
         contact: {
           name: "Vijay Gupta",
@@ -986,9 +1013,9 @@ With multi-axis connectivity—rail, highway, emerging airport—and limited pre
       {
         id: "business-square",
         title: "EMPORIA WORLD — Business Square",
-        location: "Kharghar Turbhe Link Road, Navi Mumbai",
-        excerpt: "Mixed-use development combining retail, restaurants, banquet & a business park — prime connectivity and demand drivers from Navi Mumbai's infrastructure.",
-        description: "Business Square is a distinctive mixed-use development strategically positioned on the Kharghar Turbhe Link Road. The project seamlessly integrates retail spaces, restaurants, banquet facilities, and an A-grade business park, creating a comprehensive commercial ecosystem. With podium and rooftop amenities including a signature rooftop air-restaurant and lounge, Business Square offers a premium business address that capitalizes on Navi Mumbai's infrastructure growth, including proximity to the upcoming international airport and JNPT port.",
+        location: "Turbhe, Navi Mumbai",
+        excerpt: "Mixed-Use Development | 587 Sqft onwards | G+28 | Prime Location",
+        description: "Business Square is a distinctive mixed-use G+28 development strategically positioned in Turbhe, Navi Mumbai. The project seamlessly integrates retail spaces, restaurants, banquet facilities, and an A-grade business park with office spaces from 587 Sqft onwards, creating a comprehensive commercial ecosystem. With podium and rooftop amenities including a signature rooftop air-restaurant and lounge, Business Square offers a premium business address that capitalizes on Navi Mumbai's infrastructure growth, including proximity to the upcoming international airport and JNPT port.",
         images: [
           universalHeroBg,
           businessSquareBuilding,
@@ -997,7 +1024,7 @@ With multi-axis connectivity—rail, highway, emerging airport—and limited pre
         brochure_url: "/assets/brochures/business-square-brochure.pdf",
         specifications: {
           type: "Mixed-Use Development",
-          area: "Retail, Restaurant, Banquet & Business Park",
+          area: "Office from 587 sq.ft+ | Retail, Restaurant, Banquet & Business Park",
           status: "Ready to Move",
           possession: "Immediate"
         },

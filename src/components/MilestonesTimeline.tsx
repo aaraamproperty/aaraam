@@ -15,7 +15,7 @@ interface MilestonesTimelineProps {
 const MilestonesTimeline = ({ milestones }: MilestonesTimelineProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const timelineRef = useRef<HTMLDivElement>(null);
-  const yearRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const yearRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isSectionInView, setIsSectionInView] = useState(false);
 
@@ -44,7 +44,12 @@ const MilestonesTimeline = ({ milestones }: MilestonesTimelineProps) => {
     };
   }, []);
 
-  // Auto-advance logic
+  // Click handler for year/circle
+  const handleYearClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  // Auto-advance logic - loops every 4 seconds
   useEffect(() => {
     if (prefersReducedMotion) return;
 
@@ -91,66 +96,55 @@ const MilestonesTimeline = ({ milestones }: MilestonesTimelineProps) => {
         </motion.div>
 
         {/* Timeline Years */}
-        <div className="mb-12 relative">
+        <div className="mb-12 relative max-w-4xl mx-auto">
           <div
             ref={timelineRef}
-            className="flex items-center justify-start md:justify-center gap-4 md:gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+            className="flex items-center justify-between overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-4 relative"
             role="tablist"
             aria-label="Milestones timeline"
           >
+            {/* Timeline Line - positioned to go through circles */}
+            <div
+              className="hidden md:block absolute h-[2px] bg-[#CFDDE1] left-4 right-4"
+              style={{
+                top: "calc(1.25rem + 0.75rem + 0.5rem + 0.420rem)",
+                zIndex: 1,
+              }}
+            />
+
             {milestones.map((milestone, index) => (
-              <div
+              <button
                 key={index}
                 ref={(el) => (yearRefs.current[index] = el)}
                 role="tab"
                 aria-selected={activeIndex === index}
                 aria-controls={`milestone-${index}`}
-                className="flex flex-col items-center snap-center relative"
+                onClick={() => handleYearClick(index)}
+                className="flex flex-col items-center snap-center relative cursor-pointer focus:outline-none flex-shrink-0 z-10"
               >
                 {/* Year Text */}
-                <motion.span
-                  animate={{
-                    color: activeIndex === index ? "#16A34A" : "#00486160",
-                    scale: activeIndex === index ? 1.1 : 1,
-                  }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                  className={`text-lg md:text-xl font-bold mb-2 whitespace-nowrap ${
+                <span
+                  className={`text-lg md:text-xl font-bold mb-3 whitespace-nowrap transition-colors duration-200 ${
                     activeIndex === index
                       ? "text-[#16A34A]"
                       : "text-[#004861]/40"
                   }`}
                 >
                   {milestone.year}
-                </motion.span>
+                </span>
 
-                {/* Dot Indicator */}
-                <motion.div
-                  animate={{
-                    scale: activeIndex === index ? 1.2 : 1,
-                    backgroundColor:
-                      activeIndex === index ? "#16A34A" : "#CFDDE1",
-                  }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                  className="w-4 h-4 rounded-full relative z-10 bg-white"
-                  style={{
-                    border:
-                      activeIndex === index ? "none" : "2px solid #CFDDE1",
-                  }}
-                />
-              </div>
+                {/* Dot Indicator with white background to sit on line */}
+                <div className="relative">
+                  <div
+                    className="w-4 h-4 rounded-full transition-all duration-200 border-2 border-white shadow-md"
+                    style={{
+                      backgroundColor: activeIndex === index ? "#16A34A" : "#d6e3df",
+                    }}
+                  />
+                </div>
+              </button>
             ))}
           </div>
-
-          {/* Timeline Line - passes through center of dots, from first to last year */}
-          <div
-            className="hidden md:block absolute top-[42px] h-[1px] -z-10 max-w-4xl mx-auto"
-            style={{
-              backgroundColor: "#CFDDE1",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "calc(100% - 16rem)",
-            }}
-          />
         </div>
 
         {/* Milestone Content */}
