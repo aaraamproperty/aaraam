@@ -7,7 +7,7 @@ import BrochureModal from "@/components/BrochureModal";
 import ImageGallery from "@/components/ImageGallery";
 import { Project, DeveloperGroup } from "@/data/developerGroups";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, FileText, CheckCircle, ArrowLeft, Calendar, Maximize2 } from "lucide-react";
+import { MapPin, Phone, FileText, CheckCircle, ArrowLeft, ArrowRight, Calendar, Maximize2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 // CyberSquare Gallery Images
@@ -208,6 +208,13 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
 
   const handleEnquire = () => {
     navigate("/contact");
+    // Scroll to form after navigation
+    setTimeout(() => {
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const handleBackToGroup = () => {
@@ -1143,6 +1150,29 @@ const ProjectDetail = ({ project, group }: ProjectDetailProps) => {
                 </p>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* View More Button Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center">
+            <button 
+              onClick={() => {
+                navigate('/properties');
+                setTimeout(() => {
+                  const propertiesSection = document.getElementById('main-content');
+                  if (propertiesSection) {
+                    propertiesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 100);
+              }}
+              className="group/btn inline-flex items-center gap-3 bg-white hover:bg-[#16A34A] text-[#16A34A] hover:text-white border-2 border-[#16A34A] px-8 py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:gap-4 shadow-lg hover:shadow-xl"
+            >
+              View More Properties
+              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+            </button>
           </div>
         </div>
       </section>

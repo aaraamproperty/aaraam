@@ -28,6 +28,11 @@ const Blog = () => {
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   // Update displayed articles when category changes
   useEffect(() => {
     console.log("Blog component mounted, category:", selectedCategory);
@@ -35,13 +40,6 @@ const Blog = () => {
     console.log("Fetched articles:", articles.length);
     setDisplayedArticles(articles);
     setVisibleCount(6); // Reset visible count when category changes
-    // Scroll to grid section smoothly
-    const gridSection = document.getElementById("blog-grid");
-    if (gridSection) {
-      setTimeout(() => {
-        gridSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    }
   }, [selectedCategory]);
 
   const articlesToShow = displayedArticles.slice(0, visibleCount);
@@ -68,9 +66,9 @@ const Blog = () => {
           <img
             src={heroImage}
             alt="Blog Hero"
-            className="w-full h-full object-cover opacity-75"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#004861]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
         </div>
 
         <div className="relative container mx-auto px-4 lg:px-8">
@@ -114,9 +112,10 @@ const Blog = () => {
                   transition-all duration-300 ease-smooth outline-none
                   ${
                     selectedCategory === category.id
-                      ? "text-accent bg-accent/10"
-                      : "text-accent bg-transparent hover:bg-accent hover:text-white focus:bg-accent focus:text-white"
+                      ? "text-[#004861] bg-transparent"
+                      : "text-[#004861] bg-transparent"
                   }
+                  hover:bg-[#16A34A] hover:text-white focus:bg-[#16A34A] focus:text-white
                 `}
                 style={{
                   transform: prefersReducedMotion ? "none" : undefined,

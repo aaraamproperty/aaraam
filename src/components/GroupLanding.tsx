@@ -156,7 +156,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                     y: -6,
                     scale: 1.02,
                   }}
-                  className="bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(18,40,30,0.06)] hover:shadow-[0_20px_60px_rgba(18,40,30,0.12)] transition-all duration-300 ease-smooth cursor-pointer"
+                  className="bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(18,40,30,0.06)] hover:shadow-[0_20px_60px_rgba(18,40,30,0.12)] transition-all duration-300 ease-smooth cursor-pointer flex flex-col"
                   onClick={() => {
                     navigate(projectLink);
                     window.scrollTo(0, 0);
@@ -172,7 +172,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                   aria-label={`View ${project.title} details`}
                 >
                   {/* Project Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <img
                       src={project.images[3] || project.images[1] || project.images[0]}
                       alt={project.title}
@@ -189,24 +189,24 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col h-max">
                     <h3 className="text-2xl font-bold text-[#004861] mb-3">
                       {project.title}
                     </h3>
                     
                     <div className="flex items-center gap-2 text-gray-600 mb-4">
                       <MapPin className="h-5 w-5 text-[#16A34A] flex-shrink-0" />
-                      <span>{project.location}</span>
+                      <span className="line-clamp-2">{project.location}</span>
                     </div>
 
                     <p className="text-gray-600 mb-4 line-clamp-2">
                       {project.excerpt}
                     </p>
 
-                    <div className="space-y-2 mb-6 text-sm">
+                    <div className="space-y-1 mb-4 text-sm flex-grow">
                       <div className="flex justify-between">
                         <span className="text-gray-500">Type:</span>
-                        <span className="font-semibold text-[#004861]">
+                        <span className="font-semibold text-[#004861] text-right">
                           {project.specifications.type}
                         </span>
                       </div>
@@ -219,7 +219,7 @@ const GroupLanding = ({ group }: GroupLandingProps) => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-row items-stretch gap-3">
+                    <div className="flex flex-row items-stretch gap-3 mt-auto">
                       <Button
                         onClick={(e) => {
                           e.stopPropagation();

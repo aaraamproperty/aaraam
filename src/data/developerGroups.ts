@@ -285,7 +285,7 @@ The development features an elegant grand lobby with secure access and a dedicat
     projects: [
       {
         id: "sai-world-one",
-        title: "Sai World One — One World. One Life.",
+        title: "Sai World One — One World. One Life.One Home",
         location: "Opposite D Y Patil Stadium, Nerul, Navi Mumbai",
         excerpt: "6 Acre Integrated Development | Starting ₹1.48Cr onwards | 603 Sqft | G+28 | Possession: December 2028",
         description: "Sai World One is a prestigious 6-acre integrated development offering a complete world-class lifestyle experience. This landmark project features 2 iconic G+36 residential towers with 2 & 3 BHK world luxury homes, a G+28 storey commercial business landmark with mountain & sea-view offices starting from 603 Sqft at ₹1.48 Cr onwards, and G+2 high-street retail ideal for lifestyle brands, auto showrooms, and restaurants. Located opposite D.Y. Patil Stadium on Thane-Belapur Road, the development includes designer lobby, lavish clubhouse, infinity pool, Navi Mumbai's first-ever pickleball court, dual gyms, multipurpose sports turf, and 3-tier security. With exceptional connectivity (Nerul Station: 5 mins, Airport: 15 mins, MTHL: 20 mins) and possession scheduled for December 2028, Sai World One offers an unparalleled integrated living and business ecosystem.",
@@ -492,7 +492,7 @@ With 3-level basement car parking offering 1500+ slots, 22 high-speed elevators,
       {
         id: "dream-digit",
         title: "Dream Digit — Nearby Possession",
-        location: "Turbhe / Pawne, Navi Mumbai",
+        location: "Turbhe / Pawne, Navi Mumbai,Thane-Belapur Road",
         excerpt: "1 Acre Development | Starting ₹57 Lakhs onwards | 635 Sqft onwards | G+26 | Possession: March 2026",
         description: "Dream Digit is a prestigious G+26 storey commercial tower offering premium office spaces on a 1-acre land parcel. This nearby possession property features office sizes starting from 635 sq.ft onwards, starting from ₹57 Lakhs onwards. The development includes a grand arrival lobby, horizon terrace with outdoor restaurant, modern business centre with co-working spaces, club leisure avenues including a Futsal court, podium parking, and high-street retail at ground level. With excellent connectivity to Turbhe and Koperkhairane Stations, Vashi, and the upcoming airport, and possession scheduled for March 2026, Dream Digit represents an ideal investment in Navi Mumbai's thriving commercial corridor.",
         images: [universalHeroBg, dreamDigitBuilding, dreamsLogo],

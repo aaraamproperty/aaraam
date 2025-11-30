@@ -136,8 +136,8 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Milestones Timeline - Interactive Animated */}
-      <MilestonesTimeline milestones={milestones} />
+      {/* Milestones Timeline - Interactive Animated - HIDDEN FOR NOW */}
+      {/* <MilestonesTimeline milestones={milestones} /> */}
 
       {/* Vision Hero Section */}
       <section className="py-20 bg-white">
@@ -336,7 +336,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -344,7 +344,7 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-[#F7F7F7] p-8 rounded-3xl text-center hover:bg-[#16A34A] hover:text-white group transition-all duration-300 hover:shadow-xl"
+                className="bg-[#F7F7F7] p-8 rounded-3xl text-center hover:bg-[#16A34A] hover:text-white group transition-all duration-300 hover:shadow-xl flex flex-col"
               >
                 <div className="w-16 h-16 bg-[#16A34A] group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                   <value.icon className="h-8 w-8 text-white group-hover:text-[#16A34A] transition-colors duration-300" />

@@ -169,7 +169,15 @@ const Properties = () => {
               Book Site Visit
             </Button>
             <Button
-              onClick={() => setShowBookingModal(true)}
+              onClick={() => {
+                navigate('/contact');
+                setTimeout(() => {
+                  const formSection = document.getElementById('contact-form');
+                  if (formSection) {
+                    formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 100);
+              }}
               variant="outline"
               className="border-2 border-[#004861] text-[#004861] hover:bg-[#004861] hover:text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all"
               aria-label="Contact us for enquiries"

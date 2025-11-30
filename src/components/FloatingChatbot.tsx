@@ -20,7 +20,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi! How can I help you today?",
+      text: "Hi! Welcome to Aaraam Properties 🏢 I'm here to help you find premium commercial spaces in Navi Mumbai. How can I assist you today?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -43,21 +43,21 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
   const predefinedOptions = [
     {
       id: 1,
-      text: "Find Commercial Property",
+      text: "Browse Properties",
       response:
-        "Great! I can help you find the perfect commercial property. What type of space are you looking for? Office, Retail, or Warehouse?",
+        "Great! We have 15+ verified commercial properties in Navi Mumbai from top developers like Tescon, Paradise Group, Dream Group, Raheja, and more. Properties range from ₹57 Lakhs+ to ₹2.33 Cr+ with offices, retail spaces, and mixed-use developments. Which type of space interests you - Office, Retail, or Mixed-Use?",
     },
     {
       id: 2,
-      text: "Schedule a Visit",
+      text: "Schedule Site Visit",
       response:
-        "I'd be happy to schedule a site visit for you! Please share your preferred date and time, and I'll arrange it with our property expert.",
+        "I'd be happy to schedule a property tour for you! Our team arranges viewings at your convenience. Please share your preferred date, time, and which property interests you (or we can recommend based on your requirements). You can also use the 'Book Site Visit' button on any property page!",
     },
     {
       id: 3,
-      text: "Request Callback",
+      text: "Property Pricing",
       response:
-        "Sure! Our team will call you back shortly. Could you please share your contact number and preferred time for the call?",
+        "Our properties offer transparent pricing across budgets: Entry-level from ₹57 Lakhs+, Mid-range ₹1-1.5 Cr+, Premium ₹1.5-2.5 Cr+. Prices include flexible payment plans and some properties offer pre-launch benefits. What's your budget range? I can suggest suitable properties!",
     },
   ];
 
@@ -70,7 +70,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("who are you") ||
       input.includes("company")
     ) {
-      return "Aaraam Properties is India's largest commercial real estate ecosystem, founded in 2015. We specialize in corporate rentals and commercial listings across 15+ major cities with 500+ verified properties. We provide transparent, verified, and hassle-free commercial spaces.";
+      return "Aaraam Properties is your trusted partner in commercial real estate, founded in 2018 with a vision to revolutionize the industry in India. We specialize in connecting businesses with verified, transparent, and hassle-free commercial spaces - from corporate offices to retail shops across Navi Mumbai and major cities.";
     }
 
     // Services
@@ -79,12 +79,12 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("what do you do") ||
       input.includes("offer")
     ) {
-      return "We offer: 1) Corporate Office Spaces 2) Retail Shops & Showrooms 3) Co-working Spaces 4) Warehouses 5) Commercial Buildings. All properties are verified with transparent pricing, no brokerage hassles, and corporate-friendly agreements.";
+      return "We offer premium commercial properties including: 1) Corporate Office Spaces (Grade-A offices, business parks) 2) Retail Shops & Showrooms 3) Co-working Spaces 4) Mixed-Use Developments. All properties are verified with transparent pricing and corporate-friendly agreements.";
     }
 
     // Property types
     if (input.includes("office") || input.includes("workspace")) {
-      return "We have premium corporate office spaces across major cities. Our offices are verified, ready-to-move, and come with corporate-friendly lease agreements. Would you like to browse our featured properties or schedule a site visit?";
+      return "We have premium corporate office spaces across Navi Mumbai including properties from leading developers like Tescon, Paradise Group, Dream Group, and more. Our offices range from 370 sq.ft to large floor plates with modern amenities. Would you like to browse featured properties or schedule a site visit?";
     }
 
     if (
@@ -92,7 +92,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("shop") ||
       input.includes("showroom")
     ) {
-      return "We offer retail spaces in prime locations with high footfall. Perfect for retail outlets, showrooms, and commercial shops. All properties are documented and verified. Interested in viewing our retail properties?";
+      return "We offer high-street retail spaces in prime locations with excellent footfall. Our portfolio includes retail spaces in integrated developments like Sai World One, Cyber Square, and more. All properties are documented and verified. Interested in viewing our retail properties?";
     }
 
     if (
@@ -100,7 +100,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("co-working") ||
       input.includes("shared")
     ) {
-      return "Our co-working spaces offer flexible seating, modern amenities, and collaborative environments. Ideal for startups, freelancers, and growing businesses. Would you like to know more about our co-working options?";
+      return "Our co-working spaces offer flexible seating, modern amenities, and collaborative environments. Ideal for startups, freelancers, and growing businesses. Properties include modern facilities with conference rooms, high-speed internet, and professional ambiance. Would you like to know more?";
     }
 
     // Locations & Cities
@@ -108,9 +108,11 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("location") ||
       input.includes("city") ||
       input.includes("cities") ||
-      input.includes("where")
+      input.includes("where") ||
+      input.includes("navi mumbai") ||
+      input.includes("nerul")
     ) {
-      return "We serve 15+ major cities across India including Mumbai, Delhi NCR, Bangalore, Hyderabad, Pune, Chennai, Ahmedabad, and more. We have pan-India presence with local market expertise. Which city are you looking for?";
+      return "We specialize in Navi Mumbai properties with prime locations in Nerul, Turbhe, Juinagar, Kharghar, and MIDC areas. Our properties offer excellent connectivity to Navi Mumbai Airport (15-20 mins), railway stations, highways, and upcoming infrastructure like MTHL. Which specific area interests you?";
     }
 
     // Pricing & Cost
@@ -120,7 +122,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("rent") ||
       input.includes("budget")
     ) {
-      return "We offer transparent pricing with no hidden charges or brokerage fees. Prices vary based on location, size, and amenities. Our leases are flexible and negotiable. Would you like to discuss your budget requirements with our team?";
+      return "We offer transparent pricing across various budgets: Entry-level offices start from ₹57 Lakhs+, mid-range properties from ₹1 Cr+, and premium spaces from ₹1.5 Cr+. Prices vary based on location, size, and amenities. All properties have flexible payment plans. Would you like to discuss your budget requirements?";
     }
 
     // Process & Documentation
@@ -130,7 +132,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("documentation") ||
       input.includes("agreement")
     ) {
-      return "Our process is simple: 1) Browse properties 2) Schedule site visit 3) Finalize property 4) We handle all documentation and legal compliance 5) Move in within 7-14 days. We provide corporate-friendly agreements tailored for business needs.";
+      return "Our process is simple: 1) Browse 15+ verified properties on our website 2) Schedule site visit with our team 3) Review property details, pricing, amenities 4) We handle all documentation and RERA compliance 5) Move in smoothly. We provide corporate-friendly agreements tailored for business needs.";
     }
 
     // Why choose us
@@ -139,7 +141,7 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("benefit") ||
       input.includes("advantage")
     ) {
-      return "Why choose Aaraam Properties? ✓ No Brokerage Hassles ✓ 500+ Verified Properties ✓ Corporate-Friendly Agreements ✓ Quick Leasing Support ✓ Local Experts in Every City ✓ Transparent Pricing ✓ Growth-Oriented Solutions. Founded in 2015, we're recognized as India's leading commercial property consultants.";
+      return "Why choose Aaraam Properties? ✓ 15+ Verified Premium Properties ✓ Partnerships with Top Developers (Tescon, Paradise, Dream Group, Raheja) ✓ Transparent Pricing ✓ Corporate-Friendly Agreements ✓ Expert Local Knowledge ✓ Quick Property Tours ✓ End-to-End Support. Founded in 2018 by industry veterans with decades of experience.";
     }
 
     // Contact & Visit
@@ -149,16 +151,17 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("email") ||
       input.includes("reach")
     ) {
-      return "You can reach us through: 1) Book a site visit using the 'Book Site Visit' button 2) Visit our Contact page for direct communication 3) Fill out our inquiry form. Our team responds within 24 hours. Would you like me to schedule a callback?";
+      return "You can reach us at: 📧 raju@aaraamproperties.com, saurav@aaraamproperties.com, sanup@aaraamproperties.com | 📞 8104124183, 7738915066, 9136636577 | 📍 Office: Plan S Business Park, MIDC Shiravane, Nerul, Navi Mumbai. Book a site visit or fill our contact form for immediate assistance!";
     }
 
     // Site visit
     if (
       input.includes("visit") ||
       input.includes("view") ||
-      input.includes("see")
+      input.includes("see") ||
+      input.includes("tour")
     ) {
-      return "I can help you schedule a site visit! We arrange immediate property viewings with our local experts. Click the 'Book Site Visit' button on our website or share your preferred date and time here.";
+      return "I can help you schedule a site visit! We arrange property viewings with our expert team. Click the 'Book Site Visit' button on any property page or visit our Contact page. We respond within 24 hours. Which property interests you?";
     }
 
     // Verification & Trust
@@ -168,17 +171,61 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("genuine") ||
       input.includes("authentic")
     ) {
-      return "Every property in our portfolio is thoroughly verified, documented, and ready to move in. We ensure authenticity, proper documentation, and legal compliance. With 10 years of experience and partnerships with 100+ leading corporates, we're India's most trusted commercial property platform.";
+      return "Every property is thoroughly verified with proper documentation, RERA registration, and legal compliance. We partner with established developers and ensure all properties are ready for investment. Our team verifies each detail before listing. Trust and transparency are our core values.";
     }
 
-    // Lease terms
+    // Developers & Projects
     if (
-      input.includes("lease") ||
-      input.includes("term") ||
-      input.includes("duration") ||
-      input.includes("contract")
+      input.includes("developer") ||
+      input.includes("builder") ||
+      input.includes("project") ||
+      input.includes("tescon") ||
+      input.includes("paradise") ||
+      input.includes("dream") ||
+      input.includes("raheja")
     ) {
-      return "We offer flexible lease terms based on your business needs - short-term, long-term, or customizable agreements. All our leases are corporate-friendly with transparent terms and conditions. Legal documentation is handled by our expert team.";
+      return "We partner with leading developers: Tescon (Plan I & M), Paradise Group (Sai World One & Pyramid), Dream Group (Digit, Gateway, Ikon), Raheja Prime, Delta Group, Kaamdhenu, and more. Each developer brings quality, trust, and innovation. Which project interests you?";
+    }
+
+    // Specific properties
+    if (
+      input.includes("plan i") ||
+      input.includes("plan m") ||
+      input.includes("sai world") ||
+      input.includes("cyber square") ||
+      input.includes("24 high")
+    ) {
+      return "Great choice! We have detailed information on all our premium properties. Each property page includes complete specifications, amenities, pricing, gallery, location map, and brochures. Visit our Properties page to explore or I can connect you with our team for a personalized tour!";
+    }
+
+    // Amenities
+    if (
+      input.includes("amenity") ||
+      input.includes("amenities") ||
+      input.includes("facilities") ||
+      input.includes("features")
+    ) {
+      return "Our properties feature world-class amenities: 🅿️ Parking (some with robotic systems), ⚡ Power Backup, 🔒 24/7 Security & CCTV, 🏋️ Fitness Centers, 🏊 Swimming Pools, 🍽️ Food Courts, 🤝 Conference Rooms, 🌐 High-Speed Internet, and more. Each property has unique premium features!";
+    }
+
+    // Possession & Timeline
+    if (
+      input.includes("possession") ||
+      input.includes("ready") ||
+      input.includes("when") ||
+      input.includes("timeline")
+    ) {
+      return "We have properties with various possession timelines: Ready-to-move (2026), upcoming launches (2027-2028), and pre-launch opportunities (2029-2031). Each property listing shows exact possession dates. Early investors get best pricing and payment flexibility. What timeline works for you?";
+    }
+
+    // Investment & ROI
+    if (
+      input.includes("investment") ||
+      input.includes("roi") ||
+      input.includes("return") ||
+      input.includes("rental")
+    ) {
+      return "Our commercial properties offer excellent investment potential with 7-9%+ rental yields in prime Navi Mumbai locations. Benefits include capital appreciation, corporate tenants, strategic locations near airport/metro, and growing business ecosystem. Would you like investment-specific property recommendations?";
     }
 
     // Greeting
@@ -187,16 +234,16 @@ const FloatingChatbot = ({ isHidden = false }: FloatingChatbotProps) => {
       input.includes("hello") ||
       input.includes("hey")
     ) {
-      return "Hello! Welcome to Aaraam Properties - Your trusted partner for commercial real estate. How can I assist you today? Looking for office space, retail shops, or want to know more about our services?";
+      return "Hello! Welcome to Aaraam Properties - Your trusted partner for premium commercial real estate in Navi Mumbai. We offer 15+ verified properties from top developers. How can I assist you today? Looking for office space, retail shops, or want to schedule a site visit?";
     }
 
     // Thank you
     if (input.includes("thank") || input.includes("thanks")) {
-      return "You're welcome! If you have any more questions about commercial properties, leasing, or our services, feel free to ask. We're here to help you find your perfect space!";
+      return "You're welcome! If you have any more questions about our commercial properties, leasing, pricing, or locations, feel free to ask. You can also book a site visit or contact our team directly. We're here to help you find your perfect space!";
     }
 
     // Default response
-    return "Thank you for your message! I can help you with: finding commercial properties, scheduling site visits, property pricing, our services, locations we serve, and more. Our expert team is also available for detailed assistance. What would you like to know?";
+    return "Thank you for your message! I can help you with: 🏢 Browse 15+ verified commercial properties | 📅 Schedule site visits | 💰 Property pricing & investment info | 📍 Navi Mumbai locations | 🏗️ Developer information | 📞 Connect with our expert team. What would you like to know?";
   };
 
   const handleSendMessage = () => {
